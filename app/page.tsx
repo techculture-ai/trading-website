@@ -14,6 +14,9 @@ import TradingFeatures from '@/components/TradingFeatures';
 import Awards from '@/components/Awards';
 import InvestmentOptions from '@/components/InvestmentOptions';
 import TrendingStocks from '@/components/TrendingStocks';
+import HowToOpenAccount from '@/components/HowToOpenAccount';
+import DocumentsRequired from '@/components/DocumentsRequired';
+import WhyChooseUs from '@/components/WhyChooseUs';
 
 export default function Home() {
   return (
@@ -26,11 +29,15 @@ export default function Home() {
       {/* <TradingFeatures/> */}
       {/* <LongTermInvestors />
       <AlwaysKeepingFirst /> */}
-      {/* <Testimonials />
+      {/* 
       <Awards />
       <News />
       <FAQ /> */}
       {/* <Partners /> */}
+      <WhyChooseUs />
+      <HowToOpenAccount/>
+      <DocumentsRequired/>
+      <Testimonials />
       <CTASection />
       {/* <Footer /> */}
     </main>
