@@ -1,28 +1,33 @@
-import React from 'react';
-import { FaChartPie, FaCoins, FaShieldAlt, FaFileInvoiceDollar } from 'react-icons/fa';
+import React from "react";
+import {
+  FaChartPie,
+  FaCoins,
+  FaShieldAlt,
+  FaFileInvoiceDollar,
+} from "react-icons/fa";
 
 const LongTermInvestors = () => {
   const features = [
     {
       icon: <FaChartPie />,
-      title: 'Mutual Funds',
-      description: 'Invest in 2000+ mutual funds with zero commission'
+      title: "Mutual Funds",
+      description: "Invest in 2000+ mutual funds with zero commission",
     },
     {
       icon: <FaCoins />,
-      title: 'Stocks & ETFs',
-      description: 'Build long-term wealth with equity investments'
+      title: "Stocks & ETFs",
+      description: "Build long-term wealth with equity investments",
     },
     {
       icon: <FaShieldAlt />,
-      title: 'IPO Investment',
-      description: 'Apply to IPOs directly from your Ezwealth account'
+      title: "IPO Investment",
+      description: "Apply to IPOs directly from your ez wealth account",
     },
     {
       icon: <FaFileInvoiceDollar />,
-      title: 'Smallcase Ready',
-      description: 'Invest in curated portfolios with Smallcase'
-    }
+      title: "Smallcase Ready",
+      description: "Invest in curated portfolios with Smallcase",
+    },
   ];
 
   return (
@@ -33,17 +38,18 @@ const LongTermInvestors = () => {
           <div className="order-2 lg:order-1">
             <div className="bg-gradient-to-br from-purple-200 to-blue-200 rounded-lg p-8 aspect-square"></div>
           </div>
-          
+
           {/* Right Content */}
           <div className="order-1 lg:order-2 space-y-8">
             <h2 className="text-4xl lg:text-5xl font-bold text-navy">
               Built For Long-Term Investors
             </h2>
-            
+
             <p className="text-xl text-gray-600">
-              Everything you need to build and manage your investment portfolio for the long run
+              Everything you need to build and manage your investment portfolio
+              for the long run
             </p>
-            
+
             <div className="space-y-6">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-4">
@@ -59,10 +65,8 @@ const LongTermInvestors = () => {
                 </div>
               ))}
             </div>
-            
-            <button className="btn-primary">
-              Start Investing
-            </button>
+
+            <button className="btn-primary">Start Investing</button>
           </div>
         </div>
       </div>

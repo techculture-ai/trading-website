@@ -142,38 +142,44 @@ const PricingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20">
+      <section className="bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 min-h-[50vh]">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
+        </div>
+        <div className="absolute top-20 right-10 w-96 h-96 bg-[#EF9309]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
               <FaRocket className="w-4 h-4 text-[#EF9309]" />
-              <span className="text-sm font-semibold text-[#EF9309]">Transparent Pricing</span>
+              <span className="text-sm font-semibold text-[#EF9309]">
+                Transparent Pricing
+              </span>
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              Pricing Plans
+              Pricing <span className="text-[#EF9309]">Plans</span>
             </h1>
             <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed">
-              Our plans are simple and tailored to scale for the needs of our customers to deliver exceptional value.
+              Our plans are simple and tailored to scale for the needs of our
+              customers to deliver exceptional value.
             </p>
           </div>
         </div>
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-20 -mt-20 relative z-10">
+      <section className=" mt-10 relative z-10">
         <div className="max-w-8xl mx-auto py-32 px-5 md:px-10 lg:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
             {pricingPlans.map((plan) => (
               <div
                 key={plan.id}
                 className={`relative h-full ${
-                  plan.recommended
-                    ? 'lg:-mt-8 lg:mb-8 '
-                    : ''
+                  plan.recommended ? "lg:-mt-8 lg:mb-8 " : ""
                 }`}
               >
                 {/* Recommended Badge */}
@@ -190,17 +196,17 @@ const PricingPage: React.FC = () => {
                 <div
                   className={`bg-white rounded-2xl shadow-lg border-2 transition-all duration-300 hover:shadow-2xl h-full flex flex-col ${
                     plan.recommended
-                      ? 'border-[#EF9309] lg:scale-105 shadow-xl'
+                      ? "border-[#EF9309] lg:scale-105 shadow-xl"
                       : `${plan.colorScheme.border} hover:border-[#EF9309]`
                   }`}
                 >
                   {/* Card Header */}
-                  <div className={`p-8 ${plan.recommended ? 'pt-12' : 'pt-8'}`}>
+                  <div className={`p-8 ${plan.recommended ? "pt-12" : "pt-8"}`}>
                     {/* Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-br ${plan.colorScheme.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
-                      <div className="text-white">
-                        {plan.icon}
-                      </div>
+                    <div
+                      className={`w-16 h-16 bg-gradient-to-br ${plan.colorScheme.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}
+                    >
+                      <div className="text-white">{plan.icon}</div>
                     </div>
 
                     {/* Plan Name */}
@@ -209,7 +215,9 @@ const PricingPage: React.FC = () => {
                     </h3>
 
                     {/* Tagline */}
-                    <p className={`text-sm font-semibold ${plan.colorScheme.text} mb-4`}>
+                    <p
+                      className={`text-sm font-semibold ${plan.colorScheme.text} mb-4`}
+                    >
                       {plan.tagline}
                     </p>
 
@@ -236,7 +244,9 @@ const PricingPage: React.FC = () => {
                     <div className="space-y-3">
                       {plan.features.map((feature, index) => (
                         <div key={index} className="flex items-start gap-3">
-                          <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${plan.colorScheme.gradient} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                          <div
+                            className={`w-5 h-5 rounded-full bg-gradient-to-br ${plan.colorScheme.gradient} flex items-center justify-center flex-shrink-0 mt-0.5`}
+                          >
                             <FaCheck className="w-3 h-3 text-white" />
                           </div>
                           <span className="text-sm text-[#666] leading-relaxed">
@@ -252,7 +262,7 @@ const PricingPage: React.FC = () => {
                     <button
                       className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-xl ${
                         plan.recommended
-                          ? 'bg-gradient-to-r from-[#EF9309] to-[#D68108] text-white hover:scale-105'
+                          ? "bg-gradient-to-r from-[#EF9309] to-[#D68108] text-white hover:scale-105"
                           : `bg-gradient-to-r ${plan.colorScheme.gradient} text-white hover:scale-105`
                       }`}
                     >
@@ -271,7 +281,7 @@ const PricingPage: React.FC = () => {
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-dark mb-4">
-              Detailed Charges Breakdown
+              Detailed Charges <span className="text-[#EF9309]">Breakdown</span>
             </h2>
             <p className="text-lg text-[#666]">
               Complete transparency on all charges and fees
@@ -282,31 +292,31 @@ const PricingPage: React.FC = () => {
           <div className="flex justify-center mb-8">
             <div className="inline-flex bg-gray-100 rounded-xl p-1">
               <button
-                onClick={() => setActiveTab('equity')}
+                onClick={() => setActiveTab("equity")}
                 className={`px-8 py-3 rounded-lg font-semibold transition-all ${
-                  activeTab === 'equity'
-                    ? 'bg-[#EF9309] text-white shadow-lg'
-                    : 'text-[#666] hover:text-gray-dark'
+                  activeTab === "equity"
+                    ? "bg-[#EF9309] text-white shadow-lg"
+                    : "text-[#666] hover:text-gray-dark"
                 }`}
               >
                 Equity
               </button>
               <button
-                onClick={() => setActiveTab('currency')}
+                onClick={() => setActiveTab("currency")}
                 className={`px-8 py-3 rounded-lg font-semibold transition-all ${
-                  activeTab === 'currency'
-                    ? 'bg-[#EF9309] text-white shadow-lg'
-                    : 'text-[#666] hover:text-gray-dark'
+                  activeTab === "currency"
+                    ? "bg-[#EF9309] text-white shadow-lg"
+                    : "text-[#666] hover:text-gray-dark"
                 }`}
               >
                 Currency
               </button>
               <button
-                onClick={() => setActiveTab('commodity')}
+                onClick={() => setActiveTab("commodity")}
                 className={`px-8 py-3 rounded-lg font-semibold transition-all ${
-                  activeTab === 'commodity'
-                    ? 'bg-[#EF9309] text-white shadow-lg'
-                    : 'text-[#666] hover:text-gray-dark'
+                  activeTab === "commodity"
+                    ? "bg-[#EF9309] text-white shadow-lg"
+                    : "text-[#666] hover:text-gray-dark"
                 }`}
               >
                 Commodity
@@ -315,43 +325,85 @@ const PricingPage: React.FC = () => {
           </div>
 
           {/* Equity Table */}
-          {activeTab === 'equity' && (
+          {activeTab === "equity" && (
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-gradient-to-r from-[#0A2745] to-[#1A3A5C] text-white">
-                      <th className="text-left py-4 px-6 font-semibold">Wealth Discovery Charges</th>
-                      <th className="text-left py-4 px-6 font-semibold">Equity Delivery</th>
-                      <th className="text-left py-4 px-6 font-semibold">Equity Intraday</th>
-                      <th className="text-left py-4 px-6 font-semibold">Equity Futures</th>
-                      <th className="text-left py-4 px-6 font-semibold">Equity Options</th>
+                      <th className="text-left py-4 px-6 font-semibold">
+                        Wealth Discovery Charges
+                      </th>
+                      <th className="text-left py-4 px-6 font-semibold">
+                        Equity Delivery
+                      </th>
+                      <th className="text-left py-4 px-6 font-semibold">
+                        Equity Intraday
+                      </th>
+                      <th className="text-left py-4 px-6 font-semibold">
+                        Equity Futures
+                      </th>
+                      <th className="text-left py-4 px-6 font-semibold">
+                        Equity Options
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">STT/CTT</td>
-                      <td className="py-4 px-6 text-[#666]">0.1% on both Buy and Sell</td>
-                      <td className="py-4 px-6 text-[#666]">0.025% on the Sell Side</td>
-                      <td className="py-4 px-6 text-[#666]">0.01% on the Sell Side</td>
-                      <td className="py-4 px-6 text-[#666]">0.05% on the Sell Side (For Premium)</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        STT/CTT
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        0.1% on both Buy and Sell
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        0.025% on the Sell Side
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        0.01% on the Sell Side
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        0.05% on the Sell Side (For Premium)
+                      </td>
                     </tr>
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">Transaction/Turnover charges</td>
-                      <td className="py-4 px-6 text-[#666]">NSE: 0.00325% | BSE: 0.00275%</td>
-                      <td className="py-4 px-6 text-[#666]">NSE: 0.00325% | BSE: 0.00275%</td>
-                      <td className="py-4 px-6 text-[#666]">NSE: 0.0019% | BSE: 0.0005%</td>
-                      <td className="py-4 px-6 text-[#666]">NSE: 0.05% | BSE: 0.025%</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        Transaction/Turnover charges
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        NSE: 0.00325% | BSE: 0.00275%
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        NSE: 0.00325% | BSE: 0.00275%
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        NSE: 0.0019% | BSE: 0.0005%
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        NSE: 0.05% | BSE: 0.025%
+                      </td>
                     </tr>
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">GST</td>
-                      <td className="py-4 px-6 text-[#666]">18% on (Brokerage + Transaction Charge)</td>
-                      <td className="py-4 px-6 text-[#666]">18% on (Brokerage + Transaction Charge)</td>
-                      <td className="py-4 px-6 text-[#666]">18% on (Brokerage + Transaction Charge)</td>
-                      <td className="py-4 px-6 text-[#666]">18% on (Brokerage + Transaction Charge)</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        GST
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        18% on (Brokerage + Transaction Charge)
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        18% on (Brokerage + Transaction Charge)
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        18% on (Brokerage + Transaction Charge)
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        18% on (Brokerage + Transaction Charge)
+                      </td>
                     </tr>
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">SEBI Charges</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        SEBI Charges
+                      </td>
                       <td className="py-4 px-6 text-[#666]">₹10/Crore</td>
                       <td className="py-4 px-6 text-[#666]">₹10/Crore</td>
                       <td className="py-4 px-6 text-[#666]">₹10/Crore</td>
@@ -364,35 +416,53 @@ const PricingPage: React.FC = () => {
           )}
 
           {/* Currency Table */}
-          {activeTab === 'currency' && (
+          {activeTab === "currency" && (
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-gradient-to-r from-[#0A2745] to-[#1A3A5C] text-white">
-                      <th className="text-left py-4 px-6 font-semibold">Wealth Discovery Charges</th>
-                      <th className="text-left py-4 px-6 font-semibold">Currency Futures</th>
-                      <th className="text-left py-4 px-6 font-semibold">Currency Options</th>
+                      <th className="text-left py-4 px-6 font-semibold">
+                        Wealth Discovery Charges
+                      </th>
+                      <th className="text-left py-4 px-6 font-semibold">
+                        Currency Futures
+                      </th>
+                      <th className="text-left py-4 px-6 font-semibold">
+                        Currency Options
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">STT/CTT</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        STT/CTT
+                      </td>
                       <td className="py-4 px-6 text-[#666]">No STT</td>
                       <td className="py-4 px-6 text-[#666]">No STT</td>
                     </tr>
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">Transaction/Turnover charges</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        Transaction/Turnover charges
+                      </td>
                       <td className="py-4 px-6 text-[#666]">NSE: 0.0011%</td>
                       <td className="py-4 px-6 text-[#666]">NSE: 0.0044%</td>
                     </tr>
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">GST</td>
-                      <td className="py-4 px-6 text-[#666]">18% on (Brokerage + Transaction Charge)</td>
-                      <td className="py-4 px-6 text-[#666]">18% on (Brokerage + Transaction Charge)</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        GST
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        18% on (Brokerage + Transaction Charge)
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        18% on (Brokerage + Transaction Charge)
+                      </td>
                     </tr>
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">SEBI Charges</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        SEBI Charges
+                      </td>
                       <td className="py-4 px-6 text-[#666]">₹15/Crore</td>
                       <td className="py-4 px-6 text-[#666]">₹15/Crore</td>
                     </tr>
@@ -403,31 +473,49 @@ const PricingPage: React.FC = () => {
           )}
 
           {/* Commodity Table */}
-          {activeTab === 'commodity' && (
+          {activeTab === "commodity" && (
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-gradient-to-r from-[#0A2745] to-[#1A3A5C] text-white">
-                      <th className="text-left py-4 px-6 font-semibold">Wealth Discovery Charges</th>
-                      <th className="text-left py-4 px-6 font-semibold">Commodity</th>
+                      <th className="text-left py-4 px-6 font-semibold">
+                        Wealth Discovery Charges
+                      </th>
+                      <th className="text-left py-4 px-6 font-semibold">
+                        Commodity
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">STT/CTT</td>
-                      <td className="py-4 px-6 text-[#666]">0.01% on Sell Side (Non-Agri)</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        STT/CTT
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        0.01% on Sell Side (Non-Agri)
+                      </td>
                     </tr>
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">Transaction/Turnover charges</td>
-                      <td className="py-4 px-6 text-[#666]">Non-Agri: 0.00260% | Agri: 0.00175%</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        Transaction/Turnover charges
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        Non-Agri: 0.00260% | Agri: 0.00175%
+                      </td>
                     </tr>
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">GST</td>
-                      <td className="py-4 px-6 text-[#666]">18% on (Brokerage + Transaction Charge)</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        GST
+                      </td>
+                      <td className="py-4 px-6 text-[#666]">
+                        18% on (Brokerage + Transaction Charge)
+                      </td>
                     </tr>
                     <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-gray-dark">SEBI Charges</td>
+                      <td className="py-4 px-6 font-semibold text-gray-dark">
+                        SEBI Charges
+                      </td>
                       <td className="py-4 px-6 text-[#666]">₹10/Crore</td>
                     </tr>
                   </tbody>
@@ -443,7 +531,7 @@ const PricingPage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-5 md:px-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-dark mb-4">
-              Still Have Questions?
+              Still Have <span className="text-[#EF9309]">Questions?</span>
             </h2>
             <p className="text-lg text-[#666]">
               Contact our support team or explore our FAQ section
@@ -461,7 +549,7 @@ const PricingPage: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

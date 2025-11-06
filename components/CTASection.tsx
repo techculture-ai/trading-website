@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const CTASection: React.FC = () => {
   return (
@@ -14,11 +14,13 @@ const CTASection: React.FC = () => {
               <h3 className="text-white lg:text-4xl text-2xl lg:leading-[52px] leading-[32px] font-semibold lg:text-left md:text-left text-center mb-6">
                 Invest &amp; Trade with a Trading
                 <br />
-                Platform That&apos;s{' '}
+                Platform That&apos;s{" "}
                 <i className="text-[#EF9309] not-italic">#MadeForTrade</i>
               </h3>
               <div className="text-[#aaa] text-sm md:text-base font-normal mb-8 lg:mb-8 md:text-left text-center">
-                Open your <span className="text-[#EF9309]">Ezwealth Account</span> in minutes!
+                Open your{" "}
+                <span className="text-[#EF9309]">ez wealth Account</span> in
+                minutes!
               </div>
             </div>
 

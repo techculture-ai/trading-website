@@ -1,8 +1,17 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { FaMobileAlt, FaKey, FaUserCheck, FaFileSignature, FaCheckCircle, FaShieldAlt, FaArrowRight, FaQrcode } from 'react-icons/fa';
+import React, { useState } from "react";
+import Image from "next/image";
+import {
+  FaMobileAlt,
+  FaKey,
+  FaUserCheck,
+  FaFileSignature,
+  FaCheckCircle,
+  FaShieldAlt,
+  FaArrowRight,
+  FaQrcode,
+} from "react-icons/fa";
 
 interface Step {
   id: number;
@@ -17,55 +26,55 @@ interface Step {
 const steps: Step[] = [
   {
     id: 1,
-    number: '01',
-    title: 'Download the App',
-    description: 'Download the EZWealth app or visit our website',
+    number: "01",
+    title: "Download the App",
+    description: "Download the ez wealth app or visit our website",
     icon: <FaMobileAlt className="w-8 h-8" />,
     details: [
-      'Available on iOS and Android',
-      'Quick 2-minute download',
-      'User-friendly interface'
+      "Available on iOS and Android",
+      "Quick 2-minute download",
+      "User-friendly interface",
     ],
-    image: '/steps/download-app.svg'
+    image: "/steps/download-app.svg",
   },
   {
     id: 2,
-    number: '02',
-    title: 'Enter Mobile & OTP',
-    description: 'Enter your mobile number and verify with OTP',
+    number: "02",
+    title: "Enter Mobile & OTP",
+    description: "Enter your mobile number and verify with OTP",
     icon: <FaKey className="w-8 h-8" />,
     details: [
-      'Instant OTP verification',
-      'Secure authentication',
-      'No password hassle'
+      "Instant OTP verification",
+      "Secure authentication",
+      "No password hassle",
     ],
-    image: '/steps/otp-verify.svg'
+    image: "/steps/otp-verify.svg",
   },
   {
     id: 3,
-    number: '03',
-    title: 'Verify KYC & Bank',
-    description: 'Verify your KYC and bank account details',
+    number: "03",
+    title: "Verify KYC & Bank",
+    description: "Verify your KYC and bank account details",
     icon: <FaUserCheck className="w-8 h-8" />,
     details: [
-      'DigiLocker integration',
-      'Instant Aadhaar verification',
-      'Link bank account securely'
+      "DigiLocker integration",
+      "Instant Aadhaar verification",
+      "Link bank account securely",
     ],
-    image: '/steps/kyc-verify.svg'
+    image: "/steps/kyc-verify.svg",
   },
   {
     id: 4,
-    number: '04',
-    title: 'eSign & Start Trading',
-    description: 'eSign your documents and start trading',
+    number: "04",
+    title: "eSign & Start Trading",
+    description: "eSign your documents and start trading",
     icon: <FaFileSignature className="w-8 h-8" />,
     details: [
-      'Paperless process',
-      'Digital signature',
-      'Instant account activation'
+      "Paperless process",
+      "Digital signature",
+      "Instant account activation",
     ],
-    image: '/steps/esign.svg'
+    image: "/steps/esign.svg",
   },
 ];
 
@@ -88,14 +97,17 @@ const HowToOpenAccount: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
             <FaCheckCircle className="w-4 h-4 text-[#EF9309]" />
-            <span className="text-sm font-semibold text-[#EF9309]">Simple & Fast</span>
+            <span className="text-sm font-semibold text-[#EF9309]">
+              Simple & Fast
+            </span>
           </div>
 
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            How to Open a Demat Account?
+            How to Open a <span className="text-[#EF9309]">Demat Account?</span>
           </h2>
           <p className="text-lg text-[#DADADA] max-w-3xl mx-auto">
-            Start your investment journey in just 4 simple steps. Open your free demat account in less than 5 minutes!
+            Start your investment journey in just 4 simple steps. Open your free
+            demat account in less than 5 minutes!
           </p>
         </div>
 
@@ -123,28 +135,30 @@ const HowToOpenAccount: React.FC = () => {
                   <div
                     className={`bg-white/5 backdrop-blur-sm border rounded-2xl p-6 cursor-pointer transition-all duration-300 ${
                       activeStep === step.id
-                        ? 'border-[#EF9309] shadow-xl shadow-[#EF9309]/20 -translate-y-2'
-                        : 'border-white/10 hover:border-white/30'
+                        ? "border-[#EF9309] shadow-xl shadow-[#EF9309]/20 -translate-y-2"
+                        : "border-white/10 hover:border-white/30"
                     }`}
                   >
                     {/* Icon Circle */}
                     <div
                       className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto transition-all duration-300 ${
                         activeStep === step.id
-                          ? 'bg-gradient-to-br from-[#EF9309] to-[#D68108] scale-110'
-                          : 'bg-white/10'
+                          ? "bg-gradient-to-br from-[#EF9309] to-[#D68108] scale-110"
+                          : "bg-white/10"
                       }`}
                     >
-                      <div className="text-white">
-                        {step.icon}
-                      </div>
+                      <div className="text-white">{step.icon}</div>
                     </div>
 
                     {/* Step Number */}
                     <div className="text-center mb-3">
-                      <span className={`text-sm font-bold ${
-                        activeStep === step.id ? 'text-[#EF9309]' : 'text-[#8E8E8E]'
-                      }`}>
+                      <span
+                        className={`text-sm font-bold ${
+                          activeStep === step.id
+                            ? "text-[#EF9309]"
+                            : "text-[#8E8E8E]"
+                        }`}
+                      >
                         STEP {step.id}
                       </span>
                     </div>
@@ -183,8 +197,8 @@ const HowToOpenAccount: React.FC = () => {
                   <div
                     className={`absolute -bottom-8 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-4 transition-all duration-300 ${
                       activeStep >= step.id
-                        ? 'bg-[#EF9309] border-[#0A2745]'
-                        : 'bg-white/20 border-[#0A2745]'
+                        ? "bg-[#EF9309] border-[#0A2745]"
+                        : "bg-white/20 border-[#0A2745]"
                     }`}
                   ></div>
                 </div>
@@ -201,8 +215,8 @@ const HowToOpenAccount: React.FC = () => {
               onClick={() => setActiveStep(step.id)}
               className={`bg-white/5 backdrop-blur-sm border rounded-2xl p-6 cursor-pointer transition-all duration-300 ${
                 activeStep === step.id
-                  ? 'border-[#EF9309] shadow-xl'
-                  : 'border-white/10'
+                  ? "border-[#EF9309] shadow-xl"
+                  : "border-white/10"
               }`}
             >
               <div className="flex items-start gap-4">
@@ -210,13 +224,11 @@ const HowToOpenAccount: React.FC = () => {
                 <div
                   className={`w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 ${
                     activeStep === step.id
-                      ? 'bg-gradient-to-br from-[#EF9309] to-[#D68108]'
-                      : 'bg-white/10'
+                      ? "bg-gradient-to-br from-[#EF9309] to-[#D68108]"
+                      : "bg-white/10"
                   }`}
                 >
-                  <div className="text-white text-sm">
-                    {step.icon}
-                  </div>
+                  <div className="text-white text-sm">{step.icon}</div>
                 </div>
 
                 {/* Content */}
@@ -227,15 +239,16 @@ const HowToOpenAccount: React.FC = () => {
                   <h3 className="text-white text-lg font-bold mb-1">
                     {step.title}
                   </h3>
-                  <p className="text-[#DADADA] text-sm">
-                    {step.description}
-                  </p>
+                  <p className="text-[#DADADA] text-sm">{step.description}</p>
 
                   {/* Details - Expanded */}
                   {activeStep === step.id && (
                     <div className="mt-4 space-y-2">
                       {step.details.map((detail, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-sm text-[#DADADA]">
+                        <div
+                          key={idx}
+                          className="flex items-start gap-2 text-sm text-[#DADADA]"
+                        >
                           <FaCheckCircle className="w-4 h-4 text-[#00D09C] mt-0.5 flex-shrink-0" />
                           <span>{detail}</span>
                         </div>
@@ -303,7 +316,8 @@ const HowToOpenAccount: React.FC = () => {
         <div className="mt-8 flex items-center justify-center gap-3 text-[#DADADA]">
           <FaShieldAlt className="w-5 h-5 text-[#00D09C]" />
           <p className="text-sm">
-            All data is stored safely with encryption as per regulatory guidelines
+            All data is stored safely with encryption as per regulatory
+            guidelines
           </p>
         </div>
       </div>

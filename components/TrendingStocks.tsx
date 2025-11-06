@@ -121,8 +121,7 @@ const TrendingStocks: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-10">
           <h2 className="text-white text-3xl lg:text-4xl font-bold mb-3">
-            What&apos;s Trending{' '}
-            <span className="text-[#EF9309]">Today</span>
+            What&apos;s Trending <span className="text-[#EF9309]">Today</span>
           </h2>
           <p className="text-[#8E8E8E] text-base lg:text-lg">
             Track the market&apos;s biggest movers in real-time
@@ -133,11 +132,11 @@ const TrendingStocks: React.FC = () => {
         <div className="flex justify-center mb-8 lg:mb-12">
           <div className="inline-flex bg-[#ffffff0d] backdrop-blur-sm rounded-xl p-1 border border-[#ffffff1a]">
             <button
-              onClick={() => setActiveTab('gainers')}
+              onClick={() => setActiveTab("gainers")}
               className={`px-6 lg:px-10 py-3 rounded-lg font-medium text-sm lg:text-base transition-all duration-300 ${
-                activeTab === 'gainers'
-                  ? 'bg-[#00D09C] text-white shadow-lg'
-                  : 'text-[#8E8E8E] hover:text-white'
+                activeTab === "gainers"
+                  ? "bg-[#00D09C] text-white shadow-lg"
+                  : "text-[#8E8E8E] hover:text-white"
               }`}
             >
               <span className="flex items-center gap-2">
@@ -146,11 +145,11 @@ const TrendingStocks: React.FC = () => {
               </span>
             </button>
             <button
-              onClick={() => setActiveTab('losers')}
+              onClick={() => setActiveTab("losers")}
               className={`px-6 lg:px-10 py-3 rounded-lg font-medium text-sm lg:text-base transition-all duration-300 ${
-                activeTab === 'losers'
-                  ? 'bg-[#EF4B53] text-white shadow-lg'
-                  : 'text-[#8E8E8E] hover:text-white'
+                activeTab === "losers"
+                  ? "bg-[#EF4B53] text-white shadow-lg"
+                  : "text-[#8E8E8E] hover:text-white"
               }`}
             >
               <span className="flex items-center gap-2">
@@ -169,7 +168,7 @@ const TrendingStocks: React.FC = () => {
               className="group bg-gradient-to-br from-[#1A2B42]/80 to-[#0F1F35]/80 backdrop-blur-sm border border-[#ffffff1a] rounded-2xl p-5 hover:border-[#ffffff3a] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
               style={{
                 animationDelay: `${index * 100}ms`,
-                animation: 'fadeInUp 0.6s ease-out forwards',
+                animation: "fadeInUp 0.6s ease-out forwards",
                 opacity: 0,
               }}
             >
@@ -177,9 +176,9 @@ const TrendingStocks: React.FC = () => {
               <div className="flex items-center justify-between mb-4">
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
-                    activeTab === 'gainers'
-                      ? 'bg-[#00D09C]/20 text-[#00D09C]'
-                      : 'bg-[#EF4B53]/20 text-[#EF4B53]'
+                    activeTab === "gainers"
+                      ? "bg-[#00D09C]/20 text-[#00D09C]"
+                      : "bg-[#EF4B53]/20 text-[#EF4B53]"
                   }`}
                 >
                   #{index + 1}
@@ -208,10 +207,12 @@ const TrendingStocks: React.FC = () => {
               <div className="flex items-center justify-between">
                 <div
                   className={`flex items-center gap-1 text-sm font-semibold ${
-                    activeTab === 'gainers' ? 'text-[#00D09C]' : 'text-[#EF4B53]'
+                    activeTab === "gainers"
+                      ? "text-[#00D09C]"
+                      : "text-[#EF4B53]"
                   }`}
                 >
-                  {activeTab === 'gainers' ? (
+                  {activeTab === "gainers" ? (
                     <FaArrowUp className="w-3 h-3" />
                   ) : (
                     <FaArrowDown className="w-3 h-3" />
@@ -220,7 +221,9 @@ const TrendingStocks: React.FC = () => {
                 </div>
                 <div
                   className={`text-xs font-medium ${
-                    activeTab === 'gainers' ? 'text-[#00D09C]' : 'text-[#EF4B53]'
+                    activeTab === "gainers"
+                      ? "text-[#00D09C]"
+                      : "text-[#EF4B53]"
                   }`}
                 >
                   {stock.change}
@@ -231,9 +234,9 @@ const TrendingStocks: React.FC = () => {
               <div className="mt-4 h-1 bg-[#ffffff1a] rounded-full overflow-hidden">
                 <div
                   className={`h-full rounded-full transition-all duration-1000 ${
-                    activeTab === 'gainers'
-                      ? 'bg-gradient-to-r from-[#00D09C] to-[#00E0AC]'
-                      : 'bg-gradient-to-r from-[#EF4B53] to-[#FF6B73]'
+                    activeTab === "gainers"
+                      ? "bg-gradient-to-r from-[#00D09C] to-[#00E0AC]"
+                      : "bg-gradient-to-r from-[#EF4B53] to-[#FF6B73]"
                   }`}
                   style={{
                     width: `${Math.min(

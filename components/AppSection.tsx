@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { FaArrowRightLong } from 'react-icons/fa6';
-import Image from 'next/image';
+import React, { useState } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
+import Image from "next/image";
 
 const DhanAppSection = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -10,107 +10,107 @@ const DhanAppSection = () => {
   const tabs = [
     {
       id: 0,
-      name: 'Dhan App',
-      logo: '/_next/static/media/Dhanlogo.8a85768d.svg',
-      label: 'App',
-      type: 'light',
-      title: 'Dhan App',
+      name: "Dhan App",
+      logo: "/_next/static/media/Dhanlogo.8a85768d.svg",
+      label: "App",
+      type: "light",
+      title: "Dhan App",
       description:
-        'Carefully built to give you an incredible mobile trading experience with margin, charts, option chain, reliable order execution & much more! Millions of users rely on Dhan App for their daily trading and investing needs. Best part? The App is constantly evolving!',
-      link: '/trading-app/',
-      buttonText: 'Explore Dhan App',
-      image: 'https://stock-logos.dhan.co/static-new-images/dhanwebtrial.png',
+        "Carefully built to give you an incredible mobile trading experience with margin, charts, option chain, reliable order execution & much more! Millions of users rely on Dhan App for their daily trading and investing needs. Best part? The App is constantly evolving!",
+      link: "/trading-app/",
+      buttonText: "Explore Dhan App",
+      image: "https://stock-logos.dhan.co/static-new-images/dhanwebtrial.png",
     },
     {
       id: 1,
-      name: 'Dhan Web',
-      logo: '/_next/static/media/Dhanlogo.8a85768d.svg',
-      label: 'Web',
-      type: 'light',
-      title: 'Dhan Web',
+      name: "Dhan Web",
+      logo: "/_next/static/media/Dhanlogo.8a85768d.svg",
+      label: "Web",
+      type: "light",
+      title: "Dhan Web",
       description:
-        'Experience powerful web trading with advanced charting, real-time data, and seamless execution. Trade from any browser with our feature-rich web platform designed for serious traders.',
-      link: '/web-trading-platform/',
-      buttonText: 'Explore Dhan Web',
-      image: 'https://stock-logos.dhan.co/static-new-images/dhanweb.png',
+        "Experience powerful web trading with advanced charting, real-time data, and seamless execution. Trade from any browser with our feature-rich web platform designed for serious traders.",
+      link: "/web-trading-platform/",
+      buttonText: "Explore Dhan Web",
+      image: "https://stock-logos.dhan.co/static-new-images/dhanweb.png",
     },
     {
       id: 2,
-      name: 'Options Trader App',
-      logo: 'https://stock-logos.dhan.co/static-openweb/dhanoptrader.svg',
-      label: 'App',
-      type: 'blue',
-      title: 'Options Trader App',
+      name: "Options Trader App",
+      logo: "https://stock-logos.dhan.co/static-openweb/dhanoptrader.svg",
+      label: "App",
+      type: "blue",
+      title: "Options Trader App",
       description:
-        'Advanced options trading app built specifically for F&O traders. Strategy builder, flash trade, Greeks analysis, and comprehensive margin calculator all in one powerful mobile app.',
-      link: '/options-trader/',
-      buttonText: 'Explore Options Trader',
-      image: 'https://stock-logos.dhan.co/static-new-images/optionstrader.png',
+        "Advanced options trading app built specifically for F&O traders. Strategy builder, flash trade, Greeks analysis, and comprehensive margin calculator all in one powerful mobile app.",
+      link: "/options-trader/",
+      buttonText: "Explore Options Trader",
+      image: "https://stock-logos.dhan.co/static-new-images/optionstrader.png",
     },
     {
       id: 3,
-      name: 'Options Trader Web',
-      logo: 'https://stock-logos.dhan.co/static-openweb/dhanoptrader.svg',
-      label: 'Web',
-      type: 'blue',
-      title: 'Options Trader Web',
+      name: "Options Trader Web",
+      logo: "https://stock-logos.dhan.co/static-openweb/dhanoptrader.svg",
+      label: "Web",
+      type: "blue",
+      title: "Options Trader Web",
       description:
-        'Professional-grade options trading platform for the web. Build, analyze, and execute complex option strategies with advanced tools and real-time Greeks.',
-      link: '/options-trader-web/',
-      buttonText: 'Explore Options Web',
-      image: 'https://stock-logos.dhan.co/static-new-images/optionsweb.png',
+        "Professional-grade options trading platform for the web. Build, analyze, and execute complex option strategies with advanced tools and real-time Greeks.",
+      link: "/options-trader-web/",
+      buttonText: "Explore Options Web",
+      image: "https://stock-logos.dhan.co/static-new-images/optionsweb.png",
     },
     {
       id: 4,
-      name: 'TV + Dhan',
-      logo: 'https://stock-logos.dhan.co/static-openweb/dhanplustv.svg',
-      label: '',
-      type: 'lightblue',
-      title: 'Trade from tv.dhan.co',
+      name: "TV + Dhan",
+      logo: "https://stock-logos.dhan.co/static-openweb/dhanplustv.svg",
+      label: "",
+      type: "lightblue",
+      title: "Trade from tv.dhan.co",
       description:
-        'Experience TradingView charting power integrated with Dhan trading. Access advanced charts, technical indicators, and place orders directly from TradingView interface.',
-      link: '/tradingview/',
-      buttonText: 'Explore TV + Dhan',
-      image: 'https://stock-logos.dhan.co/static-new-images/tvdhan.png',
+        "Experience TradingView charting power integrated with Dhan trading. Access advanced charts, technical indicators, and place orders directly from TradingView interface.",
+      link: "/tradingview/",
+      buttonText: "Explore TV + Dhan",
+      image: "https://stock-logos.dhan.co/static-new-images/tvdhan.png",
     },
     {
       id: 5,
-      name: 'TradingView',
-      logo: 'https://stock-logos.dhan.co/static-openweb/tv.svg',
-      label: '',
-      type: 'lightblue',
-      title: 'Connect to TradingView',
+      name: "TradingView",
+      logo: "https://stock-logos.dhan.co/static-openweb/tv.svg",
+      label: "",
+      type: "lightblue",
+      title: "Connect to TradingView",
       description:
-        'Connect your Ezwealth account to TradingView and trade directly from tradingview.com. Use premium TradingView features with seamless Ezwealth order execution.',
-      link: '/connect-to-tradingview/',
-      buttonText: 'Connect Now',
-      image: 'https://stock-logos.dhan.co/static-new-images/tradingview.png',
+        "Connect your ez wealth account to TradingView and trade directly from tradingview.com. Use premium TradingView features with seamless ez wealth order execution.",
+      link: "/connect-to-tradingview/",
+      buttonText: "Connect Now",
+      image: "https://stock-logos.dhan.co/static-new-images/tradingview.png",
     },
     {
       id: 6,
-      name: 'DhanHQ',
-      logo: 'https://stock-logos.dhan.co/static-openweb/dhanhq.svg',
-      label: '',
-      type: 'skyblue',
-      title: 'DhanHQ Trading APIs',
+      name: "DhanHQ",
+      logo: "https://stock-logos.dhan.co/static-openweb/dhanhq.svg",
+      label: "",
+      type: "skyblue",
+      title: "DhanHQ Trading APIs",
       description:
-        'Build your own trading applications with DhanHQ APIs. Connect apps, run algorithms, and automate your trading strategies with our comprehensive API suite - absolutely FREE!',
-      link: 'https://dhanhq.co/',
-      buttonText: 'Explore DhanHQ',
-      image: 'https://stock-logos.dhan.co/static-new-images/dhanhq.png',
+        "Build your own trading applications with DhanHQ APIs. Connect apps, run algorithms, and automate your trading strategies with our comprehensive API suite - absolutely FREE!",
+      link: "https://dhanhq.co/",
+      buttonText: "Explore DhanHQ",
+      image: "https://stock-logos.dhan.co/static-new-images/dhanhq.png",
     },
     {
       id: 7,
-      name: 'ScanX',
-      logo: '/_next/static/media/Scanx.f9b57e16.svg',
-      label: 'ScanX',
-      type: 'skyblue',
-      title: 'ScanX Stock Screener',
+      name: "ScanX",
+      logo: "/_next/static/media/Scanx.f9b57e16.svg",
+      label: "ScanX",
+      type: "skyblue",
+      title: "ScanX Stock Screener",
       description:
-        '50+ Readymade Screeners, Live Market Insights & Instant Trade Execution. Discover trading opportunities with powerful stock screening and analysis tools.',
-      link: '/scanx-stock-screener/',
-      buttonText: 'Explore ScanX',
-      image: 'https://stock-logos.dhan.co/static-new-images/scanx.png',
+        "50+ Readymade Screeners, Live Market Insights & Instant Trade Execution. Discover trading opportunities with powerful stock screening and analysis tools.",
+      link: "/scanx-stock-screener/",
+      buttonText: "Explore ScanX",
+      image: "https://stock-logos.dhan.co/static-new-images/scanx.png",
     },
   ];
 
@@ -185,13 +185,19 @@ const DhanAppSection = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(index)}
                 className={`
-                  ${tab.id <= 1 ? 'md:w-36 w-28' : tab.id <= 3 ? 'md:w-44 w-40' : 'md:w-36 w-28'}
+                  ${
+                    tab.id <= 1
+                      ? "md:w-36 w-28"
+                      : tab.id <= 3
+                      ? "md:w-44 w-40"
+                      : "md:w-36 w-28"
+                  }
                   h-8 lg:h-12 md:h-10 rounded-[10px] border-[0.5px] flex items-center justify-center gap-1 
                   border-[#dadada33] p-2 cursor-pointer transition-all duration-300
                   ${
                     activeTab === index
-                      ? 'opacity-100 bg-white/10 border-[#EF9309] scale-105'
-                      : 'lg:opacity-50 opacity-70 hover:opacity-100 hover:bg-white/5'
+                      ? "opacity-100 bg-white/10 border-[#EF9309] scale-105"
+                      : "lg:opacity-50 opacity-70 hover:opacity-100 hover:bg-white/5"
                   }
                 `}
                 role="tab"
@@ -202,7 +208,15 @@ const DhanAppSection = () => {
                     src={tab.logo}
                     alt={tab.name}
                     className={`
-                      ${tab.id <= 1 || tab.id === 7 ? 'md:w-6/12 w-14' : tab.id <= 3 ? 'md:w-[120px] w-28' : tab.id === 6 ? 'md:w-24 w-20' : 'md:w-28 w-24'}
+                      ${
+                        tab.id <= 1 || tab.id === 7
+                          ? "md:w-6/12 w-14"
+                          : tab.id <= 3
+                          ? "md:w-[120px] w-28"
+                          : tab.id === 6
+                          ? "md:w-24 w-20"
+                          : "md:w-28 w-24"
+                      }
                     `}
                   />
                   {tab.label && (

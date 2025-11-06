@@ -88,8 +88,8 @@ const Hero = () => {
   return (
     <>
       {/* Main Hero Section */}
-      <section className="bg-gradient-to-r from-[#1a1a2c] to-[#5b5ba7] w-full overflow-hidden relative">
-      {/* <div className="absolute inset-0 bg-black/80"></div> */}
+      <section className="w-full overflow-hidden relative">
+        {/* <div className="absolute inset-0 bg-black/80"></div> */}
         <div className="max-w-8xl mx-auto lg:px-24 md:px-10 px-5">
           <div className="flex flex-col lg:flex-row items-end justify-between lg:pt-32 pt-16">
             {/* Left Content */}
@@ -97,18 +97,28 @@ const Hero = () => {
               <div>
                 {/* Title with Lightning Icon - Desktop */}
                 <div className="items-start hidden gap-3 lg:flex md:flex pt-4 lg:pb-8 md:pb-6">
-                  <h1 className="lg:text-[60px] text-3xl text-white font-bold leading-tight">
-                    Investing & Trading
-                    Platform for {" "}
-                    <span className={`inline-block transition-all duration-300 ${isAnimating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
-                      <span className="text-[#00D09C]">{words[currentWordIndex]}</span>
+                  <h1 className="lg:text-[60px] text-3xl text-[#0A2745] font-bold leading-tight">
+                    Investing & Trading Platform for{" "}
+                    <span
+                      className={`inline-block transition-all duration-300 ${
+                        isAnimating
+                          ? "opacity-0 translate-y-2"
+                          : "opacity-100 translate-y-0"
+                      }`}
+                    >
+                      <span className="text-[#00D09C]">
+                        {words[currentWordIndex]}
+                      </span>
                     </span>
                   </h1>
                 </div>
 
                 {/* Mobile Title */}
                 <div className="items-start flex gap-2 lg:hidden md:hidden pt-4 pb-6">
-                  <div className="w-12 flex-shrink-0 mt-1" title="Lightning strike">
+                  <div
+                    className="w-12 flex-shrink-0 mt-1"
+                    title="Lightning strike"
+                  >
                     <svg
                       viewBox="0 0 64 64"
                       className="w-full h-full"
@@ -121,18 +131,30 @@ const Hero = () => {
                       />
                     </svg>
                   </div>
-                  <h1 className="text-3xl text-white font-bold leading-tight">
-                    Investing & Trading<br />
-                    Platform for<br />
-                    <span className={`inline-block transition-all duration-300 ${isAnimating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
-                      <span className="text-[#00D09C]">{words[currentWordIndex]}</span>
+                  <h1 className="text-3xl text-[#0A2745] font-bold leading-tight">
+                    Investing & Trading
+                    <br />
+                    Platform for
+                    <br />
+                    <span
+                      className={`inline-block transition-all duration-300 ${
+                        isAnimating
+                          ? "opacity-0 translate-y-2"
+                          : "opacity-100 translate-y-0"
+                      }`}
+                    >
+                      <span className="text-[#00D09C]">
+                        {words[currentWordIndex]}
+                      </span>
                     </span>
                   </h1>
                 </div>
 
                 {/* Free Account Text - Desktop */}
                 <p className="text-[#8E8E8E] text-sm font-medium hidden md:flex lg:pb-3 md:pb-2">
-                  Open your <span className="text-[#EF9309]">&nbsp;FREE&nbsp;</span> demat account in minutes!
+                  Open your{" "}
+                  <span className="text-[#EF9309]">&nbsp;FREE&nbsp;</span> demat
+                  account in minutes!
                 </p>
 
                 {/* Mobile Number Input - Desktop */}
@@ -164,9 +186,11 @@ const Hero = () => {
                       </div>
                     </div>
                     <div
-                      className={`font-normal pt-1 text-xs text-red-500 ${error ? 'visible' : 'invisible'}`}
+                      className={`font-normal pt-1 text-xs text-red-500 ${
+                        error ? "visible" : "invisible"
+                      }`}
                     >
-                      {error || 'error'}
+                      {error || "error"}
                     </div>
                   </div>
                 </div>
@@ -190,7 +214,7 @@ const Hero = () => {
                           alt="Active users"
                         />
                       </div>
-                      <div className="lg:text-base text-sm text-[#DADADA] font-normal">
+                      <div className="lg:text-base text-sm text-gray-500 font-normal">
                         1 Mn+ Active Users
                       </div>
                     </div>
@@ -204,7 +228,7 @@ const Hero = () => {
                           alt="Active users"
                         />
                       </div>
-                      <div className="lg:text-base text-sm text-[#DADADA] font-normal">
+                      <div className="lg:text-base text-sm text-gray-500 font-normal">
                         1 Mn+ Active Users
                       </div>
                     </div>
@@ -218,7 +242,7 @@ const Hero = () => {
                           alt="Rating"
                         />
                       </div>
-                      <div className="lg:text-base text-sm text-[#DADADA] font-normal">
+                      <div className="lg:text-base text-sm text-gray-500 font-normal">
                         4.5 Play Store Rating
                       </div>
                     </div>
@@ -239,12 +263,17 @@ const Hero = () => {
                   </div>
 
                   <p className="text-[#8E8E8E] text-sm font-medium pt-2 text-center">
-                    <span className="text-[#EF9309]">1 Cr+ App Downloads</span> on Play Store!
+                    <span className="text-[#EF9309]">1 Cr+ App Downloads</span>{" "}
+                    on Play Store!
                   </p>
 
                   {/* Get Dhan Button - Mobile */}
                   <div className="pt-4 flex justify-center pb-8">
-                    <a href="https://dhan.go.link/gaXqf" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://dhan.go.link/gaXqf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <button className="px-7 py-2 bg-[#EF9309] hover:bg-[#D68108] text-[#0A2745] flex text-sm rounded-md items-center gap-2 font-medium shadow-lg transition-colors">
                         Get Dhan
                         <FaArrowRightLong className="text-[#0A2745] relative left-[3px] w-4" />
@@ -327,173 +356,185 @@ const Hero = () => {
             </div> */}
 
             <div className="hidden lg:flex w-1/3 justify-end items-end relative">
-      {/* Rotating Background Circle */}
-      <Image 
-        src="/dot-circle.svg" 
-        alt="Rotating Icon" 
-        fill 
-        className="absolute object-contain" 
-        style={{ animation: "spin 20s linear infinite" }}
-      />
-      
-      <div className="relative w-full h-[550px]">
-        {/* Girl Image - Fades out and zooms out */}
-        <div 
-          className={`absolute inset-0 transition-all duration-1000 ${
-            showPhones 
-              ? 'opacity-0 scale-150 pointer-events-none' 
-              : 'opacity-100 scale-100'
-          }`}
-        >
-          <Image
-            src="/hero-bg.png"
-            alt="Trading Platform"
-            fill
-            priority
-            className="object-contain object-bottom"
-            sizes="45vw"
-          />
-        </div>
-
-        {/* Phone Images - Fade in with staggered animations */}
-        <div 
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${
-            showPhones ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }`}
-        >
-          {/* Left Phone - Indian Market (slides in from bottom-left) */}
-          <div 
-            className={`absolute transition-all duration-1000 ${
-              showPhones 
-                ? 'translate-y-0 translate-x-0 opacity-100' 
-                : 'translate-y-32 -translate-x-16 opacity-0'
-            }`}
-            style={{ 
-              left: '5%',
-              bottom: "-10%",
-              transform: showPhones ? 'rotate(-8deg) translateY(0)' : 'rotate(-8deg) translateY(128px)',
-              transitionDelay: '800ms',
-              zIndex: 1
-            }}
-          >
-            <div className="relative w-[180px] h-[360px]">
+              {/* Rotating Background Circle */}
               <Image
-                src="/phone1.webp"
-                alt="Indian Market"
+                src="/dot-circle.svg"
+                alt="Rotating Icon"
                 fill
-                className="object-contain drop-shadow-2xl"
+                className="absolute object-contain"
+                style={{ animation: "spin 20s linear infinite" }}
               />
-            </div>
-          </div>
 
-          {/* Center Phone - Net Worth (appears first, scales up) */}
-          <div 
-            className={`absolute transition-all duration-1000 ${
-              showPhones 
-                ? 'scale-100 opacity-100' 
-                : 'scale-50 opacity-0'
-            }`}
-            style={{ 
-              left: '50%',
-              bottom: "-5%",
-              transform: showPhones ? 'translateX(-50%) scale(1)' : 'translateX(-50%) scale(0.5)',
-              transitionDelay: '200ms',
-              zIndex: 3
-            }}
-          >
-            <div className="relative w-[200px] h-[400px]">
-              <Image
-                src="/phone2.webp"
-                alt="Net Worth"
-                fill
-                className="object-contain drop-shadow-2xl"
-              />
-            </div>
-          </div>
+              <div className="relative w-full h-[550px]">
+                {/* Girl Image - Fades out and zooms out */}
+                <div
+                  className={`absolute inset-0 transition-all duration-1000 ${
+                    showPhones
+                      ? "opacity-0 scale-150 pointer-events-none"
+                      : "opacity-100 scale-100"
+                  }`}
+                >
+                  <Image
+                    src="/hero-bg.png"
+                    alt="Trading Platform"
+                    fill
+                    priority
+                    className="object-contain object-bottom"
+                    sizes="45vw"
+                  />
+                </div>
 
-          {/* Right Phone - US Market (slides in from bottom-right) */}
-          <div 
-            className={`absolute transition-all duration-1000 ${
-              showPhones 
-                ? 'translate-y-0 translate-x-0 opacity-100' 
-                : 'translate-y-32 translate-x-16 opacity-0'
-            }`}
-            style={{ 
-              right: '5%',
-             bottom: "-10%",
-              transform: showPhones ? 'rotate(8deg) translateY(0)' : 'rotate(8deg) translateY(128px)',
-              transitionDelay: '600ms',
-              zIndex: 2
-            }}
-          >
-            <div className="relative w-[180px] h-[360px]">
-              <Image
-                src="/phone3.webp"
-                alt="US Market"
-                fill
-                className="object-contain drop-shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>
+                {/* Phone Images - Fade in with staggered animations */}
+                <div
+                  className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${
+                    showPhones ? "opacity-100" : "opacity-0 pointer-events-none"
+                  }`}
+                >
+                  {/* Left Phone - Indian Market (slides in from bottom-left) */}
+                  <div
+                    className={`absolute transition-all duration-1000 ${
+                      showPhones
+                        ? "translate-y-0 translate-x-0 opacity-100"
+                        : "translate-y-32 -translate-x-16 opacity-0"
+                    }`}
+                    style={{
+                      left: "5%",
+                      bottom: "-10%",
+                      transform: showPhones
+                        ? "rotate(-8deg) translateY(0)"
+                        : "rotate(-8deg) translateY(128px)",
+                      transitionDelay: "800ms",
+                      zIndex: 1,
+                    }}
+                  >
+                    <div className="relative w-[180px] h-[360px]">
+                      <Image
+                        src="/phone1.webp"
+                        alt="Indian Market"
+                        fill
+                        className="object-contain drop-shadow-2xl"
+                      />
+                    </div>
+                  </div>
 
-        {/* Counter Box Overlay - Always visible */}
-        <div className="absolute bottom-20 -left-40 animate-slideInLeft z-10">
-          <div className="bg-white rounded-full shadow-2xl p-3 min-w-[180px] flex gap-3 items-center">
-            {/* User Avatars */}
-            <div className="flex -space-x-2">
-              <div className="w-11 h-11 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                <Image
-                  src="/user1.jpg"
-                  alt="User"
-                  width={44}
-                  height={44}
-                  className="object-cover"
-                />
-              </div>
-              <div className="w-11 h-11 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                <Image
-                  src="/user2.jpg"
-                  alt="User"
-                  width={44}
-                  height={44}
-                  className="object-cover"
-                />
-              </div>
-              <div className="w-11 h-11 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                <Image
-                  src="/user1.jpg"
-                  alt="User"
-                  width={44}
-                  height={44}
-                  className="object-cover"
-                />
-              </div>
-              <div className="w-11 h-11 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                <Image
-                  src="/user2.jpg"
-                  alt="User"
-                  width={44}
-                  height={44}
-                  className="object-cover"
-                />
+                  {/* Center Phone - Net Worth (appears first, scales up) */}
+                  <div
+                    className={`absolute transition-all duration-1000 ${
+                      showPhones
+                        ? "scale-100 opacity-100"
+                        : "scale-50 opacity-0"
+                    }`}
+                    style={{
+                      left: "50%",
+                      bottom: "-5%",
+                      transform: showPhones
+                        ? "translateX(-50%) scale(1)"
+                        : "translateX(-50%) scale(0.5)",
+                      transitionDelay: "200ms",
+                      zIndex: 3,
+                    }}
+                  >
+                    <div className="relative w-[200px] h-[400px]">
+                      <Image
+                        src="/phone2.webp"
+                        alt="Net Worth"
+                        fill
+                        className="object-contain drop-shadow-2xl"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Right Phone - US Market (slides in from bottom-right) */}
+                  <div
+                    className={`absolute transition-all duration-1000 ${
+                      showPhones
+                        ? "translate-y-0 translate-x-0 opacity-100"
+                        : "translate-y-32 translate-x-16 opacity-0"
+                    }`}
+                    style={{
+                      right: "5%",
+                      bottom: "-10%",
+                      transform: showPhones
+                        ? "rotate(8deg) translateY(0)"
+                        : "rotate(8deg) translateY(128px)",
+                      transitionDelay: "600ms",
+                      zIndex: 2,
+                    }}
+                  >
+                    <div className="relative w-[180px] h-[360px]">
+                      <Image
+                        src="/phone3.webp"
+                        alt="US Market"
+                        fill
+                        className="object-contain drop-shadow-2xl"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Counter Box Overlay - Always visible */}
+                <div className="absolute bottom-20 -left-40 animate-slideInLeft z-10">
+                  <div className="bg-white rounded-full shadow-2xl p-3 min-w-[180px] flex gap-3 items-center">
+                    {/* User Avatars */}
+                    <div className="flex -space-x-2">
+                      <div className="w-11 h-11 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
+                        <Image
+                          src="/user1.jpg"
+                          alt="User"
+                          width={44}
+                          height={44}
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="w-11 h-11 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
+                        <Image
+                          src="/user2.jpg"
+                          alt="User"
+                          width={44}
+                          height={44}
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="w-11 h-11 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
+                        <Image
+                          src="/user1.jpg"
+                          alt="User"
+                          width={44}
+                          height={44}
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="w-11 h-11 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
+                        <Image
+                          src="/user2.jpg"
+                          alt="User"
+                          width={44}
+                          height={44}
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Counter Number */}
+                    <div>
+                      <div className="flex items-baseline">
+                        <span className="text-3xl font-bold text-gray-dark">
+                          {counter}
+                        </span>
+                        <span className="text-2xl font-bold text-gray-dark">
+                          k+
+                        </span>
+                      </div>
+
+                      {/* Counter Label */}
+                      <p className="text-xs text-[#8E8E8E] font-medium">
+                        Active Users
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            
-            {/* Counter Number */}
-            <div>
-              <div className="flex items-baseline">
-                <span className="text-3xl font-bold text-gray-dark">{counter}</span>
-                <span className="text-2xl font-bold text-gray-dark">k+</span>
-              </div>
-              
-              {/* Counter Label */}
-              <p className="text-xs text-[#8E8E8E] font-medium">Active Users</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
             {/* Mobile Image */}
             <div className="flex md:hidden justify-center w-full pb-8">
@@ -514,7 +555,7 @@ const Hero = () => {
       </section>
 
       {/* Investment Categories Section */}
-      <section className="w-full bg-[#091227]">
+      <section className="w-full bg-gray-100">
         <div className="max-w-8xl mx-auto lg:px-24 md:px-10 px-2 lg:py-5 py-2">
           {/* <div className="flex lg:gap-3 md:gap-3 gap-2 lg:p-1 p-2 overflow-x-auto justify-start lg:justify-center noscrollbar-x">
             <a href="/stocks/">

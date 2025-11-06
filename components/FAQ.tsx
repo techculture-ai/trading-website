@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useState, JSX } from 'react';
+import React, { useState, JSX } from "react";
 
 interface FAQItem {
   id: number;
@@ -11,32 +11,39 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     id: 1,
-    question: 'Is Dhan safe & trusted broking platform?',
+    question: "Is Dhan safe & trusted broking platform?",
     answer:
-      'Dhan is a SEBI-regulated trading platform and a Depository Participant (DP) compliant with all rules and regulations. You can rely on Dhan to invest in share market as thousands of others do as well. Furthermore, we take transparency and security very seriously. Our goal is to always ensure that you have visibility into pricing and other details. We also ensure that your data is safe at all times.',
+      "Dhan is a SEBI-regulated trading platform and a Depository Participant (DP) compliant with all rules and regulations. You can rely on Dhan to invest in share market as thousands of others do as well. Furthermore, we take transparency and security very seriously. Our goal is to always ensure that you have visibility into pricing and other details. We also ensure that your data is safe at all times.",
   },
   {
     id: 2,
-    question: 'How much time does it take to Open Ezwealth Account?',
+    question: "How much time does it take to Open ez wealth Account?",
     answer: (
       <>
-        You can{' '}
-        <a href="/open-demat-acoount/" className="text-[#EF9309] hover:underline">
+        You can{" "}
+        <a
+          href="/open-demat-acoount/"
+          className="text-[#EF9309] hover:underline"
+        >
           open demat account
-        </a>{' '}
-        on Dhan in less than 10 minutes! After that, the exchanges begin their verification and
-        approval process, shortly after which your account will be ready for trading and investing.
+        </a>{" "}
+        on Dhan in less than 10 minutes! After that, the exchanges begin their
+        verification and approval process, shortly after which your account will
+        be ready for trading and investing.
       </>
     ),
   },
   {
     id: 3,
-    question: 'What documents are required to open a corporate demat account?',
+    question: "What documents are required to open a corporate demat account?",
     answer: (
       <>
-        The following documents are all you need to open a demat account on Dhan:
+        The following documents are all you need to open a demat account on
+        Dhan:
         <ul className="list-decimal ml-8 my-2">
-          <li>Address Proof (Aadhar, Passport, Voter ID, or Driving License).</li>
+          <li>
+            Address Proof (Aadhar, Passport, Voter ID, or Driving License).
+          </li>
           <li>Bank Proof (Account Statements, Cancelled Cheque, Passbook).</li>
           <li>Identity Proof (PAN).</li>
           <li>Income Proof (Bank Account Statements, Salary Slips, ITR).</li>
@@ -48,11 +55,11 @@ const faqData: FAQItem[] = [
   },
   {
     id: 4,
-    question: 'What are the brokerage charges on Dhan?',
+    question: "What are the brokerage charges on Dhan?",
     answer: (
       <>
-        You can open a Dhan demat account for free. Once you start investing or trading, these are
-        the charges:
+        You can open a Dhan demat account for free. Once you start investing or
+        trading, these are the charges:
         <ul className="list-decimal ml-8 my-2">
           <li>₹0 for Equity Delivery, ETFs, & IPOs.</li>
           <li>₹20 for Equity Intraday & Futures in all Segments.</li>
@@ -63,7 +70,7 @@ const faqData: FAQItem[] = [
   },
   {
     id: 5,
-    question: 'How to transfer shares from your current broker to Dhan?',
+    question: "How to transfer shares from your current broker to Dhan?",
     answer: (
       <>
         You can transfer shares to Dhan by following these steps:
@@ -128,7 +135,7 @@ const FAQ: React.FC = () => {
                   <div className="col-span-1 flex items-center justify-end">
                     <svg
                       className={`w-4 h-4 text-gray-dark transition-transform duration-300 ${
-                        openIndex === index ? 'rotate-180' : ''
+                        openIndex === index ? "rotate-180" : ""
                       }`}
                       fill="currentColor"
                       viewBox="0 0 448 512"
@@ -143,7 +150,9 @@ const FAQ: React.FC = () => {
               <div
                 id={`panel-${faq.id}`}
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+                  openIndex === index
+                    ? "max-h-[1000px] opacity-100"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <div className="px-4 pb-4">

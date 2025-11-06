@@ -1,6 +1,14 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+  FaTelegram,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
   return (
@@ -12,22 +20,27 @@ const Footer: React.FC = () => {
           <div className="border-b border-b-[#dedede3a] lg:border-b-0 pb-10 lg:pb-0">
             {/* Logo */}
             <div className="flex lg:justify-start justify-center">
-              <Image
-                src="/_next/static/media/Dhanlogo.8a85768d.svg"
-                alt="Ezwealth Logo"
-                width={128}
-                height={40}
-                className="w-32"
-              />
+              <Link href="/">
+                <Image
+                  src="/logo.png"
+                  alt="ez wealth Logo"
+                  width={128}
+                  height={40}
+                  className="w-32"
+                />
+              </Link>
             </div>
 
             {/* Community */}
             <div className="pt-10 flex items-center flex-col lg:items-start">
-              <p className="text-sm font-normal text-[#DDD] mb-4">Join our Community</p>
+              <p className="text-sm font-normal text-[#DDD] mb-4">
+                Join our Community
+              </p>
               <a
                 href="https://madefortrade.in/"
                 target="_blank"
                 rel="nofollow noreferrer"
+                className="hover:opacity-80 transition-opacity"
               >
                 <Image
                   src="https://stock-logos.dhan.co/static-openweb/madeForTrade.svg"
@@ -41,91 +54,63 @@ const Footer: React.FC = () => {
 
             {/* Social Media */}
             <div className="pt-10 flex items-center flex-col lg:items-start">
-              <p className="text-sm font-normal text-[#DDD] mb-4">Follow us on</p>
-              <div className="flex gap-5">
+              <p className="text-sm font-normal text-[#DDD] mb-4">
+                Follow us on
+              </p>
+              <div className="flex gap-5 flex-wrap">
                 <a
-                  href="https://twitter.com/DhanHQ"
+                  href="https://x.com/ezwealthonline"
                   target="_blank"
                   rel="nofollow noreferrer"
                   className="hover:opacity-80 transition-opacity"
+                  aria-label="Twitter"
                 >
-                  <Image
-                    src="/_next/static/media/footer_twitter.bc9a4cdb.png"
-                    alt="Twitter"
-                    width={20}
-                    height={20}
-                    className="w-5 pt-1.5"
-                  />
+                  <FaXTwitter width={20} height={20} className="w-5 h-5 " />
                 </a>
                 <a
                   href="https://t.me/JoinDhan"
                   target="_blank"
                   rel="nofollow noreferrer"
                   className="hover:opacity-80 transition-opacity"
+                  aria-label="Telegram"
                 >
-                  <Image
-                    src="/_next/static/media/telegram.95d3e91e.svg"
-                    alt="Telegram"
-                    width={32}
-                    height={32}
-                    className="w-8"
-                  />
+                  <FaTelegram width={20} height={20} className="w-5 h-5 " />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/dhanhq/?viewAsMember=true"
+                  href="https://in.linkedin.com/company/ezwealth"
                   target="_blank"
                   rel="nofollow noreferrer"
                   className="hover:opacity-80 transition-opacity"
+                  aria-label="LinkedIn"
                 >
-                  <Image
-                    src="/_next/static/media/linkedin.eb682631.svg"
-                    alt="LinkedIn"
-                    width={32}
-                    height={32}
-                    className="w-8"
-                  />
+                  <FaLinkedin width={20} height={20} className="w-5 h-5 " />
                 </a>
                 <a
-                  href="https://www.youtube.com/channel/UCEzHCpvFWoF85UabbzKTkOQ"
+                  href="https://www.youtube.com/@EZWealth"
                   target="_blank"
                   rel="nofollow noreferrer"
                   className="hover:opacity-80 transition-opacity"
+                  aria-label="YouTube"
                 >
-                  <Image
-                    src="/_next/static/media/youtube.ce33d841.svg"
-                    alt="YouTube"
-                    width={32}
-                    height={32}
-                    className="w-8"
-                  />
+                  <FaYoutube width={20} height={20} className="w-5 h-5 " />
                 </a>
                 <a
-                  href="https://www.instagram.com/dhanhq/"
+                  href="https://www.instagram.com/ezwealth.in/"
                   target="_blank"
                   rel="nofollow noreferrer"
                   className="hover:opacity-80 transition-opacity"
+                  aria-label="Instagram"
                 >
-                  <Image
-                    src="/_next/static/media/instagram.6e850c7d.svg"
-                    alt="Instagram"
-                    width={32}
-                    height={32}
-                    className="w-8"
-                  />
+                  <FaInstagram width={20} height={20} className="w-5 h-5 " />
                 </a>
                 <a
-                  href="https://m.facebook.com/111778237817974/"
+                  href="https://www.facebook.com/ezwealth.in/"
                   target="_blank"
                   rel="nofollow noreferrer"
                   className="hover:opacity-80 transition-opacity"
+                  aria-label="Facebook"
                 >
-                  <Image
-                    src="/_next/static/media/facebook.6df52999.svg"
-                    alt="Facebook"
-                    width={32}
-                    height={32}
-                    className="w-8"
-                  />
+                  <FaFacebook width={20} height={20} className="w-5 h-5 " />
                 </a>
               </div>
             </div>
@@ -142,13 +127,16 @@ const Footer: React.FC = () => {
                   </p>
                   <ul className="space-y-1.5">
                     {[
-                      { label: 'Ezwealth Support', href: '/support/' },
-                      { label: 'Customer Service', href: '/customer-service/' },
-                      { label: 'Safety and Security', href: '/safety-security/' },
-                      { label: 'Grievance Redressal', href: '/grievance/' },
-                      { label: 'Advisory for Investors', href: '/advisory/' },
-                      { label: 'RE Awareness', href: '/rights-entitlements/' },
-                      { label: 'SECC Regulations', href: '/secc-regulations/' },
+                      { label: "ez wealth Support", href: "/support/" },
+                      { label: "Customer Service", href: "/customer-service/" },
+                      {
+                        label: "Safety and Security",
+                        href: "/safety-security/",
+                      },
+                      { label: "Grievance Redressal", href: "/grievance/" },
+                      { label: "Advisory for Investors", href: "/advisory/" },
+                      { label: "RE Awareness", href: "/rights-entitlements/" },
+                      { label: "SECC Regulations", href: "/secc-regulations/" },
                     ].map((link) => (
                       <li key={link.href}>
                         <Link
@@ -171,18 +159,43 @@ const Footer: React.FC = () => {
                   </p>
                   <ul className="space-y-1.5">
                     {[
-                      { label: 'Ezwealth App', href: '/trading-app/' },
-                      { label: 'Ezwealth Web', href: '/web-trading-platform/' },
-                      { label: 'Options Trader App', href: '/options-trader/' },
-                      { label: 'Options Trader Web', href: '/options-trader-web/' },
-                      { label: 'EzwealthHQ Trading APIs', href: 'https://dhanhq.co/', external: true },
-                      { label: 'TradingView on Ezwealth', href: '/tradingview/' },
-                      { label: 'Connect to TradingView', href: '/connect-to-tradingview/' },
-                      { label: 'smallcases on Ezwealth', href: '/smallcase/' },
-                      { label: 'Margin Trading Facility', href: '/margin-trading-facility/' },
-                      { label: 'Margin Pledge Benefit', href: '/margin-pledge-benefit/' },
-                      { label: 'ScanX Stock Screener', href: '/scanx-stock-screener/' },
-                      { label: 'Ezwealth Ticker', href: '/ticker/' },
+                      { label: "ez wealth App", href: "/trading-app/" },
+                      {
+                        label: "ez wealth Web",
+                        href: "/web-trading-platform/",
+                      },
+                      { label: "Options Trader App", href: "/options-trader/" },
+                      {
+                        label: "Options Trader Web",
+                        href: "/options-trader-web/",
+                      },
+                      {
+                        label: "Trading APIs",
+                        href: "https://dhanhq.co/",
+                        external: true,
+                      },
+                      {
+                        label: "TradingView on ez wealth",
+                        href: "/tradingview/",
+                      },
+                      {
+                        label: "Connect to TradingView",
+                        href: "/connect-to-tradingview/",
+                      },
+                      { label: "smallcases on ez wealth", href: "/smallcase/" },
+                      {
+                        label: "Margin Trading Facility",
+                        href: "/margin-trading-facility/",
+                      },
+                      {
+                        label: "Margin Pledge Benefit",
+                        href: "/margin-pledge-benefit/",
+                      },
+                      {
+                        label: "Stock Screener",
+                        href: "/scanx-stock-screener/",
+                      },
+                      { label: "Ticker", href: "/ticker/" },
                     ].map((link) => (
                       <li key={link.href}>
                         {link.external ? (
@@ -209,26 +222,96 @@ const Footer: React.FC = () => {
               </div>
 
               {/* Quick Links */}
-              <div className="lg:flex lg:items-center lg:flex-col md:-order-none order-[2]">
+              {/* <div className="lg:flex lg:items-center lg:flex-col md:-order-none order-[2]">
                 <div>
                   <p className="text-[#DADADA] text-base lg:text-lg font-semibold mb-5">
                     Quick Links
                   </p>
                   <ul className="space-y-1.5">
                     {[
-                      { label: 'Open Demat Account', href: '/open-demat-account/' },
-                      { label: 'HUF Demat Account', href: '/open-huf-demat-account/' },
-                      { label: 'Corporate Demat Account', href: '/open-corporate-demat-account/' },
-                      { label: 'Download Centre', href: '/download-centre/' },
-                      { label: 'Calculators', href: '/calculators/' },
-                      { label: 'Finance Glossary', href: '/finance-glossary/' },
-                      { label: 'Stock Market Holidays', href: '/market-holiday/' },
-                      { label: 'Muhurat Trading 2025', href: '/muhurat-trading/' },
-                      { label: 'Stock Market Courses', href: 'https://www.upsurge.club/', external: true },
-                      { label: 'Stock Market News', href: 'https://scanx.trade/stock-market-news?utm_source=dhan&utm_medium=referral', external: true },
-                      { label: 'Meet & Greet', href: '/meet-and-greet/' },
-                      { label: 'Ezwealth Connectivity Status', href: 'https://status-monitor.dhan.co/', external: true },
-                      { label: 'Regulatory Information', href: '/regulatory-information/' },
+                      {
+                        label: "Open Demat Account",
+                        href: "/open-demat-account/",
+                      },
+                      { label: "Download Centre", href: "/download-centre/" },
+                      { label: "Calculators", href: "/calculators/" },
+                      { label: "Finance Glossary", href: "/finance-glossary/" },
+                      {
+                        label: "Stock Market Holidays",
+                        href: "/market-holiday/",
+                      },
+                      {
+                        label: "Investor Grievance Data",
+                        href: "/static/downloads.aspx-invest.html",
+                      },
+                      {
+                        label: "Investors Charter - Stock Broker",
+                        href: "/investorcharter.pdf",
+                      },
+                      {
+                        label: "Investors Charter - DP",
+                        href: "/static/investor-charter-of-depository-participant.html",
+                      },
+                      {
+                        label: "smartodr.in",
+                        href: "https://smartodr.in",
+                        external: true,
+                      },
+                      { label: "Client Care", href: "/clientcare.pdf" },
+                      {
+                        label: "Freeze/Unfreeze Guide",
+                        href: "/freezeguide.pdf",
+                      },
+                      {
+                        label: "Pay-out of Securities Info",
+                        href: "/payoutofsecurity.pdf",
+                      },
+                      {
+                        label: "Do's & Don'ts (Vernacular)",
+                        href: "/vernacularlanguage.pdf",
+                      },
+                      {
+                        label: "Investor Risk Reduction",
+                        href: "/investorriskreductionaccess.pdf",
+                      },
+                      { label: "Sitemap", href: "/static/sitemap.html" },
+                      { label: "Disclaimer", href: "/static/disclaimer.html" },
+                      {
+                        label: "Privacy Policy",
+                        href: "/static/privacypolicy.html",
+                      },
+                      { label: "PMLA Policy", href: "/newpmla.pdf" },
+                      {
+                        label: "Other Policies",
+                        href: "/static/downloads.aspx-policy.html",
+                      },
+                      {
+                        label: "CDSL e-Voting",
+                        href: "https://evoting.cdslindia.com/Evoting/EvotingLogin",
+                        external: true,
+                      },
+                      {
+                        label: "SEBI SCORES",
+                        href: "https://scores.sebi.gov.in/",
+                        external: true,
+                      },
+                      {
+                        label: "Terms & Conditions",
+                        href: "/static/termsandconditions.html",
+                      },
+                      {
+                        label: "Broker Norms",
+                        href: "/static/BrokerNorms.html",
+                      },
+                      {
+                        label: "Investor Grievance Matrix",
+                        href: "/investormatrix.pdf",
+                      },
+                      { label: "Monthly Settlement Update", href: "/sebi.pdf" },
+                      {
+                        label: "Regulatory Information",
+                        href: "/regulatory-information/",
+                      },
                     ].map((link) => (
                       <li key={link.href}>
                         {link.external ? (
@@ -252,7 +335,7 @@ const Footer: React.FC = () => {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </div> */}
 
               {/* Partner with us */}
               <div className="lg:flex lg:items-center lg:flex-col md:-order-none order-[4]">
@@ -262,9 +345,19 @@ const Footer: React.FC = () => {
                   </p>
                   <ul className="space-y-1.5">
                     {[
-                      { label: 'Authorised Person', href: '/authorised-partner' },
-                      { label: 'Partner Dashboard', href: 'https://partner.dhan.co', external: true },
-                      { label: 'Code of Conduct', href: '/code-of-conduct-for-authorised-partners/' },
+                      {
+                        label: "Authorised Person",
+                        href: "/authorised-partner/",
+                      },
+                      {
+                        label: "Partner Dashboard",
+                        href: "https://partner.dhan.co",
+                        external: true,
+                      },
+                      {
+                        label: "Code of Conduct",
+                        href: "/code-of-conduct-for-authorised-partners/",
+                      },
                     ].map((link) => (
                       <li key={link.href}>
                         {link.external ? (
@@ -293,13 +386,15 @@ const Footer: React.FC = () => {
               {/* Company */}
               <div className="lg:flex lg:items-center lg:flex-col">
                 <div>
-                  <p className="text-[#DADADA] text-base lg:text-lg font-semibold mb-5">Company</p>
+                  <p className="text-[#DADADA] text-base lg:text-lg font-semibold mb-5">
+                    Company
+                  </p>
                   <ul className="space-y-1.5">
                     {[
-                      { label: 'About Us', href: '/about/' },
-                      { label: 'Pricing', href: '/pricing/' },
-                      { label: 'Careers', href: '/career/' },
-                      { label: 'Contact Us', href: '/contact/' },
+                      { label: "About Us", href: "/about/" },
+                      { label: "Pricing", href: "/pricing/" },
+                      { label: "Careers", href: "/career/" },
+                      { label: "Contact Us", href: "/contact/" },
                     ].map((link) => (
                       <li key={link.href}>
                         <Link
@@ -315,13 +410,123 @@ const Footer: React.FC = () => {
               </div>
             </div>
           </div>
+
+          <div className="lg:col-span-4">
+            <ul className="space-y-1.5 flex flex-wrap gap-x-6 gap-y-2">
+              {[
+                {
+                  label: "Open Demat Account",
+                  href: "/open-demat-account/",
+                },
+                { label: "Download Centre", href: "/download-centre/" },
+                { label: "Calculators", href: "/calculators/" },
+                { label: "Finance Glossary", href: "/finance-glossary/" },
+                {
+                  label: "Stock Market Holidays",
+                  href: "/market-holiday/",
+                },
+                {
+                  label: "Investor Grievance Data",
+                  href: "/static/downloads.aspx-invest.html",
+                },
+                {
+                  label: "Investors Charter - Stock Broker",
+                  href: "/investorcharter.pdf",
+                },
+                {
+                  label: "Investors Charter - DP",
+                  href: "/static/investor-charter-of-depository-participant.html",
+                },
+                {
+                  label: "smartodr.in",
+                  href: "https://smartodr.in",
+                  external: true,
+                },
+                { label: "Client Care", href: "/clientcare.pdf" },
+                {
+                  label: "Freeze/Unfreeze Guide",
+                  href: "/freezeguide.pdf",
+                },
+                {
+                  label: "Pay-out of Securities Info",
+                  href: "/payoutofsecurity.pdf",
+                },
+                {
+                  label: "Do's & Don'ts (Vernacular)",
+                  href: "/vernacularlanguage.pdf",
+                },
+                {
+                  label: "Investor Risk Reduction",
+                  href: "/investorriskreductionaccess.pdf",
+                },
+                { label: "Sitemap", href: "/static/sitemap.html" },
+                { label: "Disclaimer", href: "/static/disclaimer.html" },
+                {
+                  label: "Privacy Policy",
+                  href: "/static/privacypolicy.html",
+                },
+                { label: "PMLA Policy", href: "/newpmla.pdf" },
+                {
+                  label: "Other Policies",
+                  href: "/static/downloads.aspx-policy.html",
+                },
+                {
+                  label: "CDSL e-Voting",
+                  href: "https://evoting.cdslindia.com/Evoting/EvotingLogin",
+                  external: true,
+                },
+                {
+                  label: "SEBI SCORES",
+                  href: "https://scores.sebi.gov.in/",
+                  external: true,
+                },
+                {
+                  label: "Terms & Conditions",
+                  href: "/static/termsandconditions.html",
+                },
+                {
+                  label: "Broker Norms",
+                  href: "/static/BrokerNorms.html",
+                },
+                {
+                  label: "Investor Grievance Matrix",
+                  href: "/investormatrix.pdf",
+                },
+                { label: "Monthly Settlement Update", href: "/sebi.pdf" },
+                {
+                  label: "Regulatory Information",
+                  href: "/regulatory-information/",
+                },
+              ].map((link) => (
+                <li key={link.href}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm text-[#8E8E8E] font-normal hover:text-[#dedede] transition-colors w-max block"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm text-[#8E8E8E] font-normal hover:text-[#dedede] transition-colors w-max block"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Footer */}
         <div className="pt-10 pb-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8">
             {/* Built with Love */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 justify-center lg:justify-start">
               <div className="w-9">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -340,14 +545,21 @@ const Footer: React.FC = () => {
                 <p className="text-sm font-normal text-[#8E8E8E]">
                   built with love
                   <br />
-                  <span className="text-[#DADADA]">for Indians who love to invest & trade</span>
+                  <span className="text-[#DADADA]">
+                    for Indians who love to invest & trade
+                  </span>
                 </p>
               </div>
             </div>
 
             {/* Raise Financial Services */}
-            <div className="flex items-center lg:justify-end gap-3">
-              <a href="https://raiseholding.co" target="_blank" rel="nofollow noreferrer">
+            <div className="flex items-center lg:justify-center justify-center gap-3">
+              <a
+                href="https://raiseholding.co"
+                target="_blank"
+                rel="nofollow noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
                 <Image
                   src="/_next/static/media/raise.8e420eb9.svg"
                   alt="Raise Financial Services"
@@ -363,7 +575,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* App Store Links */}
-            <div className="flex justify-start lg:justify-end gap-3">
+            <div className="flex justify-center lg:justify-end gap-3">
               <a
                 href="https://apps.apple.com/in/app/dhan/id1575318726"
                 target="_blank"
@@ -392,6 +604,16 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center pt-6 border-t border-[#dedede3a]">
+          <p className="text-xs text-[#8E8E8E] text-center">
+            SEBI - NSE, BSE, MCX REGN NO. - INZ000199032, DP-IN-DP-CDSL-679-2013
+          </p>
+          <p className="text-xs text-[#8E8E8E]">
+            © {new Date().getFullYear()} ez wealth. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

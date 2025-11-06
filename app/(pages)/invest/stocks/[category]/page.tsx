@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { FaChevronRight, FaArrowUp, FaArrowDown, FaFilter, FaSortUp, FaSortDown, FaChartLine, FaStar, FaSearch } from 'react-icons/fa';
+import { FaChevronRight, FaArrowUp, FaArrowDown, FaFilter, FaSortUp, FaSortDown, FaChartLine, FaStar, FaSearch, FaRocket } from 'react-icons/fa';
 
 interface Stock {
   id: string;
@@ -223,11 +223,10 @@ export default function CategoryPage({ params }: any) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pb-12 pt-32">
+      {/* <section className="bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pb-12 pt-32">
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
-          {/* Category Info */}
+          
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex-1">
               <div className="flex items-center gap-4 mb-4">
@@ -244,9 +243,39 @@ export default function CategoryPage({ params }: any) {
                 </div>
               </div>
               <p className="text-[#DADADA] text-base leading-relaxed max-w-4xl">
-                Logistics sector stocks include companies involved in the planning, implementation, and control of the movement and storage of goods, services, and information. This sector encompasses shipping, warehousing, supply chain management, and transportation services.
+                Logistics sector stocks include companies involved in the
+                planning, implementation, and control of the movement and
+                storage of goods, services, and information. This sector
+                encompasses shipping, warehousing, supply chain management, and
+                transportation services.
               </p>
             </div>
+          </div>
+        </div>
+      </section> */}
+      <section className="relative bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 overflow-hidden min-h-[50vh]">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
+        </div>
+
+        <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
+              <FaRocket className="w-4 h-4 text-[#EF9309]" />
+              <span className="text-sm font-semibold text-[#EF9309]">
+                Stocks
+              </span>
+            </div>
+
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+              {categoryName}{" "}
+              <span className="text-[#EF9309]">Sector Stocks</span>
+            </h1>
+            <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed">
+              Logistics sector stocks include companies involved in the
+              planning, implementation, and control of the movement and storage
+              of goods, services, and information.
+            </p>
           </div>
         </div>
       </section>
@@ -263,7 +292,7 @@ export default function CategoryPage({ params }: any) {
                     <FaFilter className="w-3.5 h-3.5 text-[#EF9309]" />
                     Filters
                   </h3>
-                  <button 
+                  <button
                     onClick={clearAllFilters}
                     className="text-xs text-[#EF9309] hover:text-[#D68108] font-semibold"
                   >
@@ -275,17 +304,32 @@ export default function CategoryPage({ params }: any) {
                 {hasActiveFilters && (
                   <div className="mb-4 p-2 bg-[#EF9309]/10 rounded-lg">
                     <p className="text-xs text-[#EF9309] font-semibold">
-                      {Object.values(searchFilters).filter(v => v !== '').length} filter(s) active
+                      {
+                        Object.values(searchFilters).filter((v) => v !== "")
+                          .length
+                      }{" "}
+                      filter(s) active
                     </p>
                   </div>
                 )}
 
                 {/* Price Range */}
                 <div className="mb-5 pb-5 border-b border-gray-200">
-                  <h4 className="text-xs font-bold text-gray-dark mb-3 uppercase tracking-wide">Price Range</h4>
+                  <h4 className="text-xs font-bold text-gray-dark mb-3 uppercase tracking-wide">
+                    Price Range
+                  </h4>
                   <div className="space-y-2.5">
-                    {['₹0 - ₹50', '₹50 - ₹100', '₹100 - ₹500', '₹500 - ₹1000', 'Above ₹1000'].map((range) => (
-                      <label key={range} className="flex items-center gap-2.5 cursor-pointer group">
+                    {[
+                      "₹0 - ₹50",
+                      "₹50 - ₹100",
+                      "₹100 - ₹500",
+                      "₹500 - ₹1000",
+                      "Above ₹1000",
+                    ].map((range) => (
+                      <label
+                        key={range}
+                        className="flex items-center gap-2.5 cursor-pointer group"
+                      >
                         <input
                           type="checkbox"
                           className="w-3.5 h-3.5 text-[#EF9309] border-gray-300 rounded focus:ring-[#EF9309] cursor-pointer"
@@ -300,14 +344,19 @@ export default function CategoryPage({ params }: any) {
 
                 {/* Market Cap */}
                 <div className="mb-5 pb-5 border-b border-gray-200">
-                  <h4 className="text-xs font-bold text-gray-dark mb-3 uppercase tracking-wide">Market Cap</h4>
+                  <h4 className="text-xs font-bold text-gray-dark mb-3 uppercase tracking-wide">
+                    Market Cap
+                  </h4>
                   <div className="space-y-2.5">
                     {[
-                      { label: 'Small Cap', desc: '< ₹5,000 Cr' },
-                      { label: 'Mid Cap', desc: '₹5K - ₹20K Cr' },
-                      { label: 'Large Cap', desc: '> ₹20,000 Cr' },
+                      { label: "Small Cap", desc: "< ₹5,000 Cr" },
+                      { label: "Mid Cap", desc: "₹5K - ₹20K Cr" },
+                      { label: "Large Cap", desc: "> ₹20,000 Cr" },
                     ].map((cap) => (
-                      <label key={cap.label} className="flex items-start gap-2.5 cursor-pointer group">
+                      <label
+                        key={cap.label}
+                        className="flex items-start gap-2.5 cursor-pointer group"
+                      >
                         <input
                           type="checkbox"
                           className="w-3.5 h-3.5 text-[#EF9309] border-gray-300 rounded focus:ring-[#EF9309] cursor-pointer mt-0.5"
@@ -316,7 +365,9 @@ export default function CategoryPage({ params }: any) {
                           <span className="text-xs text-[#666] group-hover:text-gray-dark transition-colors block">
                             {cap.label}
                           </span>
-                          <span className="text-[10px] text-[#999]">{cap.desc}</span>
+                          <span className="text-[10px] text-[#999]">
+                            {cap.desc}
+                          </span>
                         </div>
                       </label>
                     ))}
@@ -325,10 +376,15 @@ export default function CategoryPage({ params }: any) {
 
                 {/* P/E Ratio */}
                 <div>
-                  <h4 className="text-xs font-bold text-gray-dark mb-3 uppercase tracking-wide">P/E Ratio</h4>
+                  <h4 className="text-xs font-bold text-gray-dark mb-3 uppercase tracking-wide">
+                    P/E Ratio
+                  </h4>
                   <div className="space-y-2.5">
-                    {['< 15', '15 - 25', '25 - 40', '> 40'].map((pe) => (
-                      <label key={pe} className="flex items-center gap-2.5 cursor-pointer group">
+                    {["< 15", "15 - 25", "25 - 40", "> 40"].map((pe) => (
+                      <label
+                        key={pe}
+                        className="flex items-center gap-2.5 cursor-pointer group"
+                      >
                         <input
                           type="checkbox"
                           className="w-3.5 h-3.5 text-[#EF9309] border-gray-300 rounded focus:ring-[#EF9309] cursor-pointer"
@@ -345,7 +401,7 @@ export default function CategoryPage({ params }: any) {
 
             {/* Stock Content - Flexible Width */}
             <div className="flex-1 min-w-0 w-4/5">
-              {viewMode === 'table' ? (
+              {viewMode === "table" ? (
                 /* Table View */
                 <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                   <div className="overflow-x-auto">
@@ -355,42 +411,61 @@ export default function CategoryPage({ params }: any) {
                         <tr className="bg-gradient-to-r from-[#0A2745] to-[#1A3A5C] text-white">
                           <th className="text-left py-4 px-4 font-semibold text-sm whitespace-nowrap">
                             <button
-                              onClick={() => handleSort('name')}
+                              onClick={() => handleSort("name")}
                               className="flex items-center gap-2 hover:text-[#EF9309] transition-colors"
                             >
                               Company
-                              {sortColumn === 'name' && (
-                                sortDirection === 'asc' ? <FaSortUp /> : <FaSortDown />
-                              )}
+                              {sortColumn === "name" &&
+                                (sortDirection === "asc" ? (
+                                  <FaSortUp />
+                                ) : (
+                                  <FaSortDown />
+                                ))}
                             </button>
                           </th>
                           <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">
                             <button
-                              onClick={() => handleSort('price')}
+                              onClick={() => handleSort("price")}
                               className="flex items-center gap-2 ml-auto hover:text-[#EF9309] transition-colors"
                             >
                               Price
-                              {sortColumn === 'price' && (
-                                sortDirection === 'asc' ? <FaSortUp /> : <FaSortDown />
-                              )}
+                              {sortColumn === "price" &&
+                                (sortDirection === "asc" ? (
+                                  <FaSortUp />
+                                ) : (
+                                  <FaSortDown />
+                                ))}
                             </button>
                           </th>
-                          <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">Change</th>
+                          <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">
+                            Change
+                          </th>
                           <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">
                             <button
-                              onClick={() => handleSort('marketCap')}
+                              onClick={() => handleSort("marketCap")}
                               className="flex items-center gap-2 ml-auto hover:text-[#EF9309] transition-colors"
                             >
                               Market Cap (Cr)
-                              {sortColumn === 'marketCap' && (
-                                sortDirection === 'asc' ? <FaSortUp /> : <FaSortDown />
-                              )}
+                              {sortColumn === "marketCap" &&
+                                (sortDirection === "asc" ? (
+                                  <FaSortUp />
+                                ) : (
+                                  <FaSortDown />
+                                ))}
                             </button>
                           </th>
-                          <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">P/E</th>
-                          <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">P/B</th>
-                          <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">ROE %</th>
-                          <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">Volume</th>
+                          <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">
+                            P/E
+                          </th>
+                          <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">
+                            P/B
+                          </th>
+                          <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">
+                            ROE %
+                          </th>
+                          <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">
+                            Volume
+                          </th>
                         </tr>
 
                         {/* Search Filter Row */}
@@ -400,7 +475,9 @@ export default function CategoryPage({ params }: any) {
                               type="text"
                               placeholder="Search company..."
                               value={searchFilters.company}
-                              onChange={(e) => handleSearchChange('company', e.target.value)}
+                              onChange={(e) =>
+                                handleSearchChange("company", e.target.value)
+                              }
                               className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309]"
                             />
                           </th>
@@ -409,7 +486,9 @@ export default function CategoryPage({ params }: any) {
                               type="text"
                               placeholder="Price..."
                               value={searchFilters.price}
-                              onChange={(e) => handleSearchChange('price', e.target.value)}
+                              onChange={(e) =>
+                                handleSearchChange("price", e.target.value)
+                              }
                               className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
                             />
                           </th>
@@ -418,7 +497,9 @@ export default function CategoryPage({ params }: any) {
                               type="text"
                               placeholder="Change..."
                               value={searchFilters.change}
-                              onChange={(e) => handleSearchChange('change', e.target.value)}
+                              onChange={(e) =>
+                                handleSearchChange("change", e.target.value)
+                              }
                               className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
                             />
                           </th>
@@ -427,7 +508,9 @@ export default function CategoryPage({ params }: any) {
                               type="text"
                               placeholder="Market Cap..."
                               value={searchFilters.marketCap}
-                              onChange={(e) => handleSearchChange('marketCap', e.target.value)}
+                              onChange={(e) =>
+                                handleSearchChange("marketCap", e.target.value)
+                              }
                               className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
                             />
                           </th>
@@ -436,7 +519,9 @@ export default function CategoryPage({ params }: any) {
                               type="text"
                               placeholder="P/E..."
                               value={searchFilters.pe}
-                              onChange={(e) => handleSearchChange('pe', e.target.value)}
+                              onChange={(e) =>
+                                handleSearchChange("pe", e.target.value)
+                              }
                               className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
                             />
                           </th>
@@ -445,7 +530,9 @@ export default function CategoryPage({ params }: any) {
                               type="text"
                               placeholder="P/B..."
                               value={searchFilters.pb}
-                              onChange={(e) => handleSearchChange('pb', e.target.value)}
+                              onChange={(e) =>
+                                handleSearchChange("pb", e.target.value)
+                              }
                               className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
                             />
                           </th>
@@ -454,7 +541,9 @@ export default function CategoryPage({ params }: any) {
                               type="text"
                               placeholder="ROE..."
                               value={searchFilters.roe}
-                              onChange={(e) => handleSearchChange('roe', e.target.value)}
+                              onChange={(e) =>
+                                handleSearchChange("roe", e.target.value)
+                              }
                               className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
                             />
                           </th>
@@ -463,7 +552,9 @@ export default function CategoryPage({ params }: any) {
                               type="text"
                               placeholder="Volume..."
                               value={searchFilters.volume}
-                              onChange={(e) => handleSearchChange('volume', e.target.value)}
+                              onChange={(e) =>
+                                handleSearchChange("volume", e.target.value)
+                              }
                               className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
                             />
                           </th>
@@ -485,25 +576,46 @@ export default function CategoryPage({ params }: any) {
                                     <p className="text-gray-dark font-semibold text-sm group-hover:text-[#EF9309] transition-colors truncate">
                                       {stock.name}
                                     </p>
-                                    <p className="text-[#666] text-xs">{stock.symbol}</p>
+                                    <p className="text-[#666] text-xs">
+                                      {stock.symbol}
+                                    </p>
                                   </div>
                                 </div>
                               </td>
                               <td className="py-3.5 px-4 text-right">
-                                <p className="text-gray-dark font-bold text-sm">₹{stock.price.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</p>
+                                <p className="text-gray-dark font-bold text-sm">
+                                  ₹
+                                  {stock.price.toLocaleString("en-IN", {
+                                    minimumFractionDigits: 2,
+                                  })}
+                                </p>
                               </td>
                               <td className="py-3.5 px-4 text-right">
                                 <div className="flex flex-col items-end gap-0.5">
-                                  <span className={`text-sm font-semibold ${stock.changePercent > 0 ? 'text-green-600' : 'text-red-600'}`}>
-                                    {stock.changePercent > 0 ? '+' : ''}{stock.changePercent.toFixed(2)}%
+                                  <span
+                                    className={`text-sm font-semibold ${
+                                      stock.changePercent > 0
+                                        ? "text-green-600"
+                                        : "text-red-600"
+                                    }`}
+                                  >
+                                    {stock.changePercent > 0 ? "+" : ""}
+                                    {stock.changePercent.toFixed(2)}%
                                   </span>
-                                  <span className={`text-xs ${stock.changePercent > 0 ? 'text-green-600' : 'text-red-600'}`}>
-                                    {stock.change > 0 ? '+' : ''}₹{stock.change.toFixed(2)}
+                                  <span
+                                    className={`text-xs ${
+                                      stock.changePercent > 0
+                                        ? "text-green-600"
+                                        : "text-red-600"
+                                    }`}
+                                  >
+                                    {stock.change > 0 ? "+" : ""}₹
+                                    {stock.change.toFixed(2)}
                                   </span>
                                 </div>
                               </td>
                               <td className="py-3.5 px-4 text-right text-gray-dark text-sm">
-                                ₹{stock.marketCap.toLocaleString('en-IN')}
+                                ₹{stock.marketCap.toLocaleString("en-IN")}
                               </td>
                               <td className="py-3.5 px-4 text-right text-gray-dark text-sm">
                                 {stock.pe.toFixed(2)}
@@ -512,7 +624,13 @@ export default function CategoryPage({ params }: any) {
                                 {stock.pb.toFixed(2)}
                               </td>
                               <td className="py-3.5 px-4 text-right">
-                                <span className={`text-sm font-medium ${stock.roe > 15 ? 'text-green-600' : 'text-gray-dark'}`}>
+                                <span
+                                  className={`text-sm font-medium ${
+                                    stock.roe > 15
+                                      ? "text-green-600"
+                                      : "text-gray-dark"
+                                  }`}
+                                >
                                   {stock.roe.toFixed(2)}%
                                 </span>
                               </td>
@@ -526,8 +644,12 @@ export default function CategoryPage({ params }: any) {
                             <td colSpan={8} className="py-12 text-center">
                               <div className="flex flex-col items-center gap-3">
                                 <FaSearch className="w-12 h-12 text-gray-300" />
-                                <p className="text-gray-dark font-semibold">No stocks found</p>
-                                <p className="text-sm text-[#666]">Try adjusting your search filters</p>
+                                <p className="text-gray-dark font-semibold">
+                                  No stocks found
+                                </p>
+                                <p className="text-sm text-[#666]">
+                                  Try adjusting your search filters
+                                </p>
                                 <button
                                   onClick={clearAllFilters}
                                   className="mt-2 text-sm text-[#EF9309] hover:text-[#D68108] font-semibold"
@@ -551,7 +673,12 @@ export default function CategoryPage({ params }: any) {
                       >
                         Load More Stocks
                         <span className="text-sm font-normal">
-                          ({Math.min(ITEMS_PER_PAGE, filteredStocks.length - displayCount)} more)
+                          (
+                          {Math.min(
+                            ITEMS_PER_PAGE,
+                            filteredStocks.length - displayCount
+                          )}{" "}
+                          more)
                         </span>
                       </button>
                     </div>
@@ -561,7 +688,8 @@ export default function CategoryPage({ params }: any) {
                   {displayedStocks.length > 0 && (
                     <div className="px-6 py-3 bg-white border-t border-gray-200 flex justify-between items-center text-sm text-[#666]">
                       <span>
-                        Showing {displayedStocks.length} of {filteredStocks.length} stocks
+                        Showing {displayedStocks.length} of{" "}
+                        {filteredStocks.length} stocks
                       </span>
                       {!hasMore && filteredStocks.length > ITEMS_PER_PAGE && (
                         <button

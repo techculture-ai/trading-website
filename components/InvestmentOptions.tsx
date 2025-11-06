@@ -19,38 +19,38 @@ const investmentOptions: InvestmentOption[] = [
   {
     id: 1,
     icon: <FaChartLine className="w-7 h-7" />,
-    title: 'Stocks',
-    description: 'Invest effortlessly in 2200+ stocks.',
-    href: '/stocks/',
-    iconBg: 'bg-[#00D09C]/10',
-    iconColor: 'text-[#00D09C]',
+    title: "Stocks",
+    description: "Invest effortlessly in 2200+ stocks.",
+    href: "/invest/stocks/",
+    iconBg: "bg-[#00D09C]/10",
+    iconColor: "text-[#00D09C]",
   },
   {
     id: 2,
     icon: <FaChartBar className="w-7 h-7" />,
-    title: 'F&O',
-    description: 'Make the most of the market volatility.',
-    href: '/options/',
-    iconBg: 'bg-[#EF9309]/10',
-    iconColor: 'text-[#EF9309]',
+    title: "F&O",
+    description: "Make the most of the market volatility.",
+    href: "/invest/futures-and-options/",
+    iconBg: "bg-[#EF9309]/10",
+    iconColor: "text-[#EF9309]",
   },
   {
     id: 3,
     icon: <FaChartPie className="w-7 h-7" />,
-    title: 'Mutual Funds',
-    description: 'Choose professionally managed funds.',
-    href: '/mutual-funds/',
-    iconBg: 'bg-[#00D09C]/10',
-    iconColor: 'text-[#00D09C]',
+    title: "Mutual Funds",
+    description: "Choose professionally managed funds.",
+    href: "/invest/mutual-funds/",
+    iconBg: "bg-[#00D09C]/10",
+    iconColor: "text-[#00D09C]",
   },
   {
     id: 4,
     icon: <FaBullhorn className="w-7 h-7" />,
-    title: 'IPOs',
-    description: 'Seize opportunities and invest in new ventures.',
-    href: '/ipo/',
-    iconBg: 'bg-[#EF9309]/10',
-    iconColor: 'text-[#EF9309]',
+    title: "IPOs",
+    description: "Seize opportunities and invest in new ventures.",
+    href: "/invest/ipos/",
+    iconBg: "bg-[#EF9309]/10",
+    iconColor: "text-[#EF9309]",
   },
 ];
 
@@ -96,7 +96,7 @@ const InvestmentOptions: React.FC = () => {
             <div className="mb-8 lg:mb-12">
               <h2 className="text-gray-dark text-3xl lg:text-4xl xl:text-5xl font-bold mb-3">
                 Find Your Next Investment on{' '}
-                <span className="text-[#EF9309]">EzWealth</span>
+                <span className="text-[#EF9309]">ez wealth</span>
               </h2>
               <div className="w-20 h-1 bg-[#EF9309] rounded-full"></div>
             </div>
@@ -174,15 +174,16 @@ const InvestmentOptions: React.FC = () => {
           <div className="order-1 lg:order-2 relative h-full flex items-center justify-center">
             {/* Phone Frame Image - Appears first */}
             <div 
-              className={`relative w-full h-full transition-all duration-700 ${
+              className={`flex justify-center items-center w-full h-full transition-all duration-700 ${
                 isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
               }`}
             >
               <Image
                 src="/usstock_widget_home.avif"
                 alt="Phone Frame"
-                fill
-                className="object-contain drop-shadow-2xl"
+                width={400}
+                height={800}
+                className="object-contain drop-shadow-2xl mx-auto"
                 priority
               />
             </div>
@@ -194,11 +195,12 @@ const InvestmentOptions: React.FC = () => {
               }`}
               style={{ transitionDelay: '400ms' }}
             >
-              <div className="relative w-[85%] h-[85%]">
+              <div className="flex items-center justify-center w-[85%] h-[85%]">
                 <Image
                   src="/vehicles_img.avif"
                   alt="Screen Content"
-                  fill
+                  width={400}
+                  height={800}
                   className="object-contain"
                 />
               </div>
