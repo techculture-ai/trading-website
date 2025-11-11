@@ -1,18 +1,27 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { FaArrowRightLong } from 'react-icons/fa6';
-import Image from 'next/image';
-import Stats from './stats';
-
+import React, { useState, useEffect } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
+import Image from "next/image";
+import Stats from "./stats";
+import { BsBank } from "react-icons/bs";
 
 const Hero = () => {
-  const [mobileNumber, setMobileNumber] = useState('');
-  const [error, setError] = useState('');
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [error, setError] = useState("");
   const [counter, setCounter] = useState(0);
-  
+
   // Rotating words for the title animation
-  const words = ['Stocks', 'Options', 'Futures', 'Commodity', 'ETFs', 'IPO', 'NFO', "Funds"];
+  const words = [
+    "Stocks",
+    "Options",
+    "Futures",
+    "Commodity",
+    "ETFs",
+    "IPO",
+    "NFO",
+    "Funds",
+  ];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showPhones, setShowPhones] = useState(false);
@@ -42,9 +51,9 @@ const Hero = () => {
     const targetNumber = 15;
     const duration = 2000;
     const steps = 50;
-    const increment = targetNumber / steps; 
+    const increment = targetNumber / steps;
     const stepDuration = duration / steps;
-    
+
     let currentStep = 0;
     const timer = setInterval(() => {
       currentStep++;
@@ -61,28 +70,34 @@ const Hero = () => {
 
   const handleMobileSubmit = () => {
     if (mobileNumber.length !== 10) {
-      setError('Please enter a valid 10-digit mobile number');
+      setError("Please enter a valid 10-digit mobile number");
       return;
     }
-    setError('');
-    console.log('Mobile:', mobileNumber);
+    setError("");
+    console.log("Mobile:", mobileNumber);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, '').slice(0, 10);
+    const value = e.target.value.replace(/\D/g, "").slice(0, 10);
     setMobileNumber(value);
-    if (error) setError('');
+    if (error) setError("");
   };
 
   const popularStocks = [
-    { name: 'Tata Motors', href: '/stocks/tata-motors-ltd-share-price/' },
-    { name: 'SBI', href: '/stocks/state-bank-of-india-ltd-share-price/' },
-    { name: 'HDFC Bank', href: '/stocks/hdfc-bank-ltd-share-price/' },
-    { name: 'Infosys', href: '/stocks/infosys-ltd-share-price/' },
-    { name: 'ITC', href: '/stocks/itc-ltd-share-price/' },
-    { name: 'Adani Enterprise', href: '/stocks/adani-enterprises-ltd-share-price/' },
-    { name: 'IRFC', href: '/stocks/indian-railway-finance-corp-ltd-share-price/' },
-    { name: 'Jio', href: '/stocks/jio-financial-services-ltd-share-price/' },
+    { name: "Tata Motors", href: "/stocks/tata-motors-ltd-share-price/" },
+    { name: "SBI", href: "/stocks/state-bank-of-india-ltd-share-price/" },
+    { name: "HDFC Bank", href: "/stocks/hdfc-bank-ltd-share-price/" },
+    { name: "Infosys", href: "/stocks/infosys-ltd-share-price/" },
+    { name: "ITC", href: "/stocks/itc-ltd-share-price/" },
+    {
+      name: "Adani Enterprise",
+      href: "/stocks/adani-enterprises-ltd-share-price/",
+    },
+    {
+      name: "IRFC",
+      href: "/stocks/indian-railway-finance-corp-ltd-share-price/",
+    },
+    { name: "Jio", href: "/stocks/jio-financial-services-ltd-share-price/" },
   ];
 
   return (
@@ -91,13 +106,13 @@ const Hero = () => {
       <section className="w-full overflow-hidden relative">
         {/* <div className="absolute inset-0 bg-black/80"></div> */}
         <div className="max-w-8xl mx-auto lg:px-24 md:px-10 px-5">
-          <div className="flex flex-col lg:flex-row items-end justify-between lg:pt-32 pt-16">
+          <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-32 pt-16">
             {/* Left Content */}
             <div className="w-full lg:w-2/3 lg:pb-0 pb-8 pr-36">
               <div>
                 {/* Title with Lightning Icon - Desktop */}
                 <div className="items-start hidden gap-3 lg:flex md:flex pt-4 lg:pb-8 md:pb-6">
-                  <h1 className="lg:text-[60px] text-3xl text-[#0A2745] font-bold leading-tight">
+                  <h1 className="lg:text-[38px] text-3xl text-[#0A2745] font-bold leading-tight">
                     Investing & Trading Platform for{" "}
                     <span
                       className={`inline-block transition-all duration-300 ${
@@ -106,7 +121,7 @@ const Hero = () => {
                           : "opacity-100 translate-y-0"
                       }`}
                     >
-                      <span className="text-[#00D09C]">
+                      <span className="text-[#fbc40c]">
                         {words[currentWordIndex]}
                       </span>
                     </span>
@@ -153,98 +168,120 @@ const Hero = () => {
                 {/* Free Account Text - Desktop */}
                 <p className="text-[#8E8E8E] text-sm font-medium hidden md:flex lg:pb-3 md:pb-2">
                   Open your{" "}
-                  <span className="text-[#EF9309]">&nbsp;FREE&nbsp;</span> demat
+                  <span className="text-[#fbc40c]">&nbsp;FREE&nbsp;</span> demat
                   account in minutes!
                 </p>
 
                 {/* Mobile Number Input - Desktop */}
-                <div className="hidden md:block lg:pb-5 md:pb-4">
-                  <div className="max-w-md">
-                    <div className="flex border border-[#DBDBDB] rounded-lg items-center py-1.5 px-2">
+                <div className="hidden md:block lg:pb-8 md:pb-6">
+                  <div className="flex justify-start gap-2">
+                    <div className="flex border border-[#DBDBDB] rounded-lg items-center px-2 bg-white">
+                      {" "}
+                      {/* Added bg-white */}
                       <span className="text-[#9a9a9a] border-r-[0.4px] border-[#8e8e8e80] px-2 text-base font-normal">
                         +91&nbsp;
                       </span>
                       <input
-                        type="text"
+                        type="tel"
                         placeholder="Enter Mobile Number"
                         inputMode="numeric"
-                        autoComplete="off"
-                        className="text-base pl-3 text-white bg-transparent w-full outline-0 font-normal placeholder:text-[#8E8E8E]"
+                        autoComplete="tel"
+                        className="text-base pl-3 text-gray-dark bg-white w-full outline-none font-normal placeholder:text-[#8E8E8E]"
                         required
                         minLength={10}
                         maxLength={10}
                         value={mobileNumber}
                         onChange={handleInputChange}
                       />
-                      <div className="flex justify-end">
-                        <button
-                          className="text-sm px-2.5 py-2.5 text-white font-medium rounded-lg bg-[#EF9309] hover:bg-[#D68108] transition-colors"
-                          onClick={handleMobileSubmit}
-                        >
-                          <FaArrowRightLong className="text-[#082745] w-4 animate-arrow-pulse" />
-                        </button>
+                    </div>
+                    <div className="hidden lg:flex">
+                      <button className="lg:px-10 px-7 lg:py-3 py-2 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white flex lg:text-base text-sm rounded-md items-center gap-2 font-medium shadow-lg transition-all hover:scale-105">
+                        Start Now
+                        <FaArrowRightLong className=" relative left-[3px] w-4" />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* ₹0 Fee Sections - Single Line with Dividers */}
+                  <div className="flex items-center justify-between gap-4 mt-6 py-4 ">
+                    {/* ₹0 Brokerage Fee */}
+                    <div className="flex items-center gap-3">
+                      <div className="text-4xl font-bold text-[#fbc40c]">
+                        ₹0
+                      </div>
+                      <div className="text-sm text-gray-600 font-medium">
+                        Brokerage Fee
                       </div>
                     </div>
-                    <div
-                      className={`font-normal pt-1 text-xs text-red-500 ${
-                        error ? "visible" : "invisible"
-                      }`}
-                    >
-                      {error || "error"}
+
+                    {/* Vertical Divider */}
+                    <div className="h-12 w-px bg-gray-300"></div>
+
+                    {/* ₹0 Account Opening */}
+                    <div className="flex items-center gap-3">
+                      <div className="text-4xl font-bold text-[#fbc40c]">
+                        ₹0
+                      </div>
+                      <div className="text-sm text-gray-600 font-medium">
+                        Account Opening Fee
+                      </div>
+                    </div>
+
+                    {/* Vertical Divider */}
+                    <div className="h-12 w-px bg-gray-300"></div>
+
+                    {/* ₹0 AMC */}
+                    <div className="flex items-center gap-3">
+                      <div className="text-4xl font-bold text-[#fbc40c]">
+                        ₹0
+                      </div>
+                      <div className="text-sm text-gray-600 font-medium">
+                        Annual Maintenance
+                      </div>
+                    </div>
+
+                    <div className="h-12 w-px bg-gray-300"></div>
+
+                    <div className="flex items-center gap-3">
+                      <div className="text-4xl font-bold text-[#fbc40c]">
+                        ₹0
+                      </div>
+                      <div className="text-sm text-gray-600 font-medium">
+                        Commission on Mutual Funds
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Start Now Button - Desktop */}
-                <div className="hidden lg:flex lg:pb-6">
-                  <button className="lg:px-10 px-7 lg:py-3 py-2 bg-[#EF9309] hover:bg-[#D68108] text-[#0A2745] flex lg:text-base text-sm rounded-md items-center gap-2 font-medium shadow-lg transition-all hover:scale-105">
+                {/* <div className="hidden lg:flex lg:pb-6">
+                  <button className="lg:px-10 px-7 lg:py-3 py-2 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white flex lg:text-base text-sm rounded-md items-center gap-2 font-medium shadow-lg transition-all hover:scale-105">
                     Start Now
-                    <FaArrowRightLong className="text-[#0A2745] relative left-[3px] w-4" />
+                    <FaArrowRightLong className=" relative left-[3px] w-4" />
                   </button>
-                </div>
+                </div> */}
 
                 {/* Stats - Desktop */}
-                <div className="md:flex lg:gap-16 gap-10 hidden lg:pb-8 md:pb-6">
-                  <div>
-                    <div className="flex gap-2 items-center">
-                      <div className="border-[0.4px] border-[#ffffff33] rounded-full p-2 flex-shrink-0">
-                        <img
-                          src="https://stock-logos.dhan.co/static-openweb/modal_active_user.svg"
-                          className="lg:w-4 w-3"
-                          alt="Active users"
-                        />
-                      </div>
-                      <div className="lg:text-base text-sm text-gray-500 font-normal">
-                        1 Mn+ Active Users
-                      </div>
+                <div className="md:flex lg:gap-12 gap-8 hidden lg:pb-8 md:pb-6">
+                  <div className="flex gap-2 items-center bg-[#6666660d] p-4 rounded-md">
+                    <div className=" border-[#ffffff33] rounded-full flex-shrink-0">
+                      <BsBank className="lg:w-4 w-3 text-black/70" />
+                    </div>
+                    <div className="lg:text-base text-sm text-gray-500 font-normal">
+                      SEBI Registered
                     </div>
                   </div>
-                  <div>
-                    <div className="flex gap-2 items-center">
-                      <div className="border-[0.4px] border-[#ffffff33] rounded-full p-2 flex-shrink-0">
-                        <img
-                          src="https://stock-logos.dhan.co/static-openweb/modal_active_user.svg"
-                          className="lg:w-4 w-3"
-                          alt="Active users"
-                        />
-                      </div>
-                      <div className="lg:text-base text-sm text-gray-500 font-normal">
-                        1 Mn+ Active Users
-                      </div>
+
+                  <div className="flex gap-2 items-center bg-[#6666660d] p-4 rounded-md">
+                    <div className="border-[0.4px] border-[#ffffff33] rounded-full justify-center flex flex-shrink-0">
+                      <img
+                        src="https://stock-logos.dhan.co/static-openweb/star.svg"
+                        className="lg:w-4 w-3"
+                        alt="Rating"
+                      />
                     </div>
-                  </div>
-                  <div>
-                    <div className="flex gap-2 items-center">
-                      <div className="border-[0.4px] border-[#ffffff33] rounded-full justify-center flex p-2 flex-shrink-0">
-                        <img
-                          src="https://stock-logos.dhan.co/static-openweb/star.svg"
-                          className="lg:w-4 w-3"
-                          alt="Rating"
-                        />
-                      </div>
-                      <div className="lg:text-base text-sm text-gray-500 font-normal">
-                        4.5 Play Store Rating
-                      </div>
+                    <div className="lg:text-base text-sm text-gray-500 font-normal">
+                      4.5 Play Store Rating
                     </div>
                   </div>
                 </div>
@@ -263,7 +300,7 @@ const Hero = () => {
                   </div>
 
                   <p className="text-[#8E8E8E] text-sm font-medium pt-2 text-center">
-                    <span className="text-[#EF9309]">1 Cr+ App Downloads</span>{" "}
+                    <span className="text-[#fbc40c]">1 Cr+ App Downloads</span>{" "}
                     on Play Store!
                   </p>
 
@@ -274,7 +311,7 @@ const Hero = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <button className="px-7 py-2 bg-[#EF9309] hover:bg-[#D68108] text-[#0A2745] flex text-sm rounded-md items-center gap-2 font-medium shadow-lg transition-colors">
+                      <button className="px-7 py-2 bg-[#fbc40c] hover:bg-[#D68108] text-[#0A2745] flex text-sm rounded-md items-center gap-2 font-medium shadow-lg transition-colors">
                         Get Dhan
                         <FaArrowRightLong className="text-[#0A2745] relative left-[3px] w-4" />
                       </button>
@@ -375,7 +412,7 @@ const Hero = () => {
                   }`}
                 >
                   <Image
-                    src="/hero-bg.png"
+                    src="/bg5.png"
                     alt="Trading Platform"
                     fill
                     priority

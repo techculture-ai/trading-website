@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { FaArrowUp, FaArrowDown, FaChevronRight } from 'react-icons/fa';
+import React, { useState } from "react";
+import Image from "next/image";
+import { FaArrowUp, FaArrowDown, FaChevronRight } from "react-icons/fa";
 
 interface Stock {
   id: number;
@@ -17,103 +17,103 @@ interface Stock {
 const topGainers: Stock[] = [
   {
     id: 1,
-    symbol: 'CARTRADE',
-    name: 'CARTRADE TECH LTD',
-    price: '₹3,085.10',
-    change: '+485.20',
-    changePercent: '+15.74',
-    logo: '/logos/cartrade.png',
+    symbol: "CARTRADE",
+    name: "CARTRADE TECH LTD",
+    price: "₹3,085.10",
+    change: "+485.20",
+    changePercent: "+15.74",
+    logo: "/logos/cartrade.png",
   },
   {
     id: 2,
-    symbol: 'TTKPRESTIG',
-    name: 'TTK PRESTIGE LTD',
-    price: '₹739.00',
-    change: '+105.50',
-    changePercent: '+14.22',
-    logo: '/logos/ttk.png',
+    symbol: "TTKPRESTIG",
+    name: "TTK PRESTIGE LTD",
+    price: "₹739.00",
+    change: "+105.50",
+    changePercent: "+14.22",
+    logo: "/logos/ttk.png",
   },
   {
     id: 3,
-    symbol: 'PRECWIRE',
-    name: 'PRECISION WIRES',
-    price: '₹234.94',
-    change: '+27.15',
-    changePercent: '+11.49',
-    logo: '/logos/precwire.png',
+    symbol: "PRECWIRE",
+    name: "PRECISION WIRES",
+    price: "₹234.94",
+    change: "+27.15",
+    changePercent: "+11.49",
+    logo: "/logos/precwire.png",
   },
   {
     id: 4,
-    symbol: 'RELIANCE',
-    name: 'RELIANCE INDUSTRIES',
-    price: '₹2,456.80',
-    change: '+245.30',
-    changePercent: '+10.98',
-    logo: '/logos/reliance.png',
+    symbol: "RELIANCE",
+    name: "RELIANCE INDUSTRIES",
+    price: "₹2,456.80",
+    change: "+245.30",
+    changePercent: "+10.98",
+    logo: "/logos/reliance.png",
   },
   {
     id: 5,
-    symbol: 'INFY',
-    name: 'INFOSYS LIMITED',
-    price: '₹1,589.25',
-    change: '+155.40',
-    changePercent: '+9.78',
-    logo: '/logos/infy.png',
+    symbol: "INFY",
+    name: "INFOSYS LIMITED",
+    price: "₹1,589.25",
+    change: "+155.40",
+    changePercent: "+9.78",
+    logo: "/logos/infy.png",
   },
 ];
 
 const topLosers: Stock[] = [
   {
     id: 1,
-    symbol: 'ADANIENT',
-    name: 'ADANI ENTERPRISES',
-    price: '₹2,145.60',
-    change: '-325.80',
-    changePercent: '-13.18',
-    logo: '/logos/adani.png',
+    symbol: "ADANIENT",
+    name: "ADANI ENTERPRISES",
+    price: "₹2,145.60",
+    change: "-325.80",
+    changePercent: "-13.18",
+    logo: "/logos/adani.png",
   },
   {
     id: 2,
-    symbol: 'TATAMOTORS',
-    name: 'TATA MOTORS LTD',
-    price: '₹685.45',
-    change: '-89.25',
-    changePercent: '-11.52',
-    logo: '/logos/tata.png',
+    symbol: "TATAMOTORS",
+    name: "TATA MOTORS LTD",
+    price: "₹685.45",
+    change: "-89.25",
+    changePercent: "-11.52",
+    logo: "/logos/tata.png",
   },
   {
     id: 3,
-    symbol: 'VEDL',
-    name: 'VEDANTA LIMITED',
-    price: '₹234.70',
-    change: '-28.90',
-    changePercent: '-10.96',
-    logo: '/logos/vedl.png',
+    symbol: "VEDL",
+    name: "VEDANTA LIMITED",
+    price: "₹234.70",
+    change: "-28.90",
+    changePercent: "-10.96",
+    logo: "/logos/vedl.png",
   },
   {
     id: 4,
-    symbol: 'COALINDIA',
-    name: 'COAL INDIA LTD',
-    price: '₹389.50',
-    change: '-45.30',
-    changePercent: '-10.42',
-    logo: '/logos/coal.png',
+    symbol: "COALINDIA",
+    name: "COAL INDIA LTD",
+    price: "₹389.50",
+    change: "-45.30",
+    changePercent: "-10.42",
+    logo: "/logos/coal.png",
   },
   {
     id: 5,
-    symbol: 'SBIN',
-    name: 'STATE BANK OF INDIA',
-    price: '₹578.90',
-    change: '-62.15',
-    changePercent: '-9.70',
-    logo: '/logos/sbi.png',
+    symbol: "SBIN",
+    name: "STATE BANK OF INDIA",
+    price: "₹578.90",
+    change: "-62.15",
+    changePercent: "-9.70",
+    logo: "/logos/sbi.png",
   },
 ];
 
 const TrendingStocks: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'gainers' | 'losers'>('gainers');
+  const [activeTab, setActiveTab] = useState<"gainers" | "losers">("gainers");
 
-  const displayStocks = activeTab === 'gainers' ? topGainers : topLosers;
+  const displayStocks = activeTab === "gainers" ? topGainers : topLosers;
 
   return (
     <section className="bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] py-16 lg:py-24">
@@ -121,7 +121,7 @@ const TrendingStocks: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-10">
           <h2 className="text-white text-3xl lg:text-4xl font-bold mb-3">
-            What&apos;s Trending <span className="text-[#EF9309]">Today</span>
+            What&apos;s Trending <span className="text-[#fbc40c]">Today</span>
           </h2>
           <p className="text-[#8E8E8E] text-base lg:text-lg">
             Track the market&apos;s biggest movers in real-time
@@ -184,7 +184,7 @@ const TrendingStocks: React.FC = () => {
                   #{index + 1}
                 </div>
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <FaChevronRight className="w-4 h-4 text-[#EF9309]" />
+                  <FaChevronRight className="w-4 h-4 text-[#fbc40c]" />
                 </div>
               </div>
 
@@ -252,7 +252,7 @@ const TrendingStocks: React.FC = () => {
 
         {/* View All Button */}
         <div className="text-center mt-10">
-          <button className="px-8 py-3 border-2 border-[#ffffff33] hover:border-[#EF9309] text-white hover:bg-[#EF9309] rounded-lg font-medium transition-all duration-300 hover:scale-105">
+          <button className="px-8 py-3 border-2 border-[#ffffff33] hover:border-[#fbc40c] text-white hover:bg-[#fbc40c] rounded-lg font-medium transition-all duration-300 hover:scale-105">
             View All Market Movers
           </button>
         </div>

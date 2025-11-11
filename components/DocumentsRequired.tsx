@@ -25,7 +25,7 @@ const documents: Document[] = [
     description:
       "Your PAN is required as identity proof and to fetch your ITR Name",
     icon: <FaIdCard className="w-10 h-10" />,
-    iconBg: "from-[#EF9309] to-[#D68108]",
+    iconBg: "from-[#fbc40c] to-[#D68108]",
     requirements: [
       "PAN Card (Mandatory)",
       "Aadhaar Card",
@@ -67,16 +67,16 @@ const DocumentsRequired: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-16 gap-6">
           <div className="flex-1">
-            <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 rounded-full px-4 py-2 mb-4">
-              <FaCheckCircle className="w-4 h-4 text-[#EF9309]" />
-              <span className="text-sm font-semibold text-[#EF9309]">
+            <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 rounded-full px-4 py-2 mb-4">
+              <FaCheckCircle className="w-4 h-4 text-[#fbc40c]" />
+              <span className="text-sm font-semibold text-[#fbc40c]">
                 Quick & Easy
               </span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
               Documents Required{" "}
               <span className="block mt-2">
-                To Open A <span className="text-[#EF9309]">Demat Account</span>
+                To Open A <span className="text-[#fbc40c]">Demat Account</span>
               </span>
             </h2>
             <p className="text-lg text-[#666] max-w-2xl">
@@ -88,8 +88,8 @@ const DocumentsRequired: React.FC = () => {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:block flex-shrink-0">
             <a
-              href="/open-demat-account/"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              href="/auth/open-demat-account/"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               Start Investing for FREE
               <FaArrowRight className="w-4 h-4" />
@@ -102,7 +102,7 @@ const DocumentsRequired: React.FC = () => {
           {documents.map((doc, index) => (
             <div
               key={doc.id}
-              className="group relative bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#EF9309] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+              className="group relative bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#fbc40c] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animation: "fadeInUp 0.6s ease-out forwards",
@@ -110,7 +110,7 @@ const DocumentsRequired: React.FC = () => {
               }}
             >
               {/* Number Badge */}
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center shadow-lg group-hover:from-[#EF9309] group-hover:to-[#D68108] transition-all duration-300">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center shadow-lg group-hover:from-[#fbc40c] group-hover:to-[#D68108] transition-all duration-300">
                 <span className="text-2xl font-bold text-gray-dark group-hover:text-white transition-colors">
                   {doc.id}
                 </span>
@@ -124,7 +124,7 @@ const DocumentsRequired: React.FC = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold text-gray-dark mb-3 group-hover:text-[#EF9309] transition-colors">
+              <h3 className="text-2xl font-bold text-gray-dark mb-3 group-hover:text-[#fbc40c] transition-colors">
                 {doc.title}
               </h3>
 
@@ -147,7 +147,7 @@ const DocumentsRequired: React.FC = () => {
               </div>
 
               {/* Hover Border Effect */}
-              {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#EF9309] to-[#00D09C] opacity-0 group-hover:opacity-100 -z-10 blur-xl transition-opacity duration-300"></div> */}
+              {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#fbc40c] to-[#00D09C] opacity-0 group-hover:opacity-100 -z-10 blur-xl transition-opacity duration-300"></div> */}
             </div>
           ))}
         </div>
@@ -155,28 +155,28 @@ const DocumentsRequired: React.FC = () => {
         {/* Additional Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           {/* Quick Tips Card */}
-          <div className="bg-gradient-to-br from-[#EF9309]/5 to-[#EF9309]/10 border border-[#EF9309]/20 rounded-2xl p-6">
+          <div className="bg-gradient-to-br from-[#fbc40c]/5 to-[#fbc40c]/10 border border-[#fbc40c]/20 rounded-2xl p-6">
             <h4 className="text-lg font-bold text-gray-dark mb-3 flex items-center gap-2">
-              <span className="w-8 h-8 bg-[#EF9309] rounded-lg flex items-center justify-center">
+              <span className="w-8 h-8 bg-[#fbc40c] rounded-lg flex items-center justify-center">
                 <FaCheckCircle className="w-4 h-4 text-white" />
               </span>
               Quick Tips
             </h4>
             <ul className="space-y-2 text-sm text-[#666]">
               <li className="flex items-start gap-2">
-                <span className="text-[#EF9309] mt-1">•</span>
+                <span className="text-[#fbc40c] mt-1">•</span>
                 <span>Keep all documents in digital format (PDF/JPG)</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#EF9309] mt-1">•</span>
+                <span className="text-[#fbc40c] mt-1">•</span>
                 <span>Ensure Aadhaar is linked to your mobile number</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#EF9309] mt-1">•</span>
+                <span className="text-[#fbc40c] mt-1">•</span>
                 <span>Have a cancelled cheque or bank statement ready</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#EF9309] mt-1">•</span>
+                <span className="text-[#fbc40c] mt-1">•</span>
                 <span>Process takes only 5-10 minutes to complete</span>
               </li>
             </ul>
@@ -222,8 +222,8 @@ const DocumentsRequired: React.FC = () => {
         {/* Mobile CTA Button */}
         <div className="lg:hidden mt-12 text-center">
           <a
-            href="/open-demat-account/"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+            href="/auth/open-demat-account/"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Start Investing for FREE
             <FaArrowRight className="w-4 h-4" />

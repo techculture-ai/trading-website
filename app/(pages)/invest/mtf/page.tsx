@@ -188,73 +188,66 @@ const MTFPage: React.FC = () => {
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 overflow-hidden h-[75vh]">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[80vh]">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
 
-        {/* Decorative Blobs */}
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[#A8D063]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#00D09C]/10 rounded-full blur-3xl"></div>
-
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#A8D063]/10 backdrop-blur-sm border border-[#A8D063]/20 rounded-full px-4 py-2 mb-6">
-                <FaRocket className="w-4 h-4 text-[#EF9309]" />
-                <span className="text-sm font-semibold text-[#EF9309]">
+              <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 border border-[#fbc40c]/30 rounded-full px-4 py-2 mb-6">
+                <FaRocket className="w-4 h-4 text-[#fbc40c]" />
+                <span className="text-sm font-semibold text-[#fbc40c]">
                   Margin Trading Facility
                 </span>
               </div>
 
-              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-                Trade with <span className="text-[#EF9309]">4x Leverage</span>
+              <h1 className="text-3xl lg:text-[38px] font-bold text-[#0A2745] mb-6">
+                Trade with <span className="text-[#fbc40c]">4x Leverage</span>
               </h1>
-              <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed mb-8">
+              <p className="text-base lg:text-lg text-[#8E8E8E] leading-relaxed mb-8">
                 Multiply your buying power with MTF. Buy more stocks with less
                 capital and maximize your returns.
               </p>
 
-              {/* Stats */}
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <p className="text-3xl font-bold text-[#EF9309] mb-2">4x</p>
-                  <p className="text-sm text-[#DADADA]">Leverage Power</p>
+                <div className="bg-gradient-to-br from-[#fbc40c]/10 to-[#D68108]/5 border-2 border-[#fbc40c]/20 rounded-2xl p-6">
+                  <p className="text-3xl font-bold text-[#fbc40c] mb-2">4x</p>
+                  <p className="text-sm text-[#8E8E8E]">Leverage Power</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+                <div className="bg-gradient-to-br from-[#00D09C]/10 to-[#00B09C]/5 border-2 border-[#00D09C]/20 rounded-2xl p-6">
                   <p className="text-3xl font-bold text-[#00D09C] mb-2">
                     10.95%
                   </p>
-                  <p className="text-sm text-[#DADADA]">Annual Interest</p>
+                  <p className="text-sm text-[#8E8E8E]">Annual Interest</p>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="/open-demat-account/"
-                  className="px-8 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+                  href="/auth/open-demat-account/"
+                  className="px-8 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
                 >
                   Start Trading with MTF
                   <FaArrowRight className="w-4 h-4" />
                 </a>
                 <a
                   href="#calculator"
-                  className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300 border border-white/20 hover:border-white/40 inline-flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-white border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   Try Calculator
                 </a>
               </div>
             </div>
 
-            {/* Right Image */}
-            <div className="relative">
-              <div className="relative z-10">
+            <div className="relative h-full flex items-center justify-center">
+              <div className="w-full max-w-[650px] h-full flex items-center justify-center">
                 <Image
                   src="/mtf.png"
                   alt="MTF Trading Screen"
-                  width={300}
-                  height={500}
+                  width={250}
+                  height={400}
                   className="object-contain drop-shadow-2xl mx-auto"
                 />
               </div>
@@ -273,11 +266,11 @@ const MTFPage: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
               Benefits of using{" "}
-              <span className="text-[#EF9309]">
+              <span className="text-[#fbc40c]">
                 Margin Trading Facility (MTF)
               </span>
             </h2>
-            <div className="w-20 h-1 bg-[#EF9309] mx-auto rounded-full mt-4"></div>
+            <div className="w-20 h-1 bg-[#fbc40c] mx-auto rounded-full mt-4"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -297,7 +290,7 @@ const MTFPage: React.FC = () => {
                   <FaChartLine className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-dark mb-3 group-hover:text-[#EF9309] transition-colors">
+                <h3 className="text-2xl font-bold text-gray-dark mb-3 group-hover:text-[#fbc40c] transition-colors">
                   {benefit.title}
                 </h3>
 
@@ -318,7 +311,7 @@ const MTFPage: React.FC = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-3">
               MTF Calculator
             </h2>
-            <div className="w-16 h-1 bg-[#EF9309] mx-auto rounded-full mb-4"></div>
+            <div className="w-16 h-1 bg-[#fbc40c] mx-auto rounded-full mb-4"></div>
             <p className="text-base text-[#666] leading-relaxed">
               Check how MTF will work for your preferred stock
             </p>
@@ -571,7 +564,7 @@ const MTFPage: React.FC = () => {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
               What is MTF?
             </h2>
-            <div className="w-20 h-1 bg-[#EF9309] mx-auto rounded-full mb-6"></div>
+            <div className="w-20 h-1 bg-[#fbc40c] mx-auto rounded-full mb-6"></div>
 
             <p className="text-lg text-[#666] max-w-4xl mx-auto mb-12">
               MTF (Margin Trading Facility) lets you buy more stocks than your
@@ -587,11 +580,11 @@ const MTFPage: React.FC = () => {
                 <p className="text-4xl font-bold text-gray-dark mb-1">₹100</p>
               </div>
 
-              <div className="text-4xl text-[#EF9309]">+</div>
+              <div className="text-4xl text-[#fbc40c]">+</div>
 
               <div className="text-center">
                 <p className="text-sm text-[#666] mb-2">ez wealth Pays</p>
-                <p className="text-4xl font-bold text-[#EF9309] mb-1">₹400</p>
+                <p className="text-4xl font-bold text-[#fbc40c] mb-1">₹400</p>
               </div>
 
               <div className="text-4xl text-gray-dark">=</div>
@@ -636,14 +629,14 @@ const MTFPage: React.FC = () => {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
               Frequently Asked Questions
             </h2>
-            <div className="w-20 h-1 bg-[#EF9309] mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-[#fbc40c] mx-auto rounded-full"></div>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq) => (
               <div
                 key={faq.id}
-                className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-[#EF9309] transition-all duration-300"
+                className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-[#fbc40c] transition-all duration-300"
               >
                 <button
                   onClick={() =>
@@ -676,7 +669,7 @@ const MTFPage: React.FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-5 md:px-10 text-center">
           <h2 className="text-3xl lg:text-5xl font-bold  mb-6">
-            Ready to Trade <span className="text-[#EF9309]">with MTF?</span>
+            Ready to Trade <span className="text-[#fbc40c]">with MTF?</span>
           </h2>
           <p className="text-lg text-[#666] mb-8">
             Open your free demat account and start trading with 4x leverage
@@ -684,15 +677,15 @@ const MTFPage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/open-demat-account/"
-              className="px-10 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+              href="/auth/open-demat-account/"
+              className="px-10 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
             >
               Open Free Account
               <FaRocket className="w-4 h-4" />
             </a>
             <a
               href="/pricing/"
-              className="px-10 py-4 bg-white border-2 border-[#EF9309] hover:bg-[#EF9309] text-[#EF9309] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
+              className="px-10 py-4 bg-white border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
             >
               View Pricing
             </a>

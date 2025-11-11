@@ -23,7 +23,7 @@ const faqData: FAQItem[] = [
         You can{" "}
         <a
           href="/open-demat-acoount/"
-          className="text-[#EF9309] hover:underline"
+          className="text-[#fbc40c] hover:underline"
         >
           open demat account
         </a>{" "}

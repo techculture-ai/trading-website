@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 interface Award {
   id: number;
@@ -14,66 +14,68 @@ interface Award {
 const awards: Award[] = [
   {
     id: 1,
-    image: 'https://stock-logos.dhan.co/static-openweb/TradingView.svg',
-    title: 'Best by Asset Classes - Options',
-    year: '2024',
-    alt: 'TradingView Award',
+    image: "https://stock-logos.dhan.co/static-openweb/TradingView.svg",
+    title: "Best by Asset Classes - Options",
+    year: "2024",
+    alt: "TradingView Award",
   },
   {
     id: 2,
-    image: 'https://stock-logos.dhan.co/static-new-images/Deloitte_Award.svg',
-    title: 'Deloitte Fast 50 Award',
-    year: 'in Fintech Category 2024',
-    alt: 'Deloitte Award',
+    image: "https://stock-logos.dhan.co/static-new-images/Deloitte_Award.svg",
+    title: "Deloitte Fast 50 Award",
+    year: "in Fintech Category 2024",
+    alt: "Deloitte Award",
   },
   {
     id: 3,
-    image: 'https://stock-logos.dhan.co/static-openweb/mcxaward.svg',
-    title: 'Leading Member Traded',
-    year: 'Clients 2024',
-    alt: 'MCX Award',
+    image: "https://stock-logos.dhan.co/static-openweb/mcxaward.svg",
+    title: "Leading Member Traded",
+    year: "Clients 2024",
+    alt: "MCX Award",
   },
   {
     id: 4,
-    image: 'https://stock-logos.dhan.co/static-openweb/TradingView.svg',
-    title: 'Best Broker in APAC',
-    year: '2023',
-    alt: 'TradingView Award',
+    image: "https://stock-logos.dhan.co/static-openweb/TradingView.svg",
+    title: "Best Broker in APAC",
+    year: "2023",
+    alt: "TradingView Award",
   },
   {
     id: 5,
-    image: 'https://stock-logos.dhan.co/static-openweb/India Devops Show 2023.svg',
-    title: 'Best Adoption of',
-    year: 'Multi-Cloud',
-    alt: 'India DevOps Show 2023',
+    image:
+      "https://stock-logos.dhan.co/static-openweb/India Devops Show 2023.svg",
+    title: "Best Adoption of",
+    year: "Multi-Cloud",
+    alt: "India DevOps Show 2023",
   },
   {
     id: 6,
-    image: 'https://stock-logos.dhan.co/static-openweb/TradingView.svg',
-    title: 'Most Reliable Tech',
-    year: '2022',
-    alt: 'TradingView Award',
+    image: "https://stock-logos.dhan.co/static-openweb/TradingView.svg",
+    title: "Most Reliable Tech",
+    year: "2022",
+    alt: "TradingView Award",
   },
   {
     id: 7,
-    image: 'https://stock-logos.dhan.co/static-openweb/India Devops Show 2022.svg',
-    title: 'Best use of',
-    year: 'Devops Technology',
-    alt: 'India DevOps Show 2022',
+    image:
+      "https://stock-logos.dhan.co/static-openweb/India Devops Show 2022.svg",
+    title: "Best use of",
+    year: "Devops Technology",
+    alt: "India DevOps Show 2022",
   },
   {
     id: 8,
-    image: 'https://stock-logos.dhan.co/static-openweb/last-trop.svg',
-    title: 'Fintech Rising',
-    year: 'Star',
-    alt: 'Fintech Rising Star',
+    image: "https://stock-logos.dhan.co/static-openweb/last-trop.svg",
+    title: "Fintech Rising",
+    year: "Star",
+    alt: "Fintech Rising Star",
   },
   {
     id: 9,
-    image: 'https://stock-logos.dhan.co/static-openweb/Global Fintech Fest.svg',
-    title: 'Best in Class',
-    year: 'Stock Trading Solution',
-    alt: 'Global Fintech Fest',
+    image: "https://stock-logos.dhan.co/static-openweb/Global Fintech Fest.svg",
+    title: "Best in Class",
+    year: "Stock Trading Solution",
+    alt: "Global Fintech Fest",
   },
 ];
 
@@ -94,8 +96,8 @@ const Awards: React.FC = () => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const nextSlide = useCallback(() => {
@@ -167,7 +169,9 @@ const Awards: React.FC = () => {
               <div
                 className="flex transition-transform duration-500 ease-out gap-2.5"
                 style={{
-                  transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
+                  transform: `translateX(-${
+                    currentIndex * (100 / visibleCards)
+                  }%)`,
                 }}
               >
                 {awards.map((award) => (
@@ -175,7 +179,9 @@ const Awards: React.FC = () => {
                     key={award.id}
                     className="flex-shrink-0"
                     style={{
-                      width: `calc(${100 / visibleCards}% - ${(10 * (visibleCards - 1)) / visibleCards}px)`,
+                      width: `calc(${100 / visibleCards}% - ${
+                        (10 * (visibleCards - 1)) / visibleCards
+                      }px)`,
                     }}
                   >
                     <div className="flex justify-center gap-3 flex-col items-center py-4">
@@ -282,10 +288,7 @@ const Awards: React.FC = () => {
                 }}
               >
                 {mobileSlides.map((slide, slideIndex) => (
-                  <div
-                    key={slideIndex}
-                    className="w-full flex-shrink-0"
-                  >
+                  <div key={slideIndex} className="w-full flex-shrink-0">
                     <div className="grid grid-cols-2 gap-4">
                       {slide.map((award) => (
                         <div
@@ -326,8 +329,8 @@ const Awards: React.FC = () => {
                   onClick={() => goToSlide(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? 'bg-[#EF9309] w-8'
-                      : 'bg-gray-300 w-2'
+                      ? "bg-[#fbc40c] w-8"
+                      : "bg-gray-300 w-2"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />

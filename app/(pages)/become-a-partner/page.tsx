@@ -54,7 +54,7 @@ const rewards: Reward[] = [
     title: "Performance Bonuses",
     description:
       "Additional incentives based on targets achieved. Get rewarded for exceptional performance.",
-    gradient: "from-[#EF9309] to-[#D68108]",
+    gradient: "from-[#fbc40c] to-[#D68108]",
   },
   {
     id: 3,
@@ -208,79 +208,77 @@ const PartnerPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 overflow-hidden h-[75vh]">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[80vh]">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
 
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[#EF9309]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        {/* Removed decorative blobs or keep them subtle */}
 
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
-                <FaHandshake className="w-4 h-4 text-[#EF9309]" />
-                <span className="text-sm font-semibold text-[#EF9309]">
+              <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 border border-[#fbc40c]/30 rounded-full px-4 py-2 mb-6">
+                <FaHandshake className="w-4 h-4 text-[#fbc40c]" />
+                <span className="text-sm font-semibold text-[#fbc40c]">
                   Partnership Program
                 </span>
               </div>
 
-              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-                Become a{" "}
-                <span className="bg-gradient-to-r from-[#EF9309] to-[#D68108] bg-clip-text text-transparent">
-                  Partner
-                </span>
+              <h1 className="text-3xl lg:text-[38px] font-bold text-[#0A2745] mb-6">
+                Become a <span className="text-[#fbc40c]">Partner</span>
               </h1>
-              <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed mb-8">
+              <p className="text-base lg:text-lg text-[#8E8E8E] leading-relaxed mb-8">
                 Join India's fastest-growing broking platform. Build your own
                 financial services business with zero investment and unlimited
                 earning potential.
               </p>
 
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <p className="text-3xl font-bold text-[#EF9309] mb-2">
+                <div className="bg-gradient-to-br from-[#fbc40c]/10 to-[#D68108]/5 border-2 border-[#fbc40c]/20 rounded-2xl p-6">
+                  <p className="text-3xl font-bold text-[#fbc40c] mb-2">
                     5000+
                   </p>
-                  <p className="text-sm text-[#DADADA]">Active Partners</p>
+                  <p className="text-sm text-[#8E8E8E]">Active Partners</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <p className="text-3xl font-bold text-[#EF9309] mb-2">
+                <div className="bg-gradient-to-br from-[#00D09C]/10 to-[#00B09C]/5 border-2 border-[#00D09C]/20 rounded-2xl p-6">
+                  <p className="text-3xl font-bold text-[#00D09C] mb-2">
                     ₹10L+
                   </p>
-                  <p className="text-sm text-[#DADADA]">Avg. Annual Earning</p>
+                  <p className="text-sm text-[#8E8E8E]">Avg. Annual Earning</p>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#apply"
-                  className="px-8 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
                 >
                   Apply Now
                   <FaArrowRight className="w-4 h-4" />
                 </a>
                 <a
                   href="#benefits"
-                  className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300 border border-white/20 hover:border-white/40 inline-flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-white border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   Learn More
                 </a>
               </div>
             </div>
 
-            <div className="relative ">
-              <Image
-                src="/partner5.avif"
-                alt="Partner Program"
-                width={600}
-                height={500}
-                className="object-contain drop-shadow-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl"
-              />
+            <div className="relative h-full flex items-center justify-center">
+              <div className="w-full max-w-[650px] h-full flex items-center justify-center">
+                <Image
+                  src="/partner5.avif"
+                  alt="Partner Program"
+                  width={600}
+                  height={500}
+                  className="object-contain drop-shadow-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -292,9 +290,9 @@ const PartnerPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-4">
               Rewards of Becoming an{" "}
-              <span className="text-[#EF9309]">Authorised Partner</span>
+              <span className="text-[#fbc40c]">Authorised Partner</span>
             </h2>
-            <div className="w-20 h-1 bg-[#EF9309] mx-auto rounded-full mb-6"></div>
+            <div className="w-20 h-1 bg-[#fbc40c] mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-[#666] max-w-3xl mx-auto">
               Experience unparalleled benefits and rewards as you grow your
               business with us
@@ -305,7 +303,7 @@ const PartnerPage: React.FC = () => {
             {rewards.map((reward) => (
               <div
                 key={reward.id}
-                className="group bg-white border-2 border-gray-100 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#EF9309]"
+                className="group bg-white border-2 border-gray-100 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#fbc40c]"
               >
                 <div
                   className={`w-16 h-16 bg-gradient-to-br ${reward.gradient} rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
@@ -313,7 +311,7 @@ const PartnerPage: React.FC = () => {
                   <div className="text-white">{reward.icon}</div>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-dark mb-3 group-hover:text-[#EF9309] transition-colors">
+                <h3 className="text-xl font-bold text-gray-dark mb-3 group-hover:text-[#fbc40c] transition-colors">
                   {reward.title}
                 </h3>
 
@@ -332,9 +330,9 @@ const PartnerPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-4">
               Who Can Become an{" "}
-              <span className="text-[#EF9309]">Authorised Person</span>
+              <span className="text-[#fbc40c]">Authorised Person</span>
             </h2>
-            <div className="w-20 h-1 bg-[#EF9309] mx-auto rounded-full mb-6"></div>
+            <div className="w-20 h-1 bg-[#fbc40c] mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-[#666] max-w-3xl mx-auto">
               Our partnership program is designed for diverse professionals and
               entrepreneurs
@@ -345,9 +343,9 @@ const PartnerPage: React.FC = () => {
             {whoCanBecome.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-[#EF9309] text-center"
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-[#fbc40c] text-center"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-[#EF9309] to-[#D68108] rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#fbc40c] to-[#D68108] rounded-xl flex items-center justify-center mx-auto mb-4">
                   <div className="text-white">{item.icon}</div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-dark mb-2">
@@ -368,7 +366,7 @@ const PartnerPage: React.FC = () => {
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-4">
                 Eligibility Criteria
               </h2>
-              <div className="w-16 h-1 bg-[#EF9309] rounded-full mb-6"></div>
+              <div className="w-16 h-1 bg-[#fbc40c] rounded-full mb-6"></div>
               <p className="text-lg text-[#666] mb-8">
                 Simple and straightforward requirements to get started as our
                 partner
@@ -378,9 +376,9 @@ const PartnerPage: React.FC = () => {
                 {eligibilityCriteria.map((criteria) => (
                   <div
                     key={criteria.id}
-                    className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-[#EF9309]/5 hover:border-[#EF9309] border-2 border-transparent transition-all duration-300"
+                    className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-[#fbc40c]/5 hover:border-[#fbc40c] border-2 border-transparent transition-all duration-300"
                   >
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#EF9309] to-[#D68108] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-gradient-to-br from-[#fbc40c] to-[#D68108] rounded-lg flex items-center justify-center flex-shrink-0">
                       <FaCheckCircle className="w-4 h-4 text-white" />
                     </div>
                     <div>
@@ -397,7 +395,7 @@ const PartnerPage: React.FC = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-[#EF9309]/10 to-blue-100/50 rounded-2xl p-8 border-2 border-[#EF9309]/20">
+              <div className="bg-gradient-to-br from-[#fbc40c]/10 to-blue-100/50 rounded-2xl p-8 border-2 border-[#fbc40c]/20">
                 <div className="bg-white rounded-xl p-6 shadow-lg mb-4">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
@@ -428,7 +426,7 @@ const PartnerPage: React.FC = () => {
                       "Dedicated Partner Manager",
                     ].map((item, index) => (
                       <li key={index} className="flex items-center gap-3">
-                        <FaStar className="w-4 h-4 text-[#EF9309] flex-shrink-0" />
+                        <FaStar className="w-4 h-4 text-[#fbc40c] flex-shrink-0" />
                         <span className="text-sm text-[#666]">{item}</span>
                       </li>
                     ))}
@@ -445,9 +443,9 @@ const PartnerPage: React.FC = () => {
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-4">
-              Why Become a <span className="text-[#EF9309]">Partner</span>
+              Why Become a <span className="text-[#fbc40c]">Partner</span>
             </h2>
-            <div className="w-20 h-1 bg-[#EF9309] mx-auto rounded-full mb-6"></div>
+            <div className="w-20 h-1 bg-[#fbc40c] mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-[#666] max-w-3xl mx-auto">
               Join the most rewarding partnership program in the industry
             </p>
@@ -457,11 +455,11 @@ const PartnerPage: React.FC = () => {
             {whyBecomePartner.map((benefit) => (
               <div
                 key={benefit.id}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-2 border-gray-100 hover:border-[#EF9309]"
+                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-2 border-gray-100 hover:border-[#fbc40c]"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#EF9309]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-[#EF9309] font-bold">
+                  <div className="w-10 h-10 bg-[#fbc40c]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-[#fbc40c] font-bold">
                       {benefit.id}
                     </span>
                   </div>
@@ -485,7 +483,7 @@ const PartnerPage: React.FC = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-4">
               How It Works
             </h2>
-            <div className="w-20 h-1 bg-[#EF9309] mx-auto rounded-full mb-6"></div>
+            <div className="w-20 h-1 bg-[#fbc40c] mx-auto rounded-full mb-6"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -516,11 +514,11 @@ const PartnerPage: React.FC = () => {
               },
             ].map((item, index) => (
               <div key={index} className="relative text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#EF9309] to-[#D68108] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold shadow-lg">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#fbc40c] to-[#D68108] rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold shadow-lg">
                   {item.step}
                 </div>
                 <div
-                  className="absolute top-10 left-1/2 w-full h-0.5 bg-[#EF9309]/20 hidden md:block"
+                  className="absolute top-10 left-1/2 w-full h-0.5 bg-[#fbc40c]/20 hidden md:block"
                   style={{ display: index === 3 ? "none" : "block" }}
                 ></div>
                 <h3 className="text-lg font-bold text-gray-dark mb-2">
@@ -562,7 +560,7 @@ const PartnerPage: React.FC = () => {
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
                     placeholder="Enter your full name"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#EF9309] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#fbc40c] focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -576,7 +574,7 @@ const PartnerPage: React.FC = () => {
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#EF9309] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#fbc40c] focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -590,7 +588,7 @@ const PartnerPage: React.FC = () => {
                     value={formData.phone}
                     onChange={(e) => handleInputChange("phone", e.target.value)}
                     placeholder="+91 1234567890"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#EF9309] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#fbc40c] focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -604,7 +602,7 @@ const PartnerPage: React.FC = () => {
                     value={formData.city}
                     onChange={(e) => handleInputChange("city", e.target.value)}
                     placeholder="Your city"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#EF9309] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#fbc40c] focus:outline-none transition-colors"
                   />
                 </div>
               </div>
@@ -618,7 +616,7 @@ const PartnerPage: React.FC = () => {
                   onChange={(e) =>
                     handleInputChange("experience", e.target.value)
                   }
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#EF9309] focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#fbc40c] focus:outline-none transition-colors"
                 >
                   <option value="">Select experience</option>
                   <option value="no-experience">No Experience</option>
@@ -637,14 +635,14 @@ const PartnerPage: React.FC = () => {
                   onChange={(e) => handleInputChange("message", e.target.value)}
                   placeholder="Tell us more about yourself..."
                   rows={4}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#EF9309] focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#fbc40c] focus:outline-none transition-colors resize-none"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>
@@ -664,26 +662,26 @@ const PartnerPage: React.FC = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-5 md:px-10 text-center">
-          <h3 className="text-2xl font-bold text-gray-dark mb-4">
-            Have Questions?
+          <h3 className="text-3xl lg:text-5xl font-bold text-gray-dark mb-6">
+            Have <span className="text-[#fbc40c]">Questions?</span>
           </h3>
-          <p className="text-base text-[#666] mb-8">
+          <p className="text-lg text-[#666] mb-8">
             Our partnership team is here to help you get started
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:+1237767898989"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-[#EF9309] hover:bg-[#D68108] text-white font-semibold rounded-xl transition-all duration-300"
+              className="px-10 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
             >
               <FaPhone className="w-4 h-4" />
               Call Us: +123-7767-8989
             </a>
             <a
               href="mailto:partner@ezwealth.com"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white border-2 border-[#EF9309] text-[#EF9309] hover:bg-[#EF9309] hover:text-white font-semibold rounded-xl transition-all duration-300"
+              className="px-10 py-4 bg-white border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
             >
               <FaEnvelope className="w-4 h-4" />
               partner@ezwealth.com
@@ -692,7 +690,7 @@ const PartnerPage: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

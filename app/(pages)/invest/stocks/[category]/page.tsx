@@ -1,8 +1,19 @@
-'use client';
+"use client";
 
-import React, { useState, useMemo } from 'react';
-import Link from 'next/link';
-import { FaChevronRight, FaArrowUp, FaArrowDown, FaFilter, FaSortUp, FaSortDown, FaChartLine, FaStar, FaSearch, FaRocket } from 'react-icons/fa';
+import React, { useState, useMemo } from "react";
+import Link from "next/link";
+import {
+  FaChevronRight,
+  FaArrowUp,
+  FaArrowDown,
+  FaFilter,
+  FaSortUp,
+  FaSortDown,
+  FaChartLine,
+  FaStar,
+  FaSearch,
+  FaRocket,
+} from "react-icons/fa";
 
 interface Stock {
   id: string;
@@ -24,188 +35,208 @@ interface Stock {
 // Sample stock data
 const sampleStocks: Stock[] = [
   {
-    id: '1',
-    name: 'Brace Port Logistics Ltd',
-    symbol: 'BRACEPORT',
-    price: 373.00,
-    change: 5.20,
+    id: "1",
+    name: "Brace Port Logistics Ltd",
+    symbol: "BRACEPORT",
+    price: 373.0,
+    change: 5.2,
     changePercent: 1.41,
     marketCap: 825,
     pe: 12.03,
     pb: 2.09,
     roe: 17.35,
     roce: 23.86,
-    volume: '2.5M',
-    weekHigh52: 425.50,
+    volume: "2.5M",
+    weekHigh52: 425.5,
     weekLow52: 310.25,
   },
   {
-    id: '2',
-    name: 'Delivery Limited',
-    symbol: 'DELHIVERY',
-    price: 480.80,
-    change: -8.40,
+    id: "2",
+    name: "Delivery Limited",
+    symbol: "DELHIVERY",
+    price: 480.8,
+    change: -8.4,
     changePercent: -1.72,
     marketCap: 35588,
     pe: 178.95,
     pb: 3.77,
     roe: 1.72,
     roce: 2.61,
-    volume: '5.8M',
-    weekHigh52: 520.00,
-    weekLow52: 425.30,
+    volume: "5.8M",
+    weekHigh52: 520.0,
+    weekLow52: 425.3,
   },
   {
-    id: '3',
-    name: 'Future Supply Chain Solutions',
-    symbol: 'FSCSL',
-    price: 294.50,
-    change: 12.30,
+    id: "3",
+    name: "Future Supply Chain Solutions",
+    symbol: "FSCSL",
+    price: 294.5,
+    change: 12.3,
     changePercent: 4.36,
     marketCap: 917,
     pe: 24.5,
     pb: 1.85,
     roe: 18.4,
     roce: 13.18,
-    volume: '1.2M',
-    weekHigh52: 315.00,
-    weekLow52: 245.80,
+    volume: "1.2M",
+    weekHigh52: 315.0,
+    weekLow52: 245.8,
   },
   {
-    id: '4',
-    name: 'Blue Dart Express Ltd',
-    symbol: 'BLUEDART',
-    price: 6825.50,
-    change: 85.20,
+    id: "4",
+    name: "Blue Dart Express Ltd",
+    symbol: "BLUEDART",
+    price: 6825.5,
+    change: 85.2,
     changePercent: 1.26,
     marketCap: 16254,
     pe: 42.8,
     pb: 8.45,
     roe: 22.5,
     roce: 28.4,
-    volume: '0.8M',
-    weekHigh52: 7200.00,
-    weekLow52: 5850.00,
+    volume: "0.8M",
+    weekHigh52: 7200.0,
+    weekLow52: 5850.0,
   },
   {
-    id: '5',
-    name: 'VRL Logistics Ltd',
-    symbol: 'VRL',
-    price: 548.30,
-    change: -3.50,
+    id: "5",
+    name: "VRL Logistics Ltd",
+    symbol: "VRL",
+    price: 548.3,
+    change: -3.5,
     changePercent: -0.63,
     marketCap: 4956,
     pe: 18.6,
     pb: 2.1,
     roe: 14.2,
     roce: 16.8,
-    volume: '1.5M',
-    weekHigh52: 620.00,
-    weekLow52: 485.50,
+    volume: "1.5M",
+    weekHigh52: 620.0,
+    weekLow52: 485.5,
   },
   // Generate more sample data
   ...Array.from({ length: 40 }, (_, i) => ({
     id: `${i + 6}`,
     name: `Stock Company ${i + 6}`,
     symbol: `STOCK${i + 6}`,
-    price: 548.30 + (i * 10),
-    change: -3.50 + (i * 0.5),
-    changePercent: -0.63 + (i * 0.1),
-    marketCap: 4956 + (i * 100),
-    pe: 18.6 + (i * 0.5),
-    pb: 2.1 + (i * 0.1),
-    roe: 14.2 + (i * 0.3),
-    roce: 16.8 + (i * 0.2),
-    volume: '1.5M',
-    weekHigh52: 620.00 + (i * 5),
-    weekLow52: 485.50 + (i * 3),
+    price: 548.3 + i * 10,
+    change: -3.5 + i * 0.5,
+    changePercent: -0.63 + i * 0.1,
+    marketCap: 4956 + i * 100,
+    pe: 18.6 + i * 0.5,
+    pb: 2.1 + i * 0.1,
+    roe: 14.2 + i * 0.3,
+    roce: 16.8 + i * 0.2,
+    volume: "1.5M",
+    weekHigh52: 620.0 + i * 5,
+    weekLow52: 485.5 + i * 3,
   })),
 ];
 
 const ITEMS_PER_PAGE = 10;
 
 export default function CategoryPage({ params }: any) {
-  const [sortColumn, setSortColumn] = useState<string>('name');
-  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
-  const [viewMode, setViewMode] = useState<'table' | 'cards'>('table');
+  const [sortColumn, setSortColumn] = useState<string>("name");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
+  const [viewMode, setViewMode] = useState<"table" | "cards">("table");
   const [displayCount, setDisplayCount] = useState(ITEMS_PER_PAGE);
-  
+
   // Individual search states for each column
   const [searchFilters, setSearchFilters] = useState({
-    company: '',
-    price: '',
-    change: '',
-    marketCap: '',
-    pe: '',
-    pb: '',
-    roe: '',
-    volume: '',
+    company: "",
+    price: "",
+    change: "",
+    marketCap: "",
+    pe: "",
+    pb: "",
+    roe: "",
+    volume: "",
   });
-  
+
   const { category }: { category: string } = React.use(params);
 
   const categoryNames: { [key: string]: string } = {
-    'logistics': 'Logistics',
-    'banking-finance': 'Banking and Finance',
-    'it': 'Information Technology',
-    'pharma': 'Pharmaceuticals',
+    logistics: "Logistics",
+    "banking-finance": "Banking and Finance",
+    it: "Information Technology",
+    pharma: "Pharmaceuticals",
   };
 
-  const categoryName = categoryNames[category] || 'Stocks';
+  const categoryName = categoryNames[category] || "Stocks";
 
   const handleSort = (column: string) => {
     if (sortColumn === column) {
-      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
     } else {
       setSortColumn(column);
-      setSortDirection('asc');
+      setSortDirection("asc");
     }
   };
 
   const handleSearchChange = (field: string, value: string) => {
-    setSearchFilters(prev => ({
+    setSearchFilters((prev) => ({
       ...prev,
-      [field]: value
+      [field]: value,
     }));
     setDisplayCount(ITEMS_PER_PAGE); // Reset to first page when searching
   };
 
   const clearAllFilters = () => {
     setSearchFilters({
-      company: '',
-      price: '',
-      change: '',
-      marketCap: '',
-      pe: '',
-      pb: '',
-      roe: '',
-      volume: '',
+      company: "",
+      price: "",
+      change: "",
+      marketCap: "",
+      pe: "",
+      pb: "",
+      roe: "",
+      volume: "",
     });
     setDisplayCount(ITEMS_PER_PAGE);
   };
 
   // Filter stocks based on all search filters
   const filteredStocks = useMemo(() => {
-    return sampleStocks.filter(stock => {
-      const matchesCompany = stock.name.toLowerCase().includes(searchFilters.company.toLowerCase()) ||
-                            stock.symbol.toLowerCase().includes(searchFilters.company.toLowerCase());
-      const matchesPrice = searchFilters.price === '' || 
-                          stock.price.toString().includes(searchFilters.price);
-      const matchesChange = searchFilters.change === '' || 
-                           stock.changePercent.toString().includes(searchFilters.change);
-      const matchesMarketCap = searchFilters.marketCap === '' || 
-                              stock.marketCap.toString().includes(searchFilters.marketCap);
-      const matchesPE = searchFilters.pe === '' || 
-                       stock.pe.toString().includes(searchFilters.pe);
-      const matchesPB = searchFilters.pb === '' || 
-                       stock.pb.toString().includes(searchFilters.pb);
-      const matchesROE = searchFilters.roe === '' || 
-                        stock.roe.toString().includes(searchFilters.roe);
-      const matchesVolume = searchFilters.volume === '' || 
-                           stock.volume.toLowerCase().includes(searchFilters.volume.toLowerCase());
+    return sampleStocks.filter((stock) => {
+      const matchesCompany =
+        stock.name
+          .toLowerCase()
+          .includes(searchFilters.company.toLowerCase()) ||
+        stock.symbol
+          .toLowerCase()
+          .includes(searchFilters.company.toLowerCase());
+      const matchesPrice =
+        searchFilters.price === "" ||
+        stock.price.toString().includes(searchFilters.price);
+      const matchesChange =
+        searchFilters.change === "" ||
+        stock.changePercent.toString().includes(searchFilters.change);
+      const matchesMarketCap =
+        searchFilters.marketCap === "" ||
+        stock.marketCap.toString().includes(searchFilters.marketCap);
+      const matchesPE =
+        searchFilters.pe === "" ||
+        stock.pe.toString().includes(searchFilters.pe);
+      const matchesPB =
+        searchFilters.pb === "" ||
+        stock.pb.toString().includes(searchFilters.pb);
+      const matchesROE =
+        searchFilters.roe === "" ||
+        stock.roe.toString().includes(searchFilters.roe);
+      const matchesVolume =
+        searchFilters.volume === "" ||
+        stock.volume.toLowerCase().includes(searchFilters.volume.toLowerCase());
 
-      return matchesCompany && matchesPrice && matchesChange && matchesMarketCap && 
-             matchesPE && matchesPB && matchesROE && matchesVolume;
+      return (
+        matchesCompany &&
+        matchesPrice &&
+        matchesChange &&
+        matchesMarketCap &&
+        matchesPE &&
+        matchesPB &&
+        matchesROE &&
+        matchesVolume
+      );
     });
   }, [searchFilters]);
 
@@ -215,10 +246,14 @@ export default function CategoryPage({ params }: any) {
   }, [filteredStocks, displayCount]);
 
   const hasMore = displayCount < filteredStocks.length;
-  const hasActiveFilters = Object.values(searchFilters).some(value => value !== '');
+  const hasActiveFilters = Object.values(searchFilters).some(
+    (value) => value !== ""
+  );
 
   const handleLoadMore = () => {
-    setDisplayCount(prev => Math.min(prev + ITEMS_PER_PAGE, filteredStocks.length));
+    setDisplayCount((prev) =>
+      Math.min(prev + ITEMS_PER_PAGE, filteredStocks.length)
+    );
   };
 
   return (
@@ -230,7 +265,7 @@ export default function CategoryPage({ params }: any) {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex-1">
               <div className="flex items-center gap-4 mb-4">
-                <div className="bg-[#EF9309] p-3 rounded-xl">
+                <div className="bg-[#fbc40c] p-3 rounded-xl">
                   <FaChartLine className="w-8 h-8 text-white" />
                 </div>
                 <div>
@@ -260,16 +295,16 @@ export default function CategoryPage({ params }: any) {
 
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
-              <FaRocket className="w-4 h-4 text-[#EF9309]" />
-              <span className="text-sm font-semibold text-[#EF9309]">
+            <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 backdrop-blur-sm border border-[#fbc40c]/20 rounded-full px-4 py-2 mb-6">
+              <FaRocket className="w-4 h-4 text-[#fbc40c]" />
+              <span className="text-sm font-semibold text-[#fbc40c]">
                 Stocks
               </span>
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
               {categoryName}{" "}
-              <span className="text-[#EF9309]">Sector Stocks</span>
+              <span className="text-[#fbc40c]">Sector Stocks</span>
             </h1>
             <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed">
               Logistics sector stocks include companies involved in the
@@ -289,12 +324,12 @@ export default function CategoryPage({ params }: any) {
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 sticky top-24">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-base font-bold text-gray-dark flex items-center gap-2">
-                    <FaFilter className="w-3.5 h-3.5 text-[#EF9309]" />
+                    <FaFilter className="w-3.5 h-3.5 text-[#fbc40c]" />
                     Filters
                   </h3>
                   <button
                     onClick={clearAllFilters}
-                    className="text-xs text-[#EF9309] hover:text-[#D68108] font-semibold"
+                    className="text-xs text-[#fbc40c] hover:text-[#D68108] font-semibold"
                   >
                     Clear
                   </button>
@@ -302,8 +337,8 @@ export default function CategoryPage({ params }: any) {
 
                 {/* Active Filters Indicator */}
                 {hasActiveFilters && (
-                  <div className="mb-4 p-2 bg-[#EF9309]/10 rounded-lg">
-                    <p className="text-xs text-[#EF9309] font-semibold">
+                  <div className="mb-4 p-2 bg-[#fbc40c]/10 rounded-lg">
+                    <p className="text-xs text-[#fbc40c] font-semibold">
                       {
                         Object.values(searchFilters).filter((v) => v !== "")
                           .length
@@ -332,7 +367,7 @@ export default function CategoryPage({ params }: any) {
                       >
                         <input
                           type="checkbox"
-                          className="w-3.5 h-3.5 text-[#EF9309] border-gray-300 rounded focus:ring-[#EF9309] cursor-pointer"
+                          className="w-3.5 h-3.5 text-[#fbc40c] border-gray-300 rounded focus:ring-[#fbc40c] cursor-pointer"
                         />
                         <span className="text-xs text-[#666] group-hover:text-gray-dark transition-colors">
                           {range}
@@ -359,7 +394,7 @@ export default function CategoryPage({ params }: any) {
                       >
                         <input
                           type="checkbox"
-                          className="w-3.5 h-3.5 text-[#EF9309] border-gray-300 rounded focus:ring-[#EF9309] cursor-pointer mt-0.5"
+                          className="w-3.5 h-3.5 text-[#fbc40c] border-gray-300 rounded focus:ring-[#fbc40c] cursor-pointer mt-0.5"
                         />
                         <div className="flex-1">
                           <span className="text-xs text-[#666] group-hover:text-gray-dark transition-colors block">
@@ -387,7 +422,7 @@ export default function CategoryPage({ params }: any) {
                       >
                         <input
                           type="checkbox"
-                          className="w-3.5 h-3.5 text-[#EF9309] border-gray-300 rounded focus:ring-[#EF9309] cursor-pointer"
+                          className="w-3.5 h-3.5 text-[#fbc40c] border-gray-300 rounded focus:ring-[#fbc40c] cursor-pointer"
                         />
                         <span className="text-xs text-[#666] group-hover:text-gray-dark transition-colors">
                           {pe}
@@ -412,7 +447,7 @@ export default function CategoryPage({ params }: any) {
                           <th className="text-left py-4 px-4 font-semibold text-sm whitespace-nowrap">
                             <button
                               onClick={() => handleSort("name")}
-                              className="flex items-center gap-2 hover:text-[#EF9309] transition-colors"
+                              className="flex items-center gap-2 hover:text-[#fbc40c] transition-colors"
                             >
                               Company
                               {sortColumn === "name" &&
@@ -426,7 +461,7 @@ export default function CategoryPage({ params }: any) {
                           <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">
                             <button
                               onClick={() => handleSort("price")}
-                              className="flex items-center gap-2 ml-auto hover:text-[#EF9309] transition-colors"
+                              className="flex items-center gap-2 ml-auto hover:text-[#fbc40c] transition-colors"
                             >
                               Price
                               {sortColumn === "price" &&
@@ -443,7 +478,7 @@ export default function CategoryPage({ params }: any) {
                           <th className="text-right py-4 px-4 font-semibold text-sm whitespace-nowrap">
                             <button
                               onClick={() => handleSort("marketCap")}
-                              className="flex items-center gap-2 ml-auto hover:text-[#EF9309] transition-colors"
+                              className="flex items-center gap-2 ml-auto hover:text-[#fbc40c] transition-colors"
                             >
                               Market Cap (Cr)
                               {sortColumn === "marketCap" &&
@@ -478,7 +513,7 @@ export default function CategoryPage({ params }: any) {
                               onChange={(e) =>
                                 handleSearchChange("company", e.target.value)
                               }
-                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309]"
+                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#fbc40c] focus:border-[#fbc40c]"
                             />
                           </th>
                           <th className="py-2 px-4">
@@ -489,7 +524,7 @@ export default function CategoryPage({ params }: any) {
                               onChange={(e) =>
                                 handleSearchChange("price", e.target.value)
                               }
-                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
+                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#fbc40c] focus:border-[#fbc40c] text-right"
                             />
                           </th>
                           <th className="py-2 px-4">
@@ -500,7 +535,7 @@ export default function CategoryPage({ params }: any) {
                               onChange={(e) =>
                                 handleSearchChange("change", e.target.value)
                               }
-                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
+                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#fbc40c] focus:border-[#fbc40c] text-right"
                             />
                           </th>
                           <th className="py-2 px-4">
@@ -511,7 +546,7 @@ export default function CategoryPage({ params }: any) {
                               onChange={(e) =>
                                 handleSearchChange("marketCap", e.target.value)
                               }
-                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
+                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#fbc40c] focus:border-[#fbc40c] text-right"
                             />
                           </th>
                           <th className="py-2 px-4">
@@ -522,7 +557,7 @@ export default function CategoryPage({ params }: any) {
                               onChange={(e) =>
                                 handleSearchChange("pe", e.target.value)
                               }
-                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
+                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#fbc40c] focus:border-[#fbc40c] text-right"
                             />
                           </th>
                           <th className="py-2 px-4">
@@ -533,7 +568,7 @@ export default function CategoryPage({ params }: any) {
                               onChange={(e) =>
                                 handleSearchChange("pb", e.target.value)
                               }
-                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
+                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#fbc40c] focus:border-[#fbc40c] text-right"
                             />
                           </th>
                           <th className="py-2 px-4">
@@ -544,7 +579,7 @@ export default function CategoryPage({ params }: any) {
                               onChange={(e) =>
                                 handleSearchChange("roe", e.target.value)
                               }
-                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
+                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#fbc40c] focus:border-[#fbc40c] text-right"
                             />
                           </th>
                           <th className="py-2 px-4">
@@ -555,7 +590,7 @@ export default function CategoryPage({ params }: any) {
                               onChange={(e) =>
                                 handleSearchChange("volume", e.target.value)
                               }
-                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#EF9309] focus:border-[#EF9309] text-right"
+                              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#fbc40c] focus:border-[#fbc40c] text-right"
                             />
                           </th>
                         </tr>
@@ -573,7 +608,7 @@ export default function CategoryPage({ params }: any) {
                                     {index + 1}
                                   </div>
                                   <div className="min-w-0">
-                                    <p className="text-gray-dark font-semibold text-sm group-hover:text-[#EF9309] transition-colors truncate">
+                                    <p className="text-gray-dark font-semibold text-sm group-hover:text-[#fbc40c] transition-colors truncate">
                                       {stock.name}
                                     </p>
                                     <p className="text-[#666] text-xs">
@@ -652,7 +687,7 @@ export default function CategoryPage({ params }: any) {
                                 </p>
                                 <button
                                   onClick={clearAllFilters}
-                                  className="mt-2 text-sm text-[#EF9309] hover:text-[#D68108] font-semibold"
+                                  className="mt-2 text-sm text-[#fbc40c] hover:text-[#D68108] font-semibold"
                                 >
                                   Clear all filters
                                 </button>
@@ -669,7 +704,7 @@ export default function CategoryPage({ params }: any) {
                     <div className="p-6 bg-gray-50 border-t border-gray-200 flex justify-center">
                       <button
                         onClick={handleLoadMore}
-                        className="px-8 py-3 bg-[#EF9309] hover:bg-[#D68108] text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
+                        className="px-8 py-3 bg-[#fbc40c] hover:bg-[#D68108] text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
                       >
                         Load More Stocks
                         <span className="text-sm font-normal">
@@ -694,7 +729,7 @@ export default function CategoryPage({ params }: any) {
                       {!hasMore && filteredStocks.length > ITEMS_PER_PAGE && (
                         <button
                           onClick={() => setDisplayCount(ITEMS_PER_PAGE)}
-                          className="text-[#EF9309] hover:text-[#D68108] font-medium"
+                          className="text-[#fbc40c] hover:text-[#D68108] font-medium"
                         >
                           Show Less
                         </button>

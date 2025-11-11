@@ -89,21 +89,21 @@ const HowToOpenAccount: React.FC = () => {
       </div>
 
       {/* Decorative Blobs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#EF9309]/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[#fbc40c]/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#00D09C]/10 rounded-full blur-3xl"></div>
 
       <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
-            <FaCheckCircle className="w-4 h-4 text-[#EF9309]" />
-            <span className="text-sm font-semibold text-[#EF9309]">
+          <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 backdrop-blur-sm border border-[#fbc40c]/20 rounded-full px-4 py-2 mb-6">
+            <FaCheckCircle className="w-4 h-4 text-[#fbc40c]" />
+            <span className="text-sm font-semibold text-[#fbc40c]">
               Simple & Fast
             </span>
           </div>
 
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            How to Open a <span className="text-[#EF9309]">Demat Account?</span>
+            How to Open a <span className="text-[#fbc40c]">Demat Account?</span>
           </h2>
           <p className="text-lg text-[#DADADA] max-w-3xl mx-auto">
             Start your investment journey in just 4 simple steps. Open your free
@@ -117,7 +117,7 @@ const HowToOpenAccount: React.FC = () => {
             {/* Progress Line */}
             {/* <div className="absolute top-24 left-0 right-0 h-1 bg-white/10">
               <div 
-                className="h-full bg-gradient-to-r from-[#EF9309] to-[#00D09C] transition-all duration-500"
+                className="h-full bg-gradient-to-r from-[#fbc40c] to-[#00D09C] transition-all duration-500"
                 style={{ width: `${((activeStep - 1) / (steps.length - 1)) * 100}%` }}
               ></div>
             </div> */}
@@ -135,7 +135,7 @@ const HowToOpenAccount: React.FC = () => {
                   <div
                     className={`bg-white/5 backdrop-blur-sm border rounded-2xl p-6 cursor-pointer transition-all duration-300 ${
                       activeStep === step.id
-                        ? "border-[#EF9309] shadow-xl shadow-[#EF9309]/20 -translate-y-2"
+                        ? "border-[#fbc40c] shadow-xl shadow-[#fbc40c]/20 -translate-y-2"
                         : "border-white/10 hover:border-white/30"
                     }`}
                   >
@@ -143,7 +143,7 @@ const HowToOpenAccount: React.FC = () => {
                     <div
                       className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto transition-all duration-300 ${
                         activeStep === step.id
-                          ? "bg-gradient-to-br from-[#EF9309] to-[#D68108] scale-110"
+                          ? "bg-gradient-to-br from-[#fbc40c] to-[#D68108] scale-110"
                           : "bg-white/10"
                       }`}
                     >
@@ -155,7 +155,7 @@ const HowToOpenAccount: React.FC = () => {
                       <span
                         className={`text-sm font-bold ${
                           activeStep === step.id
-                            ? "text-[#EF9309]"
+                            ? "text-[#fbc40c]"
                             : "text-[#8E8E8E]"
                         }`}
                       >
@@ -188,7 +188,7 @@ const HowToOpenAccount: React.FC = () => {
                     {/* Arrow Indicator */}
                     {index < steps.length - 1 && (
                       <div className="absolute -right-7 top-1/2 -translate-y-1/2 z-20">
-                        <FaArrowRight className="w-6 h-6 text-[#EF9309]" />
+                        <FaArrowRight className="w-6 h-6 text-[#fbc40c]" />
                       </div>
                     )}
                   </div>
@@ -197,7 +197,7 @@ const HowToOpenAccount: React.FC = () => {
                   <div
                     className={`absolute -bottom-8 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-4 transition-all duration-300 ${
                       activeStep >= step.id
-                        ? "bg-[#EF9309] border-[#0A2745]"
+                        ? "bg-[#fbc40c] border-[#0A2745]"
                         : "bg-white/20 border-[#0A2745]"
                     }`}
                   ></div>
@@ -215,7 +215,7 @@ const HowToOpenAccount: React.FC = () => {
               onClick={() => setActiveStep(step.id)}
               className={`bg-white/5 backdrop-blur-sm border rounded-2xl p-6 cursor-pointer transition-all duration-300 ${
                 activeStep === step.id
-                  ? "border-[#EF9309] shadow-xl"
+                  ? "border-[#fbc40c] shadow-xl"
                   : "border-white/10"
               }`}
             >
@@ -224,7 +224,7 @@ const HowToOpenAccount: React.FC = () => {
                 <div
                   className={`w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 ${
                     activeStep === step.id
-                      ? "bg-gradient-to-br from-[#EF9309] to-[#D68108]"
+                      ? "bg-gradient-to-br from-[#fbc40c] to-[#D68108]"
                       : "bg-white/10"
                   }`}
                 >
@@ -233,7 +233,7 @@ const HowToOpenAccount: React.FC = () => {
 
                 {/* Content */}
                 <div className="flex-1">
-                  <div className="text-[#EF9309] text-xs font-bold mb-1">
+                  <div className="text-[#fbc40c] text-xs font-bold mb-1">
                     STEP {step.id}
                   </div>
                   <h3 className="text-white text-lg font-bold mb-1">

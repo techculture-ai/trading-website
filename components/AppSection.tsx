@@ -130,7 +130,7 @@ const DhanAppSection = () => {
               />
               <p className="text-white font-medium text-xl lg:text-3xl ml-2">
                 Building Awesome
-                <span className="text-[#EF9309] text-xl lg:text-3xl md:inline block ml-1">
+                <span className="text-[#fbc40c] text-xl lg:text-3xl md:inline block ml-1">
                   Investing & Trading Platforms
                 </span>
               </p>
@@ -149,7 +149,7 @@ const DhanAppSection = () => {
                   </p>
                   <div className="lg:pt-16 pt-5 flex md:justify-start justify-center">
                     <a href={currentTab.link} className="w-max">
-                      <button className="lg:px-10 px-7 lg:py-3 py-2 md:py-2 bg-[#EF9309] hover:bg-[#D68108] text-[#0A2745] rounded-lg md:text-base text-sm flex items-center gap-2 font-bold shadow-lg transition-all hover:scale-105">
+                      <button className="lg:px-10 px-7 lg:py-3 py-2 md:py-2 bg-[#fbc40c] hover:bg-[#D68108] text-[#0A2745] rounded-lg md:text-base text-sm flex items-center gap-2 font-bold shadow-lg transition-all hover:scale-105">
                         {currentTab.buttonText}
                         <FaArrowRightLong className="text-[#0A2745] relative left-[3px] w-5" />
                       </button>
@@ -196,7 +196,7 @@ const DhanAppSection = () => {
                   border-[#dadada33] p-2 cursor-pointer transition-all duration-300
                   ${
                     activeTab === index
-                      ? "opacity-100 bg-white/10 border-[#EF9309] scale-105"
+                      ? "opacity-100 bg-white/10 border-[#fbc40c] scale-105"
                       : "lg:opacity-50 opacity-70 hover:opacity-100 hover:bg-white/5"
                   }
                 `}

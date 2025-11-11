@@ -6,8 +6,8 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,8 +23,8 @@ html {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .noscrollbar-x {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* 
@@ -49,18 +49,19 @@ html {
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .btn-primary {
-    @apply bg-[#EF9309] hover:bg-[#D68108] text-[#0A2745] font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+    @apply bg-[#fbc40c] hover:bg-[#D68108] text-[#0A2745] font-semibold py-3 px-6 rounded-lg transition-all duration-300;
   }
-  
+
   .btn-secondary {
     @apply bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white hover:text-[#0A2745] transition-all duration-300;
   }
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -109,23 +110,31 @@ body {
 } */
 .spiral_bg {
   position: relative;
-  background: linear-gradient(135deg, #2D1B69 0%, #1e3a8a 50%, #1e40af 100%);
+  background: linear-gradient(135deg, #2d1b69 0%, #1e3a8a 50%, #1e40af 100%);
   overflow: hidden;
 }
 
 .spiral_bg::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+  background-image: radial-gradient(
+      circle at 20% 50%,
+      rgba(139, 92, 246, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(59, 130, 246, 0.15) 0%,
+      transparent 50%
+    );
   animation: spiralMove 20s ease-in-out infinite;
 }
 
 @keyframes spiralMove {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) rotate(0deg);
   }
   50% {
@@ -191,7 +200,9 @@ body {
 
 /* small responsive tweaks */
 @media (min-width: 1024px) {
-  .lg\:pt-32 { padding-top: 8rem; }
+  .lg\:pt-32 {
+    padding-top: 8rem;
+  }
 }
 
 @keyframes slideInLeft {
@@ -216,7 +227,8 @@ body {
 
 /* Bounce animation for phone icon */
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(12deg);
   }
   50% {
@@ -229,7 +241,8 @@ body {
 }
 
 @keyframes arrowPulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
   50% {
@@ -243,30 +256,48 @@ body {
 
 .imageBgRocket {
   position: relative;
-  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-              url("/rocket-svgrepo-com.svg") no-repeat left bottom;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("/rocket-svgrepo-com.svg") no-repeat left bottom;
   background-size: contain;
 }
 
 .imageBgSaving {
   position: relative;
-  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-              url("/saving-svgrepo-com.svg") no-repeat right bottom;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("/saving-svgrepo-com.svg") no-repeat right bottom;
   background-size: contain;
 }
 
 .imageBgWifi {
   position: relative;
-  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)),
-              url("/circle-in-circle-quarter-donut.svg") no-repeat left bottom;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("/circle-in-circle-quarter-donut.svg") no-repeat left bottom;
   background-size: contain;
 }
 
-.imgSpin{
+.imgSpin {
   animation: spin 4s linear infinite;
 }
 
- @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bglogin{
+  background:  url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1414%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(255%2c 244%2c 180%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c389.035C70.266%2c375.169%2c113.68%2c309.24%2c172.197%2c267.944C227.548%2c228.882%2c307.904%2c215.073%2c334.682%2c152.844C361.433%2c90.678%2c315.868%2c22.958%2c306.46%2c-44.062C297.012%2c-111.371%2c323.656%2c-190.514%2c279.259%2c-241.979C234.863%2c-293.444%2c154.481%2c-286.518%2c87.475%2c-297.911C28.086%2c-308.008%2c-29.413%2c-309.51%2c-89.459%2c-304.67C-164.417%2c-298.628%2c-251.939%2c-317.216%2c-307.104%2c-266.108C-362.261%2c-215.009%2c-359.702%2c-127.215%2c-362.12%2c-52.065C-364.338%2c16.869%2c-343.254%2c81.246%2c-320.374%2c146.31C-295.283%2c217.662%2c-282.505%2c300.102%2c-222.218%2c345.777C-160.825%2c392.29%2c-75.566%2c403.947%2c0%2c389.035' fill='%23ffee8d'%3e%3c/path%3e%3cpath d='M1440 1180.181C1555.97 1197.462 1685.927 1152.366 1765.128 1065.909 1841.3519999999999 982.702 1815.333 852.9159999999999 1840.557 742.928 1859.925 658.475 1887.695 580.637 1896.191 494.40999999999997 1907.233 382.348 1975.0520000000001 245.23000000000002 1897.655 163.44 1819.174 80.50400000000002 1674.433 165.68400000000003 1562.73 142.019 1463.663 121.031 1385.657 18.950000000000045 1285.477 33.74300000000005 1183.6309999999999 48.78199999999998 1118.961 146.003 1045.731 218.36399999999998 966.392 296.762 873.429 367.291 840.177 473.758 804.33 588.535 789.583 726.402 855.69 826.845 921.17 926.336 1069.783 915.8489999999999 1171.702 977.48 1269.599 1036.679 1326.845 1163.319 1440 1180.181' fill='%23fffadb'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1414'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e") no-repeat center bottom;
+  background-size: cover;
+}

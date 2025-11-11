@@ -1,9 +1,16 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { FaCheck, FaStar, FaRocket, FaUsers, FaBolt, FaCrown } from 'react-icons/fa';
+import React, { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import {
+  FaCheck,
+  FaStar,
+  FaRocket,
+  FaUsers,
+  FaBolt,
+  FaCrown,
+} from "react-icons/fa";
 
 interface PricingPlan {
   id: string;
@@ -25,145 +32,147 @@ interface PricingPlan {
 
 const pricingPlans: PricingPlan[] = [
   {
-    id: 'flat',
-    name: 'EZ Flat',
-    price: '₹11',
-    period: '/order',
-    tagline: 'Fixed price, regardless of size',
-    description: 'Super Saver for frequent or high volume traders',
+    id: "flat",
+    name: "EZ Flat",
+    price: "₹11",
+    period: "/order",
+    tagline: "Fixed price, regardless of size",
+    description: "Super Saver for frequent or high volume traders",
     features: [
-      'Fixed ₹11 per order',
-      'Exposure: As per VAR on NSE Website',
-      'Hot Stocks – Daily',
-      'No hidden charges',
-      'Up to 4x equity cash intraday',
-      'Up to 4x equity cash Delivery',
-      'All segment margins as per exchange',
-      'Additional margin against shares',
-      'AMC: ₹300/year or ₹1000 lifetime',
+      "Fixed ₹11 per order",
+      "Exposure: As per VAR on NSE Website",
+      "Hot Stocks – Daily",
+      "No hidden charges",
+      "Up to 4x equity cash intraday",
+      "Up to 4x equity cash Delivery",
+      "All segment margins as per exchange",
+      "Additional margin against shares",
+      "AMC: ₹300/year or ₹1000 lifetime",
     ],
     recommended: false,
     icon: <FaBolt className="w-8 h-8" />,
     colorScheme: {
-      gradient: 'from-blue-500 to-blue-600',
-      bg: 'bg-blue-50',
-      text: 'text-blue-600',
-      border: 'border-blue-200',
+      gradient: "from-blue-500 to-blue-600",
+      bg: "bg-blue-50",
+      text: "text-blue-600",
+      border: "border-blue-200",
     },
   },
   {
-    id: 'monthly',
-    name: 'EZ Monthly',
-    price: '₹1,100',
-    period: '/month',
-    tagline: 'Unlimited trading at fixed cost',
-    description: 'For investors, short term traders',
+    id: "monthly",
+    name: "EZ Monthly",
+    price: "₹1,100",
+    period: "/month",
+    tagline: "Unlimited trading at fixed cost",
+    description: "For investors, short term traders",
     features: [
-      'Unlimited trades at ₹1,100/month',
-      'Lowest brokerage for assisted trading',
-      'Exposure: As per VAR on NSE Website',
-      'NSE CASH and F&O, BSE',
-      'Hot Stocks – Daily',
-      'No hidden charges',
-      'Exposure: As per VAR on NSE website',
-      'Additional margin against shares',
-      'AMC: ₹300/year or ₹1000 lifetime',
+      "Unlimited trades at ₹1,100/month",
+      "Lowest brokerage for assisted trading",
+      "Exposure: As per VAR on NSE Website",
+      "NSE CASH and F&O, BSE",
+      "Hot Stocks – Daily",
+      "No hidden charges",
+      "Exposure: As per VAR on NSE website",
+      "Additional margin against shares",
+      "AMC: ₹300/year or ₹1000 lifetime",
     ],
     recommended: true,
     icon: <FaStar className="w-8 h-8" />,
     colorScheme: {
-      gradient: 'from-[#EF9309] to-[#D68108]',
-      bg: 'bg-orange-50',
-      text: 'text-[#EF9309]',
-      border: 'border-[#EF9309]',
+      gradient: "from-[#fbc40c] to-[#D68108]",
+      bg: "bg-orange-50",
+      text: "text-[#fbc40c]",
+      border: "border-[#fbc40c]",
     },
   },
   {
-    id: 'assist',
-    name: 'EZ Assist',
-    price: '0.01%',
-    period: 'brokerage',
-    tagline: 'Lowest brokerage for assisted trading',
-    description: 'For investors, short term traders',
+    id: "assist",
+    name: "EZ Assist",
+    price: "0.01%",
+    period: "brokerage",
+    tagline: "Lowest brokerage for assisted trading",
+    description: "For investors, short term traders",
     features: [
-      '0.01% brokerage on trades',
-      'Lowest brokerage for assisted trading',
-      'Exposure: As per VAR on NSE Website',
-      'Hot Stocks – Daily',
-      'No hidden charges',
-      'Up to 4x equity cash intraday',
-      'Up to 4x equity cash Delivery',
-      'All segment margins as per exchange',
-      'Additional margin against shares',
-      'AMC: ₹300/year or ₹1000 lifetime',
+      "0.01% brokerage on trades",
+      "Lowest brokerage for assisted trading",
+      "Exposure: As per VAR on NSE Website",
+      "Hot Stocks – Daily",
+      "No hidden charges",
+      "Up to 4x equity cash intraday",
+      "Up to 4x equity cash Delivery",
+      "All segment margins as per exchange",
+      "Additional margin against shares",
+      "AMC: ₹300/year or ₹1000 lifetime",
     ],
     recommended: false,
     icon: <FaUsers className="w-8 h-8" />,
     colorScheme: {
-      gradient: 'from-green-500 to-green-600',
-      bg: 'bg-green-50',
-      text: 'text-green-600',
-      border: 'border-green-200',
+      gradient: "from-green-500 to-green-600",
+      bg: "bg-green-50",
+      text: "text-green-600",
+      border: "border-green-200",
     },
   },
   {
-    id: 'family',
-    name: 'EZ Family',
-    price: '₹7,999',
-    period: '/year',
-    tagline: 'For all segments, all exchanges',
-    description: 'Mega Saver for pro traders',
+    id: "family",
+    name: "EZ Family",
+    price: "₹7,999",
+    period: "/year",
+    tagline: "For all segments, all exchanges",
+    description: "Mega Saver for pro traders",
     features: [
-      'Unlimited trades at ₹7,999/year',
-      'All segments, all exchanges',
-      'Mega Saver for pro traders',
-      'Exposure: As per VAR on NSE Website',
-      'Hot Stocks – Daily',
-      'No hidden charges',
-      'Up to 4x equity cash intraday',
-      'Up to 4x equity cash Delivery',
-      'All segment margins as per exchange',
-      'Additional margin against shares',
-      'AMC: ₹300/year or ₹1000 lifetime',
+      "Unlimited trades at ₹7,999/year",
+      "All segments, all exchanges",
+      "Mega Saver for pro traders",
+      "Exposure: As per VAR on NSE Website",
+      "Hot Stocks – Daily",
+      "No hidden charges",
+      "Up to 4x equity cash intraday",
+      "Up to 4x equity cash Delivery",
+      "All segment margins as per exchange",
+      "Additional margin against shares",
+      "AMC: ₹300/year or ₹1000 lifetime",
     ],
     recommended: false,
     icon: <FaCrown className="w-8 h-8" />,
     colorScheme: {
-      gradient: 'from-purple-500 to-purple-600',
-      bg: 'bg-purple-50',
-      text: 'text-purple-600',
-      border: 'border-purple-200',
+      gradient: "from-purple-500 to-purple-600",
+      bg: "bg-purple-50",
+      text: "text-purple-600",
+      border: "border-purple-200",
     },
   },
 ];
 
 const PricingPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'equity' | 'currency' | 'commodity'>('equity');
+  const [activeTab, setActiveTab] = useState<
+    "equity" | "currency" | "commodity"
+  >("equity");
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 min-h-[50vh]">
+      <section className="bg-white pt-32 pb-20 min-h-[50vh] relative">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[#EF9309]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        {/* <div className="absolute top-20 right-10 w-96 h-96 bg-[#fbc40c]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"></div> */}
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
-              <FaRocket className="w-4 h-4 text-[#EF9309]" />
-              <span className="text-sm font-semibold text-[#EF9309]">
+            <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 border border-[#fbc40c]/30 rounded-full px-4 py-2 mb-6">
+              <FaRocket className="w-4 h-4 text-[#fbc40c]" />
+              <span className="text-sm font-semibold text-[#fbc40c]">
                 Transparent Pricing
               </span>
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              Pricing <span className="text-[#EF9309]">Plans</span>
+            <h1 className="text-4xl lg:text-6xl font-bold text-[#0A2745] mb-6">
+              Pricing <span className="text-[#fbc40c]">Plans</span>
             </h1>
-            <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed">
+            <p className="text-base lg:text-lg text-[#8E8E8E] leading-relaxed">
               Our plans are simple and tailored to scale for the needs of our
               customers to deliver exceptional value.
             </p>
@@ -185,7 +194,7 @@ const PricingPage: React.FC = () => {
                 {/* Recommended Badge */}
                 {plan.recommended && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                    <div className="bg-gradient-to-r from-[#EF9309] to-[#D68108] text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+                    <div className="bg-gradient-to-r from-[#fbc40c] to-[#D68108] text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
                       <FaStar className="w-4 h-4" />
                       RECOMMENDED
                     </div>
@@ -196,8 +205,8 @@ const PricingPage: React.FC = () => {
                 <div
                   className={`bg-white rounded-2xl shadow-lg border-2 transition-all duration-300 hover:shadow-2xl h-full flex flex-col ${
                     plan.recommended
-                      ? "border-[#EF9309] lg:scale-105 shadow-xl"
-                      : `${plan.colorScheme.border} hover:border-[#EF9309]`
+                      ? "border-[#fbc40c] lg:scale-105 shadow-xl"
+                      : `${plan.colorScheme.border} hover:border-[#fbc40c]`
                   }`}
                 >
                   {/* Card Header */}
@@ -262,7 +271,7 @@ const PricingPage: React.FC = () => {
                     <button
                       className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-xl ${
                         plan.recommended
-                          ? "bg-gradient-to-r from-[#EF9309] to-[#D68108] text-white hover:scale-105"
+                          ? "bg-gradient-to-r from-[#fbc40c] to-[#D68108] text-white hover:scale-105"
                           : `bg-gradient-to-r ${plan.colorScheme.gradient} text-white hover:scale-105`
                       }`}
                     >
@@ -281,7 +290,7 @@ const PricingPage: React.FC = () => {
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-dark mb-4">
-              Detailed Charges <span className="text-[#EF9309]">Breakdown</span>
+              Detailed Charges <span className="text-[#fbc40c]">Breakdown</span>
             </h2>
             <p className="text-lg text-[#666]">
               Complete transparency on all charges and fees
@@ -295,7 +304,7 @@ const PricingPage: React.FC = () => {
                 onClick={() => setActiveTab("equity")}
                 className={`px-8 py-3 rounded-lg font-semibold transition-all ${
                   activeTab === "equity"
-                    ? "bg-[#EF9309] text-white shadow-lg"
+                    ? "bg-[#fbc40c] text-white shadow-lg"
                     : "text-[#666] hover:text-gray-dark"
                 }`}
               >
@@ -305,7 +314,7 @@ const PricingPage: React.FC = () => {
                 onClick={() => setActiveTab("currency")}
                 className={`px-8 py-3 rounded-lg font-semibold transition-all ${
                   activeTab === "currency"
-                    ? "bg-[#EF9309] text-white shadow-lg"
+                    ? "bg-[#fbc40c] text-white shadow-lg"
                     : "text-[#666] hover:text-gray-dark"
                 }`}
               >
@@ -315,7 +324,7 @@ const PricingPage: React.FC = () => {
                 onClick={() => setActiveTab("commodity")}
                 className={`px-8 py-3 rounded-lg font-semibold transition-all ${
                   activeTab === "commodity"
-                    ? "bg-[#EF9309] text-white shadow-lg"
+                    ? "bg-[#fbc40c] text-white shadow-lg"
                     : "text-[#666] hover:text-gray-dark"
                 }`}
               >
@@ -531,7 +540,7 @@ const PricingPage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-5 md:px-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-dark mb-4">
-              Still Have <span className="text-[#EF9309]">Questions?</span>
+              Still Have <span className="text-[#fbc40c]">Questions?</span>
             </h2>
             <p className="text-lg text-[#666]">
               Contact our support team or explore our FAQ section
@@ -539,10 +548,10 @@ const PricingPage: React.FC = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+            <button className="px-8 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all">
               Contact Support
             </button>
-            <button className="px-8 py-4 bg-white border-2 border-[#EF9309] text-[#EF9309] font-semibold rounded-xl hover:bg-[#EF9309] hover:text-white transition-all">
+            <button className="px-8 py-4 bg-white border-2 border-[#fbc40c] text-[#fbc40c] font-semibold rounded-xl hover:bg-[#fbc40c] hover:text-white transition-all">
               View FAQs
             </button>
           </div>

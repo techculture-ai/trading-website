@@ -5,7 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/(pages)/**/*.{js,ts,jsx,tsx,mdx}"
+    "./app/(pages)/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -16,7 +16,7 @@ const config: Config = {
           light: '#1A3A5C',
         },
         accent: {
-          orange: '#EF9309',
+          orange: '#fbc40c',
           'orange-dark': '#D68108',
           yellow: '#FFB800',
           green: '#00D09C',

@@ -28,7 +28,7 @@ const features: Feature[] = [
     description:
       "Join over 1 million active traders and investors who trust ez wealth for their financial journey. Rated 4.5+ on app stores.",
     icon: <FaUsers className="w-8 h-8" />,
-    iconBg: "from-[#EF9309] to-[#D68108]",
+    iconBg: "from-[#fbc40c] to-[#D68108]",
     stats: "1M+ Users",
   },
   {
@@ -55,7 +55,7 @@ const features: Feature[] = [
     description:
       "Advanced charts, real-time data, options strategy builder, and TradingView integration. Everything you need to succeed.",
     icon: <FaChartLine className="w-8 h-8" />,
-    iconBg: "from-[#EF9309] to-[#D68108]",
+    iconBg: "from-[#fbc40c] to-[#D68108]",
     stats: "Pro Tools",
   },
 ];
@@ -92,22 +92,22 @@ const WhyChooseUs: React.FC = () => {
   return (
     <section className="py-20 bg-gray-50 relative overflow-hidden imageBgSaving">
       {/* Background Decoration */}
-      {/* <div className="absolute top-0 right-0 w-96 h-96 bg-[#EF9309]/5 rounded-full blur-3xl"></div>
+      {/* <div className="absolute top-0 right-0 w-96 h-96 bg-[#fbc40c]/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00D09C]/5 rounded-full blur-3xl"></div> */}
 
       <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
         {/* Header */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-16 gap-6">
           <div className="flex-1">
-            <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 rounded-full px-4 py-2 mb-4">
-              <FaAward className="w-4 h-4 text-[#EF9309]" />
-              <span className="text-sm font-semibold text-[#EF9309]">
+            <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 rounded-full px-4 py-2 mb-4">
+              <FaAward className="w-4 h-4 text-[#fbc40c]" />
+              <span className="text-sm font-semibold text-[#fbc40c]">
                 Why ez wealth
               </span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
               Why Open Demat Account{" "}
-              <span className="block mt-2 text-[#EF9309]">with ez wealth?</span>
+              <span className="block mt-2 text-[#fbc40c]">with ez wealth?</span>
             </h2>
             <p className="text-lg text-[#666] max-w-2xl">
               You can Invest, Trade, Learn & Track Your Wealth all from one
@@ -118,8 +118,8 @@ const WhyChooseUs: React.FC = () => {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:block flex-shrink-0">
             <a
-              href="/open-demat-account/"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              href="/auth/open-demat-account/"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               Start Investing for FREE
               <FaRocket className="w-4 h-4" />
@@ -132,7 +132,7 @@ const WhyChooseUs: React.FC = () => {
           {features.map((feature, index) => (
             <div
               key={feature.id}
-              className="group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 hover:border-[#EF9309]"
+              className="group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 hover:border-[#fbc40c]"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animation: "fadeInUp 0.6s ease-out forwards",
@@ -148,8 +148,8 @@ const WhyChooseUs: React.FC = () => {
                 </div>
                 {/* Stats Badge */}
                 {feature.stats && (
-                  <div className="absolute -top-2 -right-2 bg-white border-2 border-[#EF9309] rounded-full px-3 py-1 shadow-lg">
-                    <span className="text-xs font-bold text-[#EF9309]">
+                  <div className="absolute -top-2 -right-2 bg-white border-2 border-[#fbc40c] rounded-full px-3 py-1 shadow-lg">
+                    <span className="text-xs font-bold text-[#fbc40c]">
                       {feature.stats}
                     </span>
                   </div>
@@ -157,7 +157,7 @@ const WhyChooseUs: React.FC = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-gray-dark mb-3 group-hover:text-[#EF9309] transition-colors">
+              <h3 className="text-xl font-bold text-gray-dark mb-3 group-hover:text-[#fbc40c] transition-colors">
                 {feature.title}
               </h3>
 
@@ -167,7 +167,7 @@ const WhyChooseUs: React.FC = () => {
               </p>
 
               {/* Hover Gradient Border */}
-              {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#EF9309] to-[#00D09C] opacity-0 group-hover:opacity-100 -z-10 blur-xl transition-opacity duration-300"></div> */}
+              {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#fbc40c] to-[#00D09C] opacity-0 group-hover:opacity-100 -z-10 blur-xl transition-opacity duration-300"></div> */}
             </div>
           ))}
         </div>
@@ -183,8 +183,8 @@ const WhyChooseUs: React.FC = () => {
                 key={benefit.id}
                 className="flex items-start gap-4 p-4 rounded-xl hover:bg-white transition-all duration-300"
               >
-                <div className="w-10 h-10 bg-gradient-to-br from-[#EF9309]/10 to-[#EF9309]/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <div className="text-[#EF9309]">{benefit.icon}</div>
+                <div className="w-10 h-10 bg-gradient-to-br from-[#fbc40c]/10 to-[#fbc40c]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="text-[#fbc40c]">{benefit.icon}</div>
                 </div>
                 <div className="flex-1">
                   <h4 className="font-bold text-gray-dark text-sm mb-1">
@@ -200,8 +200,8 @@ const WhyChooseUs: React.FC = () => {
         {/* Mobile CTA Button */}
         <div className="lg:hidden mt-12 text-center">
           <a
-            href="/open-demat-account/"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+            href="/auth/open-demat-account/"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Start Investing for FREE
             <FaRocket className="w-4 h-4" />

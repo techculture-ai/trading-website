@@ -231,7 +231,7 @@ const Footer: React.FC = () => {
                     {[
                       {
                         label: "Open Demat Account",
-                        href: "/open-demat-account/",
+                        href: "/auth/open-demat-account/",
                       },
                       { label: "Download Centre", href: "/download-centre/" },
                       { label: "Calculators", href: "/calculators/" },
@@ -394,7 +394,7 @@ const Footer: React.FC = () => {
                       { label: "About Us", href: "/about/" },
                       { label: "Pricing", href: "/pricing/" },
                       { label: "Careers", href: "/career/" },
-                      { label: "Contact Us", href: "/contact/" },
+                      { label: "Contact Us", href: "/customer-service/" },
                     ].map((link) => (
                       <li key={link.href}>
                         <Link
@@ -416,7 +416,7 @@ const Footer: React.FC = () => {
               {[
                 {
                   label: "Open Demat Account",
-                  href: "/open-demat-account/",
+                  href: "/auth/open-demat-account/",
                 },
                 { label: "Download Centre", href: "/download-centre/" },
                 { label: "Calculators", href: "/calculators/" },

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { FaCalculator, FaPhoneAlt } from 'react-icons/fa';
+import React, { useState } from "react";
+import Link from "next/link";
+import { FaCalculator, FaPhoneAlt } from "react-icons/fa";
 
 const StickyActions: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -22,14 +22,18 @@ const StickyActions: React.FC = () => {
               <div className="bg-[#0A2745] hover:bg-[#1A3A5C] transition-all duration-300 rounded-r-2xl p-4 shadow-lg cursor-pointer">
                 <FaCalculator className="w-6 h-6 text-white" />
               </div>
-              
+
               {/* Expandable Text (hidden by default) */}
               <div
                 className={`bg-[#0A2745] transition-all duration-300 overflow-hidden whitespace-nowrap rounded-r-2xl shadow-lg ${
-                  isExpanded ? 'max-w-[200px] opacity-100 pl-3 pr-6' : 'max-w-0 opacity-0'
+                  isExpanded
+                    ? "max-w-[200px] opacity-100 pl-3 pr-6"
+                    : "max-w-0 opacity-0"
                 }`}
               >
-                <span className="text-white font-medium text-sm">Calculator</span>
+                <span className="text-white font-medium text-sm">
+                  Calculator
+                </span>
               </div>
             </div>
           </div>
@@ -40,13 +44,13 @@ const StickyActions: React.FC = () => {
           <div className="group relative">
             <div className="flex items-center">
               {/* Vertical Text Panel */}
-              <div className="bg-[#EF9309] hover:bg-[#D68108] transition-all duration-300 rounded-r-2xl py-8 px-3 shadow-lg cursor-pointer flex items-center justify-center">
+              <div className="bg-[#fbc40c] hover:bg-[#D68108] transition-all duration-300 rounded-r-2xl py-8 px-3 shadow-lg cursor-pointer flex items-center justify-center">
                 <div className="flex flex-col items-center">
                   {/* Phone Icon */}
                   <div className="mb-3 animate-bounce">
                     <FaPhoneAlt className="w-5 h-5 text-white transform rotate-12" />
                   </div>
-                  
+
                   {/* Vertical Text */}
                   <div className="writing-mode-vertical text-white font-semibold text-base tracking-wider">
                     <span className="inline-block transform rotate-180">

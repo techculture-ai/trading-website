@@ -155,86 +155,82 @@ const MutualFundsPage: React.FC = () => {
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 overflow-hidden h-[75vh]">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[80vh]">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
 
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[#EF9309]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
-                <FaRocket className="w-4 h-4 text-[#EF9309]" />
-                <span className="text-sm font-semibold text-[#EF9309]">
+              <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 border border-[#fbc40c]/30 rounded-full px-4 py-2 mb-6">
+                <FaRocket className="w-4 h-4 text-[#fbc40c]" />
+                <span className="text-sm font-semibold text-[#fbc40c]">
                   Mutual Funds
                 </span>
               </div>
 
-              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-                Invest in{" "}
-                <span className="bg-gradient-to-r from-[#EF9309] to-[#D68108] bg-clip-text text-transparent">
-                  Mutual Funds
-                </span>
+              <h1 className="text-3xl lg:text-[38px] font-bold text-[#0A2745] mb-6">
+                Invest in <span className="text-[#fbc40c]">Mutual Funds</span>
               </h1>
-              <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed mb-8">
+              <p className="text-base lg:text-lg text-[#8E8E8E] leading-relaxed mb-8">
                 Build wealth systematically with professionally managed mutual
                 funds. Start your SIP journey today.
               </p>
 
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <p className="text-3xl font-bold text-[#EF9309] mb-2">
+                <div className="bg-gradient-to-br from-[#fbc40c]/10 to-[#D68108]/5 border-2 border-[#fbc40c]/20 rounded-2xl p-6">
+                  <p className="text-3xl font-bold text-[#fbc40c] mb-2">
                     2000+
                   </p>
-                  <p className="text-sm text-[#DADADA]">Mutual Funds</p>
+                  <p className="text-sm text-[#8E8E8E]">Mutual Funds</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <p className="text-3xl font-bold text-[#EF9309] mb-2">₹100</p>
-                  <p className="text-sm text-[#DADADA]">Minimum SIP</p>
+                <div className="bg-gradient-to-br from-[#00D09C]/10 to-[#00B09C]/5 border-2 border-[#00D09C]/20 rounded-2xl p-6">
+                  <p className="text-3xl font-bold text-[#00D09C] mb-2">₹100</p>
+                  <p className="text-sm text-[#8E8E8E]">Minimum SIP</p>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="/open-demat-account/"
-                  className="px-8 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+                  href="/auth/open-demat-account/"
+                  className="px-8 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
                 >
                   Start Investing
                   <FaArrowRight className="w-4 h-4" />
                 </a>
                 <a
                   href="#calculator"
-                  className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300 border border-white/20 hover:border-white/40 inline-flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-white border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   Calculate Returns
                 </a>
               </div>
             </div>
 
-            <div className="relative">
-              <Image
-                src="/home-fno-mobile.png"
-                alt="Mutual Funds"
-                width={300}
-                height={500}
-                className="object-contain drop-shadow-2xl mx-auto"
-              />
+            <div className="relative h-full flex items-center justify-center">
+              <div className="w-full max-w-[650px] h-full flex items-center justify-center">
+                <Image
+                  src="/home-fno-mobile.png"
+                  alt="Mutual Funds"
+                  width={250}
+                  height={400}
+                  className="object-contain drop-shadow-2xl mx-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Invest with Experts Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-3">
               Invest with Experts
             </h2>
-            <div className="w-16 h-1 bg-[#EF9309] rounded-full mb-4"></div>
+            <div className="w-16 h-1 bg-[#fbc40c] rounded-full mb-4"></div>
             <p className="text-base text-[#666] max-w-3xl">
               Explore investing with expert fund managers who strategically grow
               your wealth. They analyze markets and handpick top investments to
@@ -246,7 +242,7 @@ const MutualFundsPage: React.FC = () => {
             {fundManagers.map((manager) => (
               <div
                 key={manager.id}
-                className="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-[#EF9309] hover:shadow-lg transition-all duration-300"
+                className="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-[#fbc40c] hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
@@ -321,10 +317,10 @@ const MutualFundsPage: React.FC = () => {
                     >
                       <div className="flex items-start gap-3">
                         <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
-                          <FaChartLine className="w-6 h-6 text-[#EF9309]" />
+                          <FaChartLine className="w-6 h-6 text-[#fbc40c]" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-semibold text-gray-dark text-sm mb-1 truncate group-hover:text-[#EF9309] transition-colors">
+                          <h4 className="font-semibold text-gray-dark text-sm mb-1 truncate group-hover:text-[#fbc40c] transition-colors">
                             {fund.name}
                           </h4>
                           <p className="text-xs text-[#666] mb-2">
@@ -344,7 +340,7 @@ const MutualFundsPage: React.FC = () => {
                             </div>
                           </div>
                         </div>
-                        <FaArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#EF9309] transition-colors flex-shrink-0 mt-1" />
+                        <FaArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#fbc40c] transition-colors flex-shrink-0 mt-1" />
                       </div>
                     </div>
                   ))}
@@ -356,7 +352,7 @@ const MutualFundsPage: React.FC = () => {
               <h2 className="text-3xl font-bold text-gray-dark mb-3">
                 Categories
               </h2>
-              <div className="w-16 h-1 bg-[#EF9309] rounded-full mb-4"></div>
+              <div className="w-16 h-1 bg-[#fbc40c] rounded-full mb-4"></div>
               <p className="text-base text-[#666] mb-8">
                 We've got you covered for all your investment goals, whether
                 it's saving on taxes, aiming for high returns or seeking lower
@@ -374,12 +370,12 @@ const MutualFundsPage: React.FC = () => {
                 ].map((category, index) => (
                   <div
                     key={index}
-                    className="bg-white border-2 border-gray-100 rounded-xl p-4 hover:border-[#EF9309] hover:shadow-md transition-all cursor-pointer group"
+                    className="bg-white border-2 border-gray-100 rounded-xl p-4 hover:border-[#fbc40c] hover:shadow-md transition-all cursor-pointer group"
                   >
-                    <div className="w-10 h-10 bg-[#EF9309]/10 rounded-lg flex items-center justify-center mb-3 group-hover:bg-[#EF9309] transition-colors">
-                      <FaChartLine className="w-5 h-5 text-[#EF9309] group-hover:text-white transition-colors" />
+                    <div className="w-10 h-10 bg-[#fbc40c]/10 rounded-lg flex items-center justify-center mb-3 group-hover:bg-[#fbc40c] transition-colors">
+                      <FaChartLine className="w-5 h-5 text-[#fbc40c] group-hover:text-white transition-colors" />
                     </div>
-                    <h4 className="font-bold text-gray-dark group-hover:text-[#EF9309] transition-colors">
+                    <h4 className="font-bold text-gray-dark group-hover:text-[#fbc40c] transition-colors">
                       {category}
                     </h4>
                   </div>
@@ -397,7 +393,7 @@ const MutualFundsPage: React.FC = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-3">
               Benefits of Mutual Funds
             </h2>
-            <div className="w-16 h-1 bg-[#EF9309] rounded-full mb-4"></div>
+            <div className="w-16 h-1 bg-[#fbc40c] rounded-full mb-4"></div>
             <p className="text-base text-[#666] max-w-3xl">
               From diversification to expert management to accessibility, mutual
               funds are the ultimate choice for investors.
@@ -408,7 +404,7 @@ const MutualFundsPage: React.FC = () => {
             {benefits.map((benefit) => (
               <div
                 key={benefit.id}
-                className="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-[#EF9309] hover:shadow-lg transition-all duration-300 text-center"
+                className="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-[#fbc40c] hover:shadow-lg transition-all duration-300 text-center"
               >
                 <div
                   className={`w-14 h-14 ${benefit.color} rounded-xl flex items-center justify-center mx-auto mb-4`}
@@ -449,7 +445,7 @@ const MutualFundsPage: React.FC = () => {
 
               {/* Fund Selection */}
               <div className="mb-6">
-                <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl border-2 border-[#EF9309]">
+                <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl border-2 border-[#fbc40c]">
                   <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
                     <FaChartLine className="w-5 h-5 text-gray-600" />
                   </div>
@@ -477,9 +473,9 @@ const MutualFundsPage: React.FC = () => {
                   onChange={(e) =>
                     setInvestmentAmount(parseInt(e.target.value))
                   }
-                  className="w-full h-2 bg-[#EF9309] rounded-lg appearance-none cursor-pointer"
+                  className="w-full h-2 bg-[#fbc40c] rounded-lg appearance-none cursor-pointer"
                   style={{
-                    background: `linear-gradient(to right, #EF9309 0%, #EF9309 ${
+                    background: `linear-gradient(to right, #fbc40c 0%, #fbc40c ${
                       ((investmentAmount - 1000) / 99000) * 100
                     }%, #e5e7eb ${
                       ((investmentAmount - 1000) / 99000) * 100
@@ -534,7 +530,7 @@ const MutualFundsPage: React.FC = () => {
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-4">
                 See how much you could've earned!
               </h2>
-              <div className="w-16 h-1 bg-[#EF9309] rounded-full mb-6"></div>
+              <div className="w-16 h-1 bg-[#fbc40c] rounded-full mb-6"></div>
               <p className="text-lg text-[#666] mb-8">
                 Discover Your Earning Potential. Estimate your potential mutual
                 fund earnings with our returns calculator.
@@ -548,7 +544,7 @@ const MutualFundsPage: React.FC = () => {
                   "Plan your financial goals better",
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <FaCheckCircle className="w-5 h-5 text-[#EF9309] flex-shrink-0" />
+                    <FaCheckCircle className="w-5 h-5 text-[#fbc40c] flex-shrink-0" />
                     <span className="text-[#666]">{item}</span>
                   </div>
                 ))}
@@ -562,7 +558,7 @@ const MutualFundsPage: React.FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-5 md:px-10 text-center">
           <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-            Start Your SIP <span className="text-[#EF9309]">Journey Today</span>
+            Start Your SIP <span className="text-[#fbc40c]">Journey Today</span>
           </h2>
           <p className="text-lg text-[#666] mb-8">
             Build wealth systematically with mutual funds. Start with as low as
@@ -570,15 +566,15 @@ const MutualFundsPage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/open-demat-account/"
-              className="px-10 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+              href="/auth/open-demat-account/"
+              className="px-10 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
             >
               Open Free Account
               <FaRocket className="w-4 h-4" />
             </a>
             <a
               href="/pricing/"
-              className="px-10 py-4 bg-white border-2 border-[#EF9309] hover:bg-[#EF9309] text-[#EF9309] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
+              className="px-10 py-4 bg-white border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
             >
               View Pricing
             </a>

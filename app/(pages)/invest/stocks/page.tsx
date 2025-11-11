@@ -204,74 +204,73 @@ export default function StocksPage() {
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 overflow-hidden">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[80vh] ">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
 
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[#EF9309]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        {/* <div className="absolute top-20 right-10 w-96 h-96 bg-[#fbc40c]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div> */}
 
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
-                <FaChartLine className="w-4 h-4 text-[#EF9309]" />
-                <span className="text-sm font-semibold text-[#EF9309]">
+              <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 border border-[#fbc40c]/30 rounded-full px-4 py-2 mb-6">
+                <FaChartLine className="w-4 h-4 text-[#fbc40c]" />
+                <span className="text-sm font-semibold text-[#fbc40c]">
                   Stock Investment
                 </span>
               </div>
 
-              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-                Explore{" "}
-                <span className="bg-gradient-to-r from-[#EF9309] to-[#D68108] bg-clip-text text-transparent">
-                  Stock Categories
-                </span>
+              <h1 className="text-3xl lg:text-[38px] font-bold text-[#0A2745] mb-6">
+                Explore <span className="text-[#fbc40c]">Stock Categories</span>
               </h1>
-              <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed mb-8">
+              <p className="text-base lg:text-lg text-[#8E8E8E] leading-relaxed mb-8">
                 Discover stocks across different sectors and industries. Find
                 the perfect investment opportunity that aligns with your
                 portfolio strategy.
               </p>
 
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <p className="text-3xl font-bold text-[#EF9309] mb-2">
+                <div className="bg-gradient-to-br from-[#fbc40c]/10 to-[#D68108]/5 border-2 border-[#fbc40c]/20 rounded-2xl p-6">
+                  <p className="text-3xl font-bold text-[#fbc40c] mb-2">
                     2000+
                   </p>
-                  <p className="text-sm text-[#DADADA]">Listed Stocks</p>
+                  <p className="text-sm text-[#8E8E8E]">Listed Stocks</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <p className="text-3xl font-bold text-[#EF9309] mb-2">15</p>
-                  <p className="text-sm text-[#DADADA]">Sectors</p>
+                <div className="bg-gradient-to-br from-[#00D09C]/10 to-[#00C08A]/5 border-2 border-[#00D09C]/20 rounded-2xl p-6">
+                  <p className="text-3xl font-bold text-[#fbc40c] mb-2">15</p>
+                  <p className="text-sm text-[#8E8E8E]">Sectors</p>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="/open-demat-account/"
-                  className="px-8 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+                  href="/auth/open-demat-account/"
+                  className="px-8 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
                 >
                   Start Investing
                   <FaArrowRight className="w-4 h-4" />
                 </a>
                 <a
                   href="#categories"
-                  className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300 border border-white/20 hover:border-white/40 inline-flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-white  border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   Browse Categories
                 </a>
               </div>
             </div>
 
-            <div className="relative">
-              <Image
-                src="/mtf.png"
-                alt="Stock Trading"
-                width={300}
-                height={500}
-                className="object-contain drop-shadow-2xl mx-auto"
-              />
+            <div className="relative h-full flex items-center justify-center">
+              <div className="w-full max-w-[650px] h-full flex items-center justify-center">
+                <Image
+                  src="/mtf.png"
+                  alt="Stock Trading"
+                  width={250}
+                  height={400}
+                  className="object-contain drop-shadow-2xl mx-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -284,9 +283,9 @@ export default function StocksPage() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-2 border-gray-100 hover:border-[#EF9309]"
+                className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-2 border-gray-100 hover:border-[#fbc40c]"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-[#EF9309] to-[#D68108] rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#fbc40c] to-[#D68108] rounded-xl flex items-center justify-center mb-4">
                   <div className="text-white">{feature.icon}</div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-dark mb-2">
@@ -319,7 +318,7 @@ export default function StocksPage() {
                 href={`/invest/stocks/${category.slug}`}
                 className="group"
               >
-                <div className="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#EF9309] h-full flex flex-col">
+                <div className="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#fbc40c] h-full flex flex-col">
                   {/* Icon */}
                   <div
                     className={`w-14 h-14 bg-gradient-to-br ${category.gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
@@ -328,7 +327,7 @@ export default function StocksPage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-dark mb-2 group-hover:text-[#EF9309] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-dark mb-2 group-hover:text-[#fbc40c] transition-colors">
                     {category.title}
                   </h3>
 
@@ -342,7 +341,7 @@ export default function StocksPage() {
                     <span className="text-sm font-semibold text-[#666]">
                       {category.stockCount} Stocks
                     </span>
-                    <FaArrowRight className="w-4 h-4 text-[#EF9309] opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-300" />
+                    <FaArrowRight className="w-4 h-4 text-[#fbc40c] opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-300" />
                   </div>
                 </div>
               </Link>
@@ -369,7 +368,7 @@ export default function StocksPage() {
                   "Enjoy tax benefits on long-term investments",
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <FaCheckCircle className="w-5 h-5 text-[#EF9309] flex-shrink-0 mt-0.5" />
+                    <FaCheckCircle className="w-5 h-5 text-[#fbc40c] flex-shrink-0 mt-0.5" />
                     <span className="text-[#666]">{item}</span>
                   </div>
                 ))}
@@ -382,27 +381,27 @@ export default function StocksPage() {
               </h3>
               <div className="space-y-4 mb-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-[#EF9309] rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-10 h-10 bg-[#fbc40c] rounded-full flex items-center justify-center text-white font-bold">
                     1
                   </div>
                   <p className="text-[#666]">Open a free demat account</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-[#EF9309] rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-10 h-10 bg-[#fbc40c] rounded-full flex items-center justify-center text-white font-bold">
                     2
                   </div>
                   <p className="text-[#666]">Complete your KYC verification</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-[#EF9309] rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-10 h-10 bg-[#fbc40c] rounded-full flex items-center justify-center text-white font-bold">
                     3
                   </div>
                   <p className="text-[#666]">Add funds and start investing</p>
                 </div>
               </div>
               <a
-                href="/open-demat-account/"
-                className="block w-full py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-center"
+                href="/auth/open-demat-account/"
+                className="block w-full py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-center"
               >
                 Open Free Account
               </a>
@@ -415,7 +414,7 @@ export default function StocksPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-5 md:px-10 text-center">
           <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-            Ready to <span className="text-[#EF9309]">Start Investing?</span>
+            Ready to <span className="text-[#fbc40c]">Start Investing?</span>
           </h2>
           <p className="text-lg text-[#666] mb-8">
             Open your free demat account and start trading in stocks today with
@@ -423,15 +422,15 @@ export default function StocksPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/open-demat-account/"
-              className="px-10 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+              href="/auth/open-demat-account/"
+              className="px-10 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
             >
               Open Free Account
               <FaRocket className="w-4 h-4" />
             </a>
             <a
               href="/pricing/"
-              className="px-10 py-4 bg-white border-2 border-[#EF9309] hover:bg-[#EF9309] text-[#EF9309] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
+              className="px-10 py-4 bg-white border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
             >
               View Pricing
             </a>

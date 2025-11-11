@@ -144,7 +144,7 @@ const benefits = [
     title: "Instant Application",
     description:
       "Apply for IPOs instantly using UPI. Quick and paperless process.",
-    gradient: "from-[#EF9309] to-[#D68108]",
+    gradient: "from-[#fbc40c] to-[#D68108]",
   },
   {
     id: 2,
@@ -168,7 +168,7 @@ const benefits = [
     title: "Easy Tracking",
     description:
       "Track your IPO applications and allotment status in real-time.",
-    gradient: "from-[#EF9309] to-[#D68108]",
+    gradient: "from-[#fbc40c] to-[#D68108]",
   },
 ];
 
@@ -182,71 +182,64 @@ const IPOPage: React.FC = () => {
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 overflow-hidden h-[75vh]">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[75vh]">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
 
-        {/* Decorative Blobs */}
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[#A8D063]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#00D09C]/10 rounded-full blur-3xl"></div>
-
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#A8D063]/10 backdrop-blur-sm border border-[#A8D063]/20 rounded-full px-4 py-2 mb-6">
-                <FaRocket className="w-4 h-4 text-[#EF9309]" />
-                <span className="text-sm font-semibold text-[#EF9309]">
+              <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 border border-[#fbc40c]/30 rounded-full px-4 py-2 mb-6">
+                <FaRocket className="w-4 h-4 text-[#fbc40c]" />
+                <span className="text-sm font-semibold text-[#fbc40c]">
                   IPO Investments
                 </span>
               </div>
 
-              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-                Invest in <span className="text-[#EF9309]">Upcoming IPOs</span>
+              <h1 className="text-3xl lg:text-[38px] font-bold text-[#0A2745] mb-6">
+                Invest in <span className="text-[#fbc40c]">Upcoming IPOs</span>
               </h1>
-              <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed mb-8">
+              <p className="text-base lg:text-lg text-[#8E8E8E] leading-relaxed mb-8">
                 Apply for the latest IPOs using UPI in seconds. Get early access
                 to promising companies before they hit the market.
               </p>
 
-              {/* Stats */}
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <p className="text-3xl font-bold text-[#EF9309] mb-2">50+</p>
-                  <p className="text-sm text-[#DADADA]">IPOs Listed</p>
+                <div className="bg-gradient-to-br from-[#fbc40c]/10 to-[#D68108]/5 border-2 border-[#fbc40c]/20 rounded-2xl p-6">
+                  <p className="text-3xl font-bold text-[#fbc40c] mb-2">50+</p>
+                  <p className="text-sm text-[#8E8E8E]">IPOs Listed</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+                <div className="bg-gradient-to-br from-[#00D09C]/10 to-[#00B09C]/5 border-2 border-[#00D09C]/20 rounded-2xl p-6">
                   <p className="text-3xl font-bold text-[#00D09C] mb-2">₹0</p>
-                  <p className="text-sm text-[#DADADA]">Application Fee</p>
+                  <p className="text-sm text-[#8E8E8E]">Application Fee</p>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="/open-demat-account/"
-                  className="px-8 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+                  href="/auth/open-demat-account/"
+                  className="px-8 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
                 >
                   Start Investing in IPOs
                   <FaArrowRight className="w-4 h-4" />
                 </a>
                 <a
                   href="#current-ipos"
-                  className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300 border border-white/20 hover:border-white/40 inline-flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-white border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   View Open IPOs
                 </a>
               </div>
             </div>
 
-            {/* Right Image */}
-            <div className="relative">
-              <div className="relative z-10">
+            <div className="relative h-full flex items-center justify-center">
+              <div className="w-full max-w-[650px] h-full flex items-center justify-center">
                 <Image
                   src="/discover_analyst_trade_3mobile.webp"
                   alt="IPO Application Screen"
-                  width={600}
-                  height={800}
+                  width={250}
+                  height={400}
                   className="object-contain drop-shadow-2xl mx-auto"
                 />
               </div>
@@ -272,7 +265,7 @@ const IPOPage: React.FC = () => {
               </div>
 
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
-                Current <span className="text-[#EF9309]">IPOs</span>
+                Current <span className="text-[#fbc40c]">IPOs</span>
               </h2>
               <div className="w-20 h-1 bg-[#A8D063] rounded-full mb-6"></div>
 
@@ -429,9 +422,9 @@ const IPOPage: React.FC = () => {
             </div>
 
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
-              To Be <span className="text-[#EF9309]">Announced</span>
+              To Be <span className="text-[#fbc40c]">Announced</span>
             </h2>
-            <div className="w-20 h-1 bg-[#EF9309] rounded-full mb-6 mx-auto"></div>
+            <div className="w-20 h-1 bg-[#fbc40c] rounded-full mb-6 mx-auto"></div>
 
             <p className="text-lg text-[#666] leading-relaxed max-w-3xl text-center mx-auto">
               Unlock potential before it's public. Get notified about upcoming
@@ -443,10 +436,10 @@ const IPOPage: React.FC = () => {
             {upcomingIPOs.map((ipo, index) => (
               <div
                 key={ipo.id}
-                className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-[#EF9309] relative overflow-hidden"
+                className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-[#fbc40c] relative overflow-hidden"
               >
                 {/* Decorative corner */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-[#EF9309]/10 rounded-bl-full"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-[#fbc40c]/10 rounded-bl-full"></div>
 
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -455,7 +448,7 @@ const IPOPage: React.FC = () => {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-dark mb-3 group-hover:text-[#EF9309] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-dark mb-3 group-hover:text-[#fbc40c] transition-colors">
                     {ipo.company}
                   </h3>
 
@@ -482,7 +475,7 @@ const IPOPage: React.FC = () => {
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
-              Previous <span className="text-[#EF9309]">IPOs</span>
+              Previous <span className="text-[#fbc40c]">IPOs</span>
             </h2>
             <div className="w-20 h-1 bg-[#A8D063] mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-[#666]">
@@ -538,7 +531,7 @@ const IPOPage: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
               Why Invest in IPOs with{" "}
-              <span className="text-[#EF9309]">ez wealth?</span>
+              <span className="text-[#fbc40c]">ez wealth?</span>
             </h2>
           </div>
 
@@ -571,7 +564,7 @@ const IPOPage: React.FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-5 md:px-10 text-center">
           <h2 className="text-3xl lg:text-5xl font-bold  mb-6">
-            Ready to Invest <span className="text-[#EF9309]">in IPOs?</span>
+            Ready to Invest <span className="text-[#fbc40c]">in IPOs?</span>
           </h2>
           <p className="text-lg text-[#666] mb-8">
             Open your free demat account and start applying for IPOs today with
@@ -579,15 +572,15 @@ const IPOPage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/open-demat-account/"
-              className="px-10 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+              href="/auth/open-demat-account/"
+              className="px-10 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
             >
               Open Free Account
               <FaRocket className="w-4 h-4" />
             </a>
             <a
               href="/pricing/"
-              className="px-10 py-4 bg-white border-2 border-[#EF9309] hover:bg-[#EF9309] text-[#EF9309] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
+              className="px-10 py-4 bg-white border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
             >
               View Pricing
             </a>

@@ -104,9 +104,9 @@ const ipoData: Record<string, IPOData> = {
   // Add more IPO data here
 };
 
-const IPODetailPage: React.FC =  () => {
+const IPODetailPage: React.FC = () => {
   const params = useParams();
-  const slug =  params?.slug as string;
+  const slug = params?.slug as string;
   const ipo = ipoData[slug];
 
   if (!ipo) {
@@ -118,7 +118,10 @@ const IPODetailPage: React.FC =  () => {
             <h1 className="text-3xl font-bold text-gray-dark mb-4">
               IPO Not Found
             </h1>
-            <Link href="/invest/ipos" className="text-[#EF9309] hover:underline">
+            <Link
+              href="/invest/ipos"
+              className="text-[#fbc40c] hover:underline"
+            >
               Back to IPO List
             </Link>
           </div>
@@ -171,9 +174,9 @@ const IPODetailPage: React.FC =  () => {
               </div>
 
               {/* Investment Info */}
-              <div className="bg-gradient-to-br from-[#EF9309]/10 to-[#EF9309]/5 rounded-xl p-6 border-2 border-[#EF9309]/20">
+              <div className="bg-gradient-to-br from-[#fbc40c]/10 to-[#fbc40c]/5 rounded-xl p-6 border-2 border-[#fbc40c]/20">
                 <p className="text-sm text-[#666] mb-1">Minimum Investment</p>
-                <p className="text-3xl font-bold text-[#EF9309] mb-1">
+                <p className="text-3xl font-bold text-[#fbc40c] mb-1">
                   {ipo.minInvestment}
                 </p>
                 <p className="text-sm text-[#666]">{ipo.sharesPerLot} shares</p>
@@ -192,7 +195,7 @@ const IPODetailPage: React.FC =  () => {
               {/* IPO Details */}
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
                 <h2 className="text-2xl font-bold text-gray-dark mb-6 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#EF9309] rounded"></div>
+                  <div className="w-1 h-6 bg-[#fbc40c] rounded"></div>
                   IPO Details
                 </h2>
 
@@ -246,7 +249,7 @@ const IPODetailPage: React.FC =  () => {
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-2xl font-bold text-gray-dark flex items-center gap-2">
-                    <div className="w-1 h-6 bg-[#EF9309] rounded"></div>
+                    <div className="w-1 h-6 bg-[#fbc40c] rounded"></div>
                     Subscription Rate
                   </h2>
                   <span className="text-sm text-[#666]">
@@ -278,7 +281,7 @@ const IPODetailPage: React.FC =  () => {
                       key={index}
                       className={`flex items-center justify-between p-4 rounded-xl ${
                         item.isTotal
-                          ? "bg-[#EF9309]/10 border-2 border-[#EF9309]"
+                          ? "bg-[#fbc40c]/10 border-2 border-[#fbc40c]"
                           : "bg-gray-50"
                       }`}
                     >
@@ -293,7 +296,7 @@ const IPODetailPage: React.FC =  () => {
                       </span>
                       <span
                         className={`text-lg font-bold ${
-                          item.isTotal ? "text-[#EF9309]" : "text-gray-dark"
+                          item.isTotal ? "text-[#fbc40c]" : "text-gray-dark"
                         }`}
                       >
                         {item.value}
@@ -306,7 +309,7 @@ const IPODetailPage: React.FC =  () => {
               {/* About Company */}
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
                 <h2 className="text-2xl font-bold text-gray-dark mb-4 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#EF9309] rounded"></div>
+                  <div className="w-1 h-6 bg-[#fbc40c] rounded"></div>
                   About {ipo.company}
                 </h2>
                 <p className="text-[#666] leading-relaxed">{ipo.about}</p>
@@ -315,13 +318,13 @@ const IPODetailPage: React.FC =  () => {
               {/* Issue Objectives */}
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
                 <h2 className="text-2xl font-bold text-gray-dark mb-4 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#EF9309] rounded"></div>
+                  <div className="w-1 h-6 bg-[#fbc40c] rounded"></div>
                   Issue Objectives
                 </h2>
                 <ul className="space-y-3">
                   {ipo.objectives.map((objective, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <FaCheckCircle className="w-5 h-5 text-[#EF9309] flex-shrink-0 mt-0.5" />
+                      <FaCheckCircle className="w-5 h-5 text-[#fbc40c] flex-shrink-0 mt-0.5" />
                       <span className="text-[#666]">{objective}</span>
                     </li>
                   ))}
@@ -334,7 +337,7 @@ const IPODetailPage: React.FC =  () => {
               {/* Important Dates Timeline */}
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200  top-24">
                 <h3 className="text-xl font-bold text-gray-dark mb-6 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#EF9309] rounded"></div>
+                  <div className="w-1 h-6 bg-[#fbc40c] rounded"></div>
                   Important Dates
                 </h3>
 
@@ -362,7 +365,7 @@ const IPODetailPage: React.FC =  () => {
                       icon: <FaFlag className="w-5 h-5" />,
                       label: "Listing",
                       date: ipo.timeline.listing,
-                      color: "bg-[#EF9309]/10 text-[#EF9309]",
+                      color: "bg-[#fbc40c]/10 text-[#fbc40c]",
                     },
                   ].map((item, index) => (
                     <div key={index} className="relative">
@@ -389,7 +392,7 @@ const IPODetailPage: React.FC =  () => {
                 </div>
 
                 {/* Apply Button */}
-                <button className="w-full mt-6 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                <button className="w-full mt-6 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
                   Apply Now
                 </button>
 
@@ -401,7 +404,7 @@ const IPODetailPage: React.FC =  () => {
               {/* Financials */}
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
                 <h3 className="text-xl font-bold text-gray-dark mb-4 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#EF9309] rounded"></div>
+                  <div className="w-1 h-6 bg-[#fbc40c] rounded"></div>
                   Key Financials
                 </h3>
 

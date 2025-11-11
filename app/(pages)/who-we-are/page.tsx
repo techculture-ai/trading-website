@@ -45,7 +45,7 @@ const features: Feature[] = [
     title: "Call N Trade",
     description:
       "Trade over phone at no extra cost. Expert assistance available when you need it.",
-    gradient: "from-[#EF9309] to-[#D68108]",
+    gradient: "from-[#fbc40c] to-[#D68108]",
   },
   {
     id: 2,
@@ -69,7 +69,7 @@ const features: Feature[] = [
     title: "Free Research Picks",
     description:
       "Technical and fundamental picks delivered on mobile and desktop app.",
-    gradient: "from-[#EF9309] to-[#D68108]",
+    gradient: "from-[#fbc40c] to-[#D68108]",
   },
   {
     id: 5,
@@ -316,26 +316,26 @@ const AboutPage: React.FC = () => {
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 overflow-hidden min-h-[50vh]">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[50vh]">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[#EF9309]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"></div>
-        
+        {/* <div className="absolute top-20 right-10 w-96 h-96 bg-[#fbc40c]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"></div> */}
+
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
-              <FaRocket className="w-4 h-4 text-[#EF9309]" />
-              <span className="text-sm font-semibold text-[#EF9309]">
+            <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 border border-[#fbc40c]/30 rounded-full px-4 py-2 mb-6">
+              <FaRocket className="w-4 h-4 text-[#fbc40c]" />
+              <span className="text-sm font-semibold text-[#fbc40c]">
                 About ez wealth
               </span>
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              A Different <span className="text-[#EF9309]">Broking House</span>
+            <h1 className="text-4xl lg:text-6xl font-bold text-[#0A2745] mb-6">
+              A Different <span className="text-[#fbc40c]">Broking House</span>
             </h1>
-            <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed">
+            <p className="text-base lg:text-lg text-[#8E8E8E] leading-relaxed">
               Online brand of Wealth Discovery Securities Pvt Limited, a full
               service leading Stock Broking firm headquartered in New Delhi. We
               offer More for Less.
@@ -351,7 +351,7 @@ const AboutPage: React.FC = () => {
             {features.map((feature, index) => (
               <div
                 key={feature.id}
-                className="group bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#EF9309] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                className="group bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-[#fbc40c] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                 style={{
                   animationDelay: `${index * 100}ms`,
                   animation: "fadeInUp 0.6s ease-out forwards",
@@ -364,7 +364,7 @@ const AboutPage: React.FC = () => {
                   <div className="text-white">{feature.icon}</div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-dark mb-3 group-hover:text-[#EF9309] transition-colors">
+                <h3 className="text-2xl font-bold text-gray-dark mb-3 group-hover:text-[#fbc40c] transition-colors">
                   {feature.title}
                 </h3>
 
@@ -381,14 +381,14 @@ const AboutPage: React.FC = () => {
       <section className="py-20  bg-gray-50">
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 rounded-full px-4 py-2 mb-4">
-              <FaAward className="w-4 h-4 text-[#EF9309]" />
-              <span className="text-sm font-semibold text-[#EF9309]">
+            <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 rounded-full px-4 py-2 mb-4">
+              <FaAward className="w-4 h-4 text-[#fbc40c]" />
+              <span className="text-sm font-semibold text-[#fbc40c]">
                 Leadership
               </span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
-              Meet Our <span className="text-[#EF9309]">Founder</span>
+              Meet Our <span className="text-[#fbc40c]">Founder</span>
             </h2>
             <p className="text-lg text-[#666] max-w-2xl mx-auto">
               The visionary leader steering ez wealth towards innovation and
@@ -402,13 +402,20 @@ const AboutPage: React.FC = () => {
                 {/* Image Side */}
                 <div className="relative h-96 lg:h-auto bg-gradient-to-br from-[#0A2745] to-[#1A3A5C]">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-48 h-48 bg-white/10 rounded-full flex items-center justify-center">
+                    {/* <div className="w-48 h-48 bg-white/10 rounded-full flex items-center justify-center">
                       <FaUsers className="w-24 h-24 text-white/50" />
-                    </div>
+                    </div> */}
+                    <Image
+                      src="/Rahul-Agarwal.jpg"
+                      alt="Rahul Agarwal"
+                      width={500}
+                      height={600}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
 
                   {/* Quote Badge */}
-                  <div className="absolute top-8 right-8 w-16 h-16 bg-[#EF9309] rounded-2xl flex items-center justify-center shadow-xl">
+                  <div className="absolute top-8 right-8 w-16 h-16 bg-[#fbc40c] rounded-2xl flex items-center justify-center shadow-xl">
                     <FaQuoteLeft className="w-8 h-8 text-white" />
                   </div>
 
@@ -422,10 +429,10 @@ const AboutPage: React.FC = () => {
                     <h3 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-2">
                       Rahul Agarwal
                     </h3>
-                    <p className="text-xl text-[#EF9309] font-semibold mb-1">
+                    <p className="text-xl text-[#fbc40c] font-semibold mb-1">
                       Founder & CEO
                     </p>
-                    <div className="w-20 h-1 bg-[#EF9309] rounded-full"></div>
+                    <div className="w-20 h-1 bg-[#fbc40c] rounded-full"></div>
                   </div>
 
                   <div className="space-y-4 mb-8">
@@ -440,7 +447,7 @@ const AboutPage: React.FC = () => {
                     </p>
                     <p className="text-[#666] leading-relaxed">
                       Rahul brings over{" "}
-                      <strong className="text-[#EF9309]">
+                      <strong className="text-[#fbc40c]">
                         12 years of International Experience
                       </strong>{" "}
                       into Wealth Discovery. He is a Technocrat with Post
@@ -452,8 +459,8 @@ const AboutPage: React.FC = () => {
 
                   {/* Achievements */}
                   <div className="grid grid-cols-2 gap-4 mb-8">
-                    <div className="bg-gradient-to-br from-[#EF9309]/5 to-[#EF9309]/10 rounded-xl p-4 border border-[#EF9309]/20">
-                      <p className="text-2xl font-bold text-[#EF9309] mb-1">
+                    <div className="bg-gradient-to-br from-[#fbc40c]/5 to-[#fbc40c]/10 rounded-xl p-4 border border-[#fbc40c]/20">
+                      <p className="text-2xl font-bold text-[#fbc40c] mb-1">
                         12+
                       </p>
                       <p className="text-xs text-[#666] font-medium">
@@ -477,19 +484,19 @@ const AboutPage: React.FC = () => {
                     </p>
                     <div className="flex gap-3">
                       <a
-                        href="#"
+                        href="https://www.linkedin.com/in/rahulagarwalwd/"
                         className="w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 hover:from-[#0077B5] hover:to-[#0077B5] rounded-xl flex items-center justify-center transition-all duration-300 group shadow-md hover:shadow-xl"
                       >
                         <FaLinkedin className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors" />
                       </a>
                       <a
-                        href="#"
+                        href="https://x.com/rahul_pittsburg"
                         className="w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 hover:from-[#1DA1F2] hover:to-[#1DA1F2] rounded-xl flex items-center justify-center transition-all duration-300 group shadow-md hover:shadow-xl"
                       >
                         <FaTwitter className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors" />
                       </a>
                       <a
-                        href="#"
+                        href="https://www.facebook.com/rahulagarwalwd/"
                         className="w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 hover:from-[#4267B2] hover:to-[#4267B2] rounded-xl flex items-center justify-center transition-all duration-300 group shadow-md hover:shadow-xl"
                       >
                         <FaFacebook className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors" />
@@ -509,7 +516,7 @@ const AboutPage: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
               Trade with us at your{" "}
-              <span className="text-[#EF9309]">favourite exchange</span>
+              <span className="text-[#fbc40c]">favourite exchange</span>
             </h2>
             <p className="text-lg text-[#666] max-w-3xl mx-auto">
               At BSE, NSE, MCX and NCDEX, and in all segments including Equity
@@ -522,7 +529,7 @@ const AboutPage: React.FC = () => {
             {["BSE", "NSE", "MCX", "NCDEX"].map((exchange, index) => (
               <div
                 key={exchange}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center border-2 border-gray-100 hover:border-[#EF9309]"
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center border-2 border-gray-100 hover:border-[#fbc40c]"
               >
                 <div className="w-20 h-20 bg-gradient-to-br from-[#0A2745] to-[#1A3A5C] rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-white">
@@ -536,9 +543,9 @@ const AboutPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-12 bg-gradient-to-br from-[#EF9309]/5 to-[#00D09C]/5 rounded-2xl p-8 border border-[#EF9309]/20">
+          <div className="mt-12 bg-gradient-to-br from-[#fbc40c]/5 to-[#00D09C]/5 rounded-2xl p-8 border border-[#fbc40c]/20">
             <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#EF9309] to-[#D68108] rounded-2xl flex items-center justify-center flex-shrink-0">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#fbc40c] to-[#D68108] rounded-2xl flex items-center justify-center flex-shrink-0">
                 <FaHandshake className="w-8 h-8 text-white" />
               </div>
               <div className="flex-1 text-center md:text-left">
@@ -570,7 +577,7 @@ const AboutPage: React.FC = () => {
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
               The People Behind{" "}
-              <span className="text-[#EF9309]">Our Success</span>
+              <span className="text-[#fbc40c]">Our Success</span>
             </h2>
             <p className="text-lg text-[#666] max-w-2xl mx-auto">
               Meet the talented professionals driving innovation and delivering
@@ -644,7 +651,7 @@ const AboutPage: React.FC = () => {
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              Why Choose <span className="text-[#EF9309]">Us?</span>
+              Why Choose <span className="text-[#fbc40c]">Us?</span>
             </h2>
             <p className="text-lg text-[#DADADA] max-w-3xl mx-auto">
               We firmly believe that we need to provide more for less. Here are
@@ -659,12 +666,12 @@ const AboutPage: React.FC = () => {
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/30 transition-all duration-300 group"
               >
                 <div className="flex items-start gap-3 mb-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-[#EF9309] to-[#D68108] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-gradient-to-br from-[#fbc40c] to-[#D68108] rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-bold text-sm">
                       {reason.id}
                     </span>
                   </div>
-                  <h4 className="text-white font-bold text-sm leading-tight group-hover:text-[#EF9309] transition-colors">
+                  <h4 className="text-white font-bold text-sm leading-tight group-hover:text-[#fbc40c] transition-colors">
                     {reason.title}
                   </h4>
                 </div>
@@ -681,7 +688,7 @@ const AboutPage: React.FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-5 md:px-10 text-center">
           <h2 className="text-3xl lg:text-5xl font-bold text-gray-dark mb-6">
-            Ready to Start <span className="text-[#EF9309]">Your Journey?</span>
+            Ready to Start <span className="text-[#fbc40c]">Your Journey?</span>
           </h2>
           <p className="text-lg text-[#666] mb-8">
             Join thousands of traders who trust ez wealth for their investment
@@ -689,15 +696,15 @@ const AboutPage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/open-demat-account/"
-              className="px-10 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+              href="/auth/open-demat-account/"
+              className="px-10 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
             >
               Open Free Account
               <FaRocket className="w-4 h-4" />
             </a>
             <a
               href="/contact/"
-              className="px-10 py-4 bg-white border-2 border-[#EF9309] hover:bg-[#EF9309] text-[#EF9309] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
+              className="px-10 py-4 bg-white border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
             >
               Contact Us
             </a>

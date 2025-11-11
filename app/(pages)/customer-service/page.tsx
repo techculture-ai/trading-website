@@ -16,7 +16,10 @@ import {
   FaPaperPlane,
   FaHeadset,
   FaQuestionCircle,
+  FaYoutube,
+  FaTelegram,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 interface FormData {
   name: string;
@@ -64,7 +67,7 @@ const ContactPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      {/* <Header /> */}
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 overflow-hidden min-h-[50vh]">
@@ -72,23 +75,20 @@ const ContactPage: React.FC = () => {
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
 
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[#EF9309]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 w-96 h-96 bg-[#fbc40c]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"></div>
 
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
-              <FaHeadset className="w-4 h-4 text-[#EF9309]" />
-              <span className="text-sm font-semibold text-[#EF9309]">
+            <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 backdrop-blur-sm border border-[#fbc40c]/20 rounded-full px-4 py-2 mb-6">
+              <FaHeadset className="w-4 h-4 text-[#fbc40c]" />
+              <span className="text-sm font-semibold text-[#fbc40c]">
                 We're Here to Help
               </span>
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              Get in{" "}
-              <span className="bg-gradient-to-r from-[#EF9309] to-[#D68108] bg-clip-text text-transparent">
-                Touch
-              </span>
+              Get in <span className="text-[#fbc40c]">Touch</span>
             </h1>
             <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed">
               Have questions? We're here to help. Reach out to us and we'll
@@ -116,7 +116,7 @@ const ContactPage: React.FC = () => {
                 title: "Email Us",
                 info: "support@ezwealth.com",
                 subInfo: "We reply within 24 hours",
-                gradient: "from-[#EF9309] to-[#D68108]",
+                gradient: "from-[#fbc40c] to-[#D68108]",
                 href: "mailto:support@ezwealth.com",
               },
               {
@@ -131,7 +131,7 @@ const ContactPage: React.FC = () => {
               <a
                 key={index}
                 href={item.href}
-                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-[#EF9309]"
+                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-[#fbc40c] flex flex-col items-center text-center"
               >
                 <div
                   className={`w-14 h-14 bg-gradient-to-br ${item.gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
@@ -141,7 +141,7 @@ const ContactPage: React.FC = () => {
                 <h3 className="text-lg font-bold text-gray-dark mb-2">
                   {item.title}
                 </h3>
-                <p className="text-base font-semibold text-[#EF9309] mb-1">
+                <p className="text-base font-semibold text-[#fbc40c] mb-1">
                   {item.info}
                 </p>
                 <p className="text-sm text-[#666]">{item.subInfo}</p>
@@ -161,7 +161,7 @@ const ContactPage: React.FC = () => {
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-3">
                   Send us a Message
                 </h2>
-                <div className="w-16 h-1 bg-[#EF9309] rounded-full mb-4"></div>
+                <div className="w-16 h-1 bg-[#fbc40c] rounded-full mb-4"></div>
                 <p className="text-base text-[#666]">
                   Fill out the form below and our team will get back to you
                   within 24 hours.
@@ -179,7 +179,7 @@ const ContactPage: React.FC = () => {
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
                     placeholder="Enter your full name"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#EF9309] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#fbc40c] focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -196,7 +196,7 @@ const ContactPage: React.FC = () => {
                         handleInputChange("email", e.target.value)
                       }
                       placeholder="your@email.com"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#EF9309] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#fbc40c] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -211,7 +211,7 @@ const ContactPage: React.FC = () => {
                         handleInputChange("phone", e.target.value)
                       }
                       placeholder="+91 1234567890"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#EF9309] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#fbc40c] focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -226,7 +226,7 @@ const ContactPage: React.FC = () => {
                     onChange={(e) =>
                       handleInputChange("subject", e.target.value)
                     }
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#EF9309] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#fbc40c] focus:outline-none transition-colors"
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -250,14 +250,14 @@ const ContactPage: React.FC = () => {
                     }
                     placeholder="Write your message here..."
                     rows={6}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#EF9309] focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#fbc40c] focus:outline-none transition-colors resize-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -279,7 +279,7 @@ const ContactPage: React.FC = () => {
               {/* Office Address */}
               <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
                 <h3 className="text-2xl font-bold text-gray-dark mb-6 flex items-center gap-2">
-                  <FaMapMarkerAlt className="w-6 h-6 text-[#EF9309]" />
+                  <FaMapMarkerAlt className="w-6 h-6 text-[#fbc40c]" />
                   Our Office
                 </h3>
 
@@ -297,7 +297,7 @@ const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                    <FaClock className="w-5 h-5 text-[#EF9309] flex-shrink-0" />
+                    <FaClock className="w-5 h-5 text-[#fbc40c] flex-shrink-0" />
                     <div>
                       <p className="text-sm font-semibold text-gray-dark">
                         Business Hours
@@ -323,7 +323,7 @@ const ContactPage: React.FC = () => {
                         color: "hover:bg-[#4267B2]",
                       },
                       {
-                        icon: <FaTwitter />,
+                        icon: <FaXTwitter />,
                         href: "#",
                         color: "hover:bg-[#1DA1F2]",
                       },
@@ -407,10 +407,10 @@ const ContactPage: React.FC = () => {
             ].map((faq, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all duration-300 border-2 border-gray-100 hover:border-[#EF9309]"
+                className="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all duration-300 border-2 border-gray-100 hover:border-[#fbc40c]"
               >
                 <div className="flex items-start gap-3 mb-3">
-                  <FaQuestionCircle className="w-5 h-5 text-[#EF9309] flex-shrink-0 mt-1" />
+                  <FaQuestionCircle className="w-5 h-5 text-[#fbc40c] flex-shrink-0 mt-1" />
                   <h4 className="font-bold text-gray-dark">{faq.question}</h4>
                 </div>
                 <p className="text-sm text-[#666] pl-8">{faq.answer}</p>
@@ -421,7 +421,7 @@ const ContactPage: React.FC = () => {
           <div className="text-center mt-8">
             <a
               href="/support"
-              className="inline-flex items-center gap-2 text-[#EF9309] hover:text-[#D68108] font-semibold transition-colors"
+              className="inline-flex items-center gap-2 text-[#fbc40c] hover:text-[#D68108] font-semibold transition-colors"
             >
               View All FAQs
               <FaQuestionCircle className="w-4 h-4" />
@@ -431,18 +431,18 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929]">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-5 md:px-10 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Ready to Get Started?
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-4">
+            Ready to <span className="text-[#fbc40c]">Get Started?</span>
           </h2>
-          <p className="text-lg text-[#DADADA] mb-8">
+          <p className="text-lg text-[#666] mb-8">
             Open your free demat account today and start your investment journey
             with EZWealth.
           </p>
           <a
-            href="/open-demat-account/"
-            className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            href="/auth/open-demat-account/"
+            className="px-10 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
           >
             Open Free Account
             <FaPaperPlane className="w-4 h-4" />
@@ -450,7 +450,7 @@ const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

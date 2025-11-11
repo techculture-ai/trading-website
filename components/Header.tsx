@@ -28,17 +28,17 @@ const Header = () => {
   };
 
   // Color schemes based on page
-  const textColor = isHomePage ? "text-[#0A2745]" : "text-white";
-  const hoverColor = "hover:text-[#EF9309]";
-  const phoneTextColor = isHomePage ? "text-[#0A2745]" : "text-white";
-  const phoneIconBg = isHomePage ? "text-[#0A2745]" : "text-white";
-  const buttonTextColor = isHomePage ? "text-[#0A2745]" : "text-white";
+  const textColor = "text-[#0A2745] ";
+  const hoverColor = "hover:text-[#fbc40c]";
+  const phoneTextColor = "text-[#0A2745]";
+  const phoneIconBg = "text-[#0A2745]";
+  const buttonTextColor = "text-[#0A2745]";
 
   return (
     <header
       className={`fixed top-0 z-50 w-full ${
-        isHomePage ? "bg-white/20" : "bg-[#0A2745]/50"
-      } backdrop-blur-md transition-all duration-500 shadow-lg`}
+         "bg-white/10" 
+      } backdrop-blur-sm transition-all duration-500 `}
     >
       <div className="max-w-8xl mx-auto px-4 lg:px-24">
         <div className="flex justify-between gap-4 items-center">
@@ -58,7 +58,7 @@ const Header = () => {
             {/* Who We Are */}
             <Link
               href="/who-we-are"
-              className={`text-[15px] ${textColor} ${hoverColor} font-semibold transition-colors duration-200 py-6`}
+              className={`text-[15px] ${textColor} ${hoverColor} font-medium transition-colors duration-200 py-6`}
             >
               Who We Are
             </Link>
@@ -66,7 +66,7 @@ const Header = () => {
             {/* Recommendations */}
             <Link
               href="/recommendations"
-              className={`text-[15px] ${textColor} ${hoverColor} font-semibold transition-colors duration-200 py-6`}
+              className={`text-[15px] ${textColor} ${hoverColor} font-medium  transition-colors duration-200 py-6`}
             >
               Recommendations
             </Link>
@@ -139,7 +139,7 @@ const Header = () => {
               onMouseLeave={handleDropdownLeave}
             >
               <button
-                className={`text-[15px] ${textColor} ${hoverColor} flex items-center gap-1.5 font-semibold transition-colors duration-200 py-6`}
+                className={`text-[15px] ${textColor} ${hoverColor} flex items-center gap-1.5 font-medium transition-colors duration-200 py-6`}
               >
                 Invest & Trade
                 <FaChevronDown
@@ -170,7 +170,7 @@ const Header = () => {
             {/* Pricing */}
             <Link
               href="/pricing"
-              className={`text-[15px] ${textColor} ${hoverColor} font-semibold transition-colors duration-200 py-6`}
+              className={`text-[15px] ${textColor} ${hoverColor} font-medium transition-colors duration-200 py-6`}
             >
               Pricing
             </Link>
@@ -178,23 +178,23 @@ const Header = () => {
             {/* Become a Partner */}
             <Link
               href="/become-a-partner"
-              className={`text-[15px] ${textColor} ${hoverColor} font-semibold transition-colors duration-200 py-6`}
+              className={`text-[15px] ${textColor} ${hoverColor} font-medium transition-colors duration-200 py-6`}
             >
               Become a Partner
             </Link>
 
             {/* Customer services */}
-            <Link
+            {/* <Link
               href="/customer-service"
               className={`text-[15px] ${textColor} ${hoverColor} font-semibold transition-colors duration-200 py-6`}
             >
               Customer services
-            </Link>
+            </Link> */}
           </nav>
 
-          <div className="flex justify-end items-center gap-8 w-[40%] h-full">
+          <div className="flex justify-end items-center gap-8 h-full">
             {/* Search Bar - Desktop with Icon Toggle */}
-            <div className="hidden lg:flex items-center flex-1 max-w-md justify-end">
+            {/* <div className="hidden lg:flex items-center flex-1 max-w-md justify-end">
               <div className="relative w-full">
                 <div
                   className={`absolute right-0 top-1/2 -translate-y-1/2 transition-all duration-300 ${
@@ -204,7 +204,7 @@ const Header = () => {
                   <input
                     type="text"
                     placeholder="Search Stocks, Mutual Funds, ETFs..."
-                    className={`w-full bg-white/10 border border-[#666] rounded-lg py-2 pl-10 pr-4 ${isHomePage ? "text-[#0A2745]" : "text-white"} placeholder-[#8E8E8E] focus:outline-none focus:border-[#EF9309] transition-colors`}
+                    className={`w-full bg-white/10 border border-[#666] rounded-lg py-2 pl-10 pr-4 ${isHomePage ? "text-[#0A2745]" : "text-white"} placeholder-[#8E8E8E] focus:outline-none focus:border-[#fbc40c] transition-colors`}
                     onBlur={() => setIsSearchOpen(false)}
                   />
                 </div>
@@ -215,14 +215,14 @@ const Header = () => {
                     isSearchOpen ? "left-3 right-auto" : ""
                   }`}
                 >
-                  <FaSearch className="text-[#EF9309] w-5 h-5 hover:text-[#D68108] transition-colors cursor-pointer" />
+                  <FaSearch className="text-[#fbc40c] w-5 h-5 hover:text-[#D68108] transition-colors cursor-pointer" />
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* Phone Number - Desktop */}
             <div className="hidden lg:flex items-center gap-2">
-              <div className="flex items-center gap-2 bg-[#EF9309] rounded-full p-2">
+              <div className="flex items-center gap-2 bg-[#fbc40c] rounded-full p-2">
                 <FaPhone className={`${phoneIconBg} w-3.5 h-3.5`} />
               </div>
               <div className="flex flex-col">
@@ -231,7 +231,7 @@ const Header = () => {
                 </span>
                 <a
                   href="tel:+1234567890"
-                  className={`text-sm ${phoneTextColor} font-medium hover:text-[#EF9309] transition-colors whitespace-nowrap`}
+                  className={`text-sm ${phoneTextColor} font-medium hover:text-[#fbc40c] transition-colors whitespace-nowrap`}
                 >
                   +123-7767-8989
                 </a>
@@ -240,22 +240,21 @@ const Header = () => {
 
             {/* Action Buttons - Desktop */}
             <div className="hidden lg:flex items-center gap-2">
-              <a
-                href="https://login.dhan.co"
-                target="_blank"
+              <Link
+                href="/auth/login"
                 rel="noopener noreferrer"
-                className={`${buttonTextColor} hover:bg-[#EF9309] hover:text-white py-2 px-4 border border-[#666] hover:border-[#EF9309] rounded-lg text-sm xl:text-[15px] font-semibold transition-all duration-200`}
+                className={`${buttonTextColor} hover:bg-gradient-to-r hover:from-[#D68108] hover:to-[#fbc40c] hover:text-white py-2 px-4 border border-[#666] hover:border-[#D68108] rounded-lg text-sm xl:text-[15px] font-medium transition-all duration-200`}
               >
                 Login
-              </a>
-              <a
-                href="/open-demat-account/"
+              </Link>
+              <Link
+                href="/auth/open-demat-account/"
                 className={`${
                   isHomePage ? "text-[#0A2745]" : "text-[#0A2745]"
-                } bg-[#EF9309] hover:bg-[#D68108] py-2 px-4 rounded-lg text-sm xl:text-[15px] font-semibold transition-all duration-200 whitespace-nowrap`}
+                } bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white py-2 px-4 rounded-lg text-sm xl:text-[15px] font-medium transition-all duration-200 whitespace-nowrap`}
               >
                 Open Account
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -274,18 +273,18 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden pb-4 space-y-4 border-t border-[#ffffff33] pt-4">
             <div className="relative">
-              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#EF9309] w-4 h-4" />
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#fbc40c] w-4 h-4" />
               <input
                 type="text"
                 placeholder="Search..."
                 className={`w-full bg-white/10 border border-[#ffffff33] rounded-lg py-2 pl-10 pr-4 ${
                   isHomePage ? "text-[#0A2745]" : "text-white"
-                } placeholder-[#8E8E8E] focus:outline-none focus:border-[#EF9309]`}
+                } placeholder-[#8E8E8E] focus:outline-none focus:border-[#fbc40c]`}
               />
             </div>
 
             <div className="flex items-center gap-3 px-2">
-              <div className="flex items-center gap-2 bg-[#EF9309] rounded-full p-2">
+              <div className="flex items-center gap-2 bg-[#fbc40c] rounded-full p-2">
                 <FaPhone className="text-white w-3.5 h-3.5" />
               </div>
               <div className="flex flex-col">
@@ -312,7 +311,7 @@ const Header = () => {
                 href="/who-we-are"
                 className={`block ${
                   isHomePage ? "text-[#0A2745]" : "text-[#8E8E8E]"
-                } hover:text-[#EF9309] transition`}
+                } hover:text-[#fbc40c] transition`}
               >
                 Who We Are
               </Link>
@@ -320,7 +319,7 @@ const Header = () => {
                 href="/pricing"
                 className={`block ${
                   isHomePage ? "text-[#0A2745]" : "text-[#8E8E8E]"
-                } hover:text-[#EF9309] transition`}
+                } hover:text-[#fbc40c] transition`}
               >
                 Pricing
               </Link>
@@ -328,7 +327,7 @@ const Header = () => {
                 href="/mutual-funds"
                 className={`block ${
                   isHomePage ? "text-[#0A2745]" : "text-[#8E8E8E]"
-                } hover:text-[#EF9309] transition`}
+                } hover:text-[#fbc40c] transition`}
               >
                 Mutual Funds
               </Link>
@@ -336,29 +335,28 @@ const Header = () => {
                 href="/ipo"
                 className={`block ${
                   isHomePage ? "text-[#0A2745]" : "text-[#8E8E8E]"
-                } hover:text-[#EF9309] transition`}
+                } hover:text-[#fbc40c] transition`}
               >
                 IPO
               </Link>
             </div>
 
             <div className="flex flex-col gap-2 pt-2">
-              <a
-                href="https://login.dhan.co"
-                target="_blank"
+              <Link
+                href="/auth/login"
                 rel="noopener noreferrer"
                 className={`text-center ${
                   isHomePage ? "text-[#0A2745]" : "text-white"
                 } border border-[#ffffff66] py-2 px-4 rounded-lg`}
               >
                 Login
-              </a>
-              <a
-                href="/open-demat-account/"
-                className="text-center text-[#0A2745] bg-[#EF9309] py-2 px-4 rounded-lg"
+              </Link>
+              <Link
+                href="/auth/open-demat-account/"
+                className="text-center text-[#0A2745] bg-[#fbc40c] py-2 px-4 rounded-lg"
               >
                 Open Account
-              </a>
+              </Link>
             </div>
           </div>
         )}
@@ -378,7 +376,7 @@ const SimpleDropdownItem = ({
   return (
     <Link
       href={href}
-      className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-[#EF9309] hover:text-white transition-all duration-200 border-b border-gray-100 last:border-b-0"
+      className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-[#fbc40c] hover:text-white transition-all duration-200 border-b border-gray-100 last:border-b-0"
     >
       {title}
     </Link>

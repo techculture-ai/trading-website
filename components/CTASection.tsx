@@ -15,21 +15,21 @@ const CTASection: React.FC = () => {
                 Invest &amp; Trade with a Trading
                 <br />
                 Platform That&apos;s{" "}
-                <i className="text-[#EF9309] not-italic">#MadeForTrade</i>
+                <i className="text-[#fbc40c] not-italic">#MadeForTrade</i>
               </h3>
               <div className="text-[#aaa] text-sm md:text-base font-normal mb-8 lg:mb-8 md:text-left text-center">
                 Open your{" "}
-                <span className="text-[#EF9309]">ez wealth Account</span> in
+                <span className="text-[#fbc40c]">ez wealth Account</span> in
                 minutes!
               </div>
             </div>
 
             {/* Desktop Button */}
             <div className="hidden lg:block">
-              <button className="group max-w-fit lg:px-10 px-7 lg:py-3 py-2 bg-[#EF9309] hover:bg-[#D68108] text-primary rounded-lg flex gap-1 items-center lg:text-base text-sm font-normal shadow-lg hover:shadow-xl transition-all duration-300">
+              <button className="group max-w-fit lg:px-10 px-7 lg:py-3 py-2 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white rounded-lg flex gap-1 items-center lg:text-base text-sm font-normal shadow-lg hover:shadow-xl transition-all duration-300">
                 Start Now
                 <svg
-                  className="w-4 h-4 text-primary relative left-[3px] transition-transform group-hover:translate-x-1"
+                  className="w-4 h-4 text-white relative left-[3px] transition-transform group-hover:translate-x-1"
                   fill="currentColor"
                   viewBox="0 0 512 512"
                 >
@@ -42,7 +42,7 @@ const CTASection: React.FC = () => {
             <div className="lg:hidden">
               <a
                 href="https://dhan.go.link/gaXqf"
-                className="max-w-fit lg:px-10 px-7 lg:py-3 py-2 bg-[#EF9309] hover:bg-[#D68108] text-primary rounded-lg flex gap-1 items-center lg:text-base text-sm font-normal shadow-lg transition-all duration-300"
+                className="max-w-fit lg:px-10 px-7 lg:py-3 py-2 bg-[#fbc40c] hover:bg-[#D68108] text-primary rounded-lg flex gap-1 items-center lg:text-base text-sm font-normal shadow-lg transition-all duration-300"
               >
                 Start Now
                 <svg

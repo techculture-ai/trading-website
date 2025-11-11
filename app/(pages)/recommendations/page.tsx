@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { 
+import React, { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import {
   FaChartLine,
   FaStar,
   FaFilter,
@@ -12,8 +12,8 @@ import {
   FaClock,
   FaCheckCircle,
   FaChevronDown,
-  FaBolt
-} from 'react-icons/fa';
+  FaBolt,
+} from "react-icons/fa";
 import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
 
 interface Stock {
@@ -27,191 +27,188 @@ interface Stock {
   weekChange: number;
   horizon: string;
   accuracy: number;
-  recommendation: 'BUY' | 'SELL' | 'HOLD';
+  recommendation: "BUY" | "SELL" | "HOLD";
   sector: string;
-  risk: 'Low' | 'Medium' | 'High';
+  risk: "Low" | "Medium" | "High";
 }
 
 const stocks: Stock[] = [
   {
     id: 1,
-    company: 'Updater Services Limited',
-    symbol: 'UPDATER',
+    company: "Updater Services Limited",
+    symbol: "UPDATER",
     potentialUpside: 99.93,
     currentPrice: 231.08,
-    targetPrice: 462.00,
-    dayChange: -1.10,
+    targetPrice: 462.0,
+    dayChange: -1.1,
     weekChange: -1.27,
-    horizon: '3 months',
+    horizon: "3 months",
     accuracy: 63.0,
-    recommendation: 'BUY',
-    sector: 'Technology',
-    risk: 'Medium',
+    recommendation: "BUY",
+    sector: "Technology",
+    risk: "Medium",
   },
   {
     id: 2,
-    company: 'H.G.Infra Engineering Ltd',
-    symbol: 'HGINFRA',
+    company: "H.G.Infra Engineering Ltd",
+    symbol: "HGINFRA",
     potentialUpside: 98.65,
-    currentPrice: 906.10,
-    targetPrice: 1800.00,
+    currentPrice: 906.1,
+    targetPrice: 1800.0,
     dayChange: -0.39,
     weekChange: -0.67,
-    horizon: '6 months',
+    horizon: "6 months",
     accuracy: 63.0,
-    recommendation: 'BUY',
-    sector: 'Infrastructure',
-    risk: 'Low',
+    recommendation: "BUY",
+    sector: "Infrastructure",
+    risk: "Low",
   },
   {
     id: 3,
-    company: 'D. P. Abhushan Limited',
-    symbol: 'DPABHUSHAN',
+    company: "D. P. Abhushan Limited",
+    symbol: "DPABHUSHAN",
     potentialUpside: 20.04,
-    currentPrice: 1516.10,
-    targetPrice: 1820.00,
+    currentPrice: 1516.1,
+    targetPrice: 1820.0,
     dayChange: 2.81,
     weekChange: 10.13,
-    horizon: '1 month',
+    horizon: "1 month",
     accuracy: 63.0,
-    recommendation: 'BUY',
-    sector: 'Retail',
-    risk: 'High',
+    recommendation: "BUY",
+    sector: "Retail",
+    risk: "High",
   },
   {
     id: 4,
-    company: 'Aditya Vision Limited',
-    symbol: 'ADITYAVISION',
+    company: "Aditya Vision Limited",
+    symbol: "ADITYAVISION",
     potentialUpside: 8.35,
     currentPrice: 574.05,
-    targetPrice: 622.00,
+    targetPrice: 622.0,
     dayChange: -3.63,
     weekChange: 0.61,
-    horizon: '2 months',
+    horizon: "2 months",
     accuracy: 63.0,
-    recommendation: 'BUY',
-    sector: 'Retail',
-    risk: 'Medium',
+    recommendation: "BUY",
+    sector: "Retail",
+    risk: "Medium",
   },
   {
     id: 5,
-    company: 'Goodluck India Limited',
-    symbol: 'GOODLUCK',
-    potentialUpside: -3.00,
-    currentPrice: 412.50,
-    targetPrice: 400.00,
+    company: "Goodluck India Limited",
+    symbol: "GOODLUCK",
+    potentialUpside: -3.0,
+    currentPrice: 412.5,
+    targetPrice: 400.0,
     dayChange: -2.97,
     weekChange: -5.05,
-    horizon: '1 month',
+    horizon: "1 month",
     accuracy: 63.0,
-    recommendation: 'BUY',
-    sector: 'Manufacturing',
-    risk: 'High',
+    recommendation: "BUY",
+    sector: "Manufacturing",
+    risk: "High",
   },
   {
     id: 6,
-    company: 'Justdial Ltd.',
-    symbol: 'JUSTDIAL',
+    company: "Justdial Ltd.",
+    symbol: "JUSTDIAL",
     potentialUpside: 47.19,
-    currentPrice: 825.30,
-    targetPrice: 1215.00,
+    currentPrice: 825.3,
+    targetPrice: 1215.0,
     dayChange: -0.83,
     weekChange: -4.39,
-    horizon: '6 months',
+    horizon: "6 months",
     accuracy: 63.0,
-    recommendation: 'BUY',
-    sector: 'Technology',
-    risk: 'Low',
+    recommendation: "BUY",
+    sector: "Technology",
+    risk: "Low",
   },
   {
     id: 7,
-    company: 'Aditya Birla Real Est Ltd',
-    symbol: 'ADITYA',
+    company: "Aditya Birla Real Est Ltd",
+    symbol: "ADITYA",
     potentialUpside: 46.89,
-    currentPrice: 1125.00,
-    targetPrice: 1652.50,
-    dayChange: -0.90,
-    weekChange: -8.60,
-    horizon: '4 months',
+    currentPrice: 1125.0,
+    targetPrice: 1652.5,
+    dayChange: -0.9,
+    weekChange: -8.6,
+    horizon: "4 months",
     accuracy: 63.0,
-    recommendation: 'BUY',
-    sector: 'Real Estate',
-    risk: 'Medium',
+    recommendation: "BUY",
+    sector: "Real Estate",
+    risk: "Medium",
   },
   {
     id: 8,
-    company: 'Balrampur Chini Mills Ltd',
-    symbol: 'BALRAMCHIN',
+    company: "Balrampur Chini Mills Ltd",
+    symbol: "BALRAMCHIN",
     potentialUpside: 46.29,
-    currentPrice: 425.80,
-    targetPrice: 623.00,
+    currentPrice: 425.8,
+    targetPrice: 623.0,
     dayChange: -2.57,
-    weekChange: -4.30,
-    horizon: '5 months',
+    weekChange: -4.3,
+    horizon: "5 months",
     accuracy: 63.0,
-    recommendation: 'BUY',
-    sector: 'FMCG',
-    risk: 'Low',
+    recommendation: "BUY",
+    sector: "FMCG",
+    risk: "Low",
   },
 ];
 
 const RecommendationsPage: React.FC = () => {
-  const [sortBy, setSortBy] = useState<'upside' | 'price' | 'change'>('upside');
-  const [filterSector, setFilterSector] = useState<string>('all');
+  const [sortBy, setSortBy] = useState<"upside" | "price" | "change">("upside");
+  const [filterSector, setFilterSector] = useState<string>("all");
   const [showFilters, setShowFilters] = useState(false);
 
-  const sectors = ['all', ...Array.from(new Set(stocks.map(s => s.sector)))];
+  const sectors = ["all", ...Array.from(new Set(stocks.map((s) => s.sector)))];
 
   const filteredStocks = stocks
-    .filter(stock => filterSector === 'all' || stock.sector === filterSector)
+    .filter((stock) => filterSector === "all" || stock.sector === filterSector)
     .sort((a, b) => {
-      if (sortBy === 'upside') return b.potentialUpside - a.potentialUpside;
-      if (sortBy === 'price') return b.currentPrice - a.currentPrice;
+      if (sortBy === "upside") return b.potentialUpside - a.potentialUpside;
+      if (sortBy === "price") return b.currentPrice - a.currentPrice;
       return b.weekChange - a.weekChange;
     });
 
   const getRiskColor = (risk: string) => {
-    if (risk === 'Low') return 'bg-green-100 text-green-700';
-    if (risk === 'Medium') return 'bg-yellow-100 text-yellow-700';
-    return 'bg-red-100 text-red-700';
+    if (risk === "Low") return "bg-green-100 text-green-700";
+    if (risk === "Medium") return "bg-yellow-100 text-yellow-700";
+    return "bg-red-100 text-red-700";
   };
 
   const getUpsideColor = (upside: number) => {
-    if (upside >= 50) return 'text-green-600';
-    if (upside >= 20) return 'text-blue-600';
-    if (upside >= 0) return 'text-orange-600';
-    return 'text-red-600';
+    if (upside >= 50) return "text-green-600";
+    if (upside >= 20) return "text-blue-600";
+    if (upside >= 0) return "text-orange-600";
+    return "text-red-600";
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 overflow-hidden min-h-[50vh]">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[50vh]">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
 
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[#EF9309]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"></div>
+        {/* <div className="absolute top-20 right-10 w-96 h-96 bg-[#fbc40c]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"></div> */}
 
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
-              <FaStar className="w-4 h-4 text-[#EF9309]" />
-              <span className="text-sm font-semibold text-[#EF9309]">
+            <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 border border-[#fbc40c]/30 rounded-full px-4 py-2 mb-6">
+              <FaStar className="w-4 h-4 text-[#fbc40c]" />
+              <span className="text-sm font-semibold text-[#fbc40c]">
                 Expert Recommendations
               </span>
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              Stock{" "}
-              <span className="bg-gradient-to-r from-[#EF9309] to-[#D68108] bg-clip-text text-transparent">
-                Recommendations
-              </span>
+            <h1 className="text-4xl lg:text-6xl font-bold text-[#0A2745] mb-6">
+              Stock <span className="text-[#fbc40c]">Recommendations</span>
             </h1>
-            <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed">
+            <p className="text-base lg:text-lg text-[#8E8E8E] leading-relaxed">
               Expert-curated stock picks with detailed analysis and price
               targets. Make informed investment decisions backed by research.
             </p>
@@ -220,7 +217,7 @@ const RecommendationsPage: React.FC = () => {
       </section>
 
       {/* Filter & Sort Section */}
-      <section className="py-8 bg-white border-b border-gray-200">
+      <section className="py-8 ">
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             <div className="flex items-center gap-4">
@@ -244,7 +241,7 @@ const RecommendationsPage: React.FC = () => {
                   <select
                     value={filterSector}
                     onChange={(e) => setFilterSector(e.target.value)}
-                    className="px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-[#EF9309] focus:outline-none text-sm"
+                    className="px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-[#fbc40c] focus:outline-none text-sm"
                   >
                     {sectors.map((sector) => (
                       <option key={sector} value={sector}>
@@ -268,7 +265,7 @@ const RecommendationsPage: React.FC = () => {
                   onClick={() => setSortBy(option.value as any)}
                   className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
                     sortBy === option.value
-                      ? "bg-[#EF9309] text-white"
+                      ? "bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
@@ -287,7 +284,7 @@ const RecommendationsPage: React.FC = () => {
             {filteredStocks.map((stock, index) => (
               <div
                 key={stock.id}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-[#EF9309] overflow-hidden"
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-[#fbc40c] overflow-hidden"
                 style={{
                   animationDelay: `${index * 50}ms`,
                   animation: "fadeInUp 0.6s ease-out forwards",
@@ -321,7 +318,7 @@ const RecommendationsPage: React.FC = () => {
                 {/* Body */}
                 <div className="p-5">
                   {/* Company Name */}
-                  <h3 className="text-base font-bold text-gray-dark mb-1 group-hover:text-[#EF9309] transition-colors line-clamp-2">
+                  <h3 className="text-base font-bold text-gray-dark mb-1 group-hover:text-[#fbc40c] transition-colors line-clamp-2">
                     {stock.company}
                   </h3>
                   <p className="text-xs text-[#666] mb-4">{stock.symbol}</p>
@@ -334,7 +331,7 @@ const RecommendationsPage: React.FC = () => {
                         ₹{stock.currentPrice.toFixed(2)}
                       </p>
                     </div>
-                    <FaArrowRight className="w-4 h-4 text-[#EF9309]" />
+                    <FaArrowRight className="w-4 h-4 text-[#fbc40c]" />
                     <div className="text-right">
                       <p className="text-xs text-[#666] mb-1">Target</p>
                       <p className="text-lg font-bold text-green-600">
@@ -413,15 +410,15 @@ const RecommendationsPage: React.FC = () => {
                   </div>
 
                   {/* Accuracy */}
-                  <div className="flex items-center justify-between p-3 bg-[#EF9309]/5 rounded-lg border border-[#EF9309]/20 mb-4">
+                  <div className="flex items-center justify-between p-3 bg-[#fbc40c]/5 rounded-lg border border-[#fbc40c]/20 mb-4">
                     <span className="text-xs text-[#666]">Past accuracy</span>
-                    <span className="text-sm font-bold text-[#EF9309]">
+                    <span className="text-sm font-bold text-[#fbc40c]">
                       {stock.accuracy}%
                     </span>
                   </div>
 
                   {/* Explore Button */}
-                  <button className="w-full py-3 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group-hover:scale-105">
+                  <button className="w-full py-3 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group-hover:scale-105">
                     Explore
                     <FaArrowRight className="w-4 h-4" />
                   </button>
@@ -454,18 +451,18 @@ const RecommendationsPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929]">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-5 md:px-10 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Ready to Start Investing?
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-6">
+            Ready to <span className="text-[#fbc40c]">Start Investing?</span>
           </h2>
-          <p className="text-lg text-[#DADADA] mb-8">
+          <p className="text-lg text-[#666] mb-8">
             Open your free demat account and access exclusive stock
             recommendations.
           </p>
           <a
-            href="/open-demat-account/"
-            className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            href="/auth/open-demat-account/"
+            className="px-10 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
           >
             Open Free Account
             <FaRocket className="w-4 h-4" />
@@ -473,7 +470,7 @@ const RecommendationsPage: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
 
       <style jsx>{`
         @keyframes fadeInUp {

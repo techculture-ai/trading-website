@@ -70,7 +70,7 @@ const whyFeatures: Feature[] = [
     title: "Order Slicing",
     description:
       "Big orders? ez wealth auto-splits them for smoother execution and lower slippage.",
-    gradient: "from-[#EF9309] to-[#D68108]",
+    gradient: "from-[#fbc40c] to-[#D68108]",
   },
   {
     id: 2,
@@ -123,58 +123,58 @@ const FuturesOptionsPage: React.FC = () => {
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] pt-32 pb-20 overflow-hidden h-[75vh]">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[80vh] ">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
 
         {/* Decorative Blobs */}
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[#EF9309]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#00D09C]/10 rounded-full blur-3xl"></div>
+        {/* <div className="absolute top-20 right-10 w-96 h-96 bg-[#fbc40c]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#00D09C]/10 rounded-full blur-3xl"></div> */}
 
-        <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24 relative z-10 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
             {/* Left Content */}
-            <div>
-              <div className="inline-flex items-center gap-2 bg-[#EF9309]/10 backdrop-blur-sm border border-[#EF9309]/20 rounded-full px-4 py-2 mb-6">
-                <HiTrendingUp className="w-4 h-4 text-[#EF9309]" />
-                <span className="text-sm font-semibold text-[#EF9309]">
+            <div className="">
+              <div className="inline-flex items-center gap-2 bg-[#fbc40c]/10 border border-[#fbc40c]/30 rounded-full px-4 py-2 mb-6">
+                <HiTrendingUp className="w-4 h-4 text-[#fbc40c]" />
+                <span className="text-sm font-semibold text-[#fbc40c]">
                   Futures & Options
                 </span>
               </div>
 
-              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+              <h1 className="text-3xl lg:text-[38px] font-bold text-[#0A2745] mb-6">
                 Unlock your{" "}
-                <span className="text-[#EF9309]">Full Potential</span>
+                <span className="text-[#fbc40c]">Full Potential</span>
               </h1>
-              <p className="text-lg lg:text-xl text-[#DADADA] leading-relaxed mb-8">
+              <p className="text-base lg:text-lg text-[#8E8E8E] leading-relaxed mb-8">
                 Futures & Options let you control more with less money and
                 profit on price swings in both directions.
               </p>
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <p className="text-3xl font-bold text-[#EF9309] mb-2">50+</p>
-                  <p className="text-sm text-[#DADADA]">Option Strategies</p>
+                <div className="bg-gradient-to-br from-[#fbc40c]/10 to-[#D68108]/5 border-2 border-[#fbc40c]/20 rounded-2xl p-6">
+                  <p className="text-3xl font-bold text-[#fbc40c] mb-2">50+</p>
+                  <p className="text-sm text-[#8E8E8E]">Option Strategies</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+                <div className="bg-gradient-to-br from-[#00D09C]/10 to-[#00B09C]/5 border-2 border-[#00D09C]/20 rounded-2xl p-6">
                   <p className="text-3xl font-bold text-[#00D09C] mb-2">₹11</p>
-                  <p className="text-sm text-[#DADADA]">Flat Brokerage</p>
+                  <p className="text-sm text-[#8E8E8E]">Flat Brokerage</p>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="/open-demat-account/"
-                  className="px-8 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+                  href="/auth/open-demat-account/"
+                  className="px-8 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
                 >
                   Start Trading F&O
                   <FaArrowRight className="w-4 h-4" />
                 </a>
                 <a
                   href="#features"
-                  className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300 border border-white/20 hover:border-white/40 inline-flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-white  border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300  inline-flex items-center justify-center gap-2"
                 >
                   Explore Features
                 </a>
@@ -182,14 +182,14 @@ const FuturesOptionsPage: React.FC = () => {
             </div>
 
             {/* Right Image */}
-            <div className="relative">
-              <div className="relative z-10">
+            <div className="relative h-full flex items-center justify-center">
+              <div className="w-full max-w-[650px] h-full flex items-center justify-center">
                 <Image
                   src="/discover_analyst_trade_3mobile.webp"
                   alt="F&O Trading Screen"
-                  width={600}
-                  height={800}
-                  className="object-contain drop-shadow-2xl mx-auto"
+                  width={550}
+                  height={400}
+                  className="object-contain drop-shadow-2xl max-h-full h-full"
                 />
               </div>
             </div>
@@ -208,7 +208,7 @@ const FuturesOptionsPage: React.FC = () => {
               </span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
-              Know The <span className="text-[#EF9309]">Risks</span>
+              Know The <span className="text-[#fbc40c]">Risks</span>
             </h2>
             <p className="text-lg text-[#666] max-w-3xl mx-auto">
               F&O trading comes with significant risks. Understanding them is
@@ -270,7 +270,7 @@ const FuturesOptionsPage: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
               The Complete Option{" "}
-              <span className="text-[#EF9309]">Trading Experience</span>
+              <span className="text-[#fbc40c]">Trading Experience</span>
             </h2>
             <p className="text-lg text-[#666] max-w-3xl mx-auto mb-8">
               Discover, Analyse, Trade. Analyze trends, identify trading
@@ -283,7 +283,7 @@ const FuturesOptionsPage: React.FC = () => {
                 onClick={() => setActiveTab("stock")}
                 className={`px-8 py-3 rounded-lg font-semibold transition-all ${
                   activeTab === "stock"
-                    ? "bg-[#EF9309] text-white shadow-lg"
+                    ? "bg-[#fbc40c] text-white shadow-lg"
                     : "text-[#666] hover:text-gray-dark"
                 }`}
               >
@@ -293,7 +293,7 @@ const FuturesOptionsPage: React.FC = () => {
                 onClick={() => setActiveTab("index")}
                 className={`px-8 py-3 rounded-lg font-semibold transition-all ${
                   activeTab === "index"
-                    ? "bg-[#EF9309] text-white shadow-lg"
+                    ? "bg-[#fbc40c] text-white shadow-lg"
                     : "text-[#666] hover:text-gray-dark"
                 }`}
               >
@@ -407,7 +407,7 @@ const FuturesOptionsPage: React.FC = () => {
               </div>
 
               <div className="text-center mt-8">
-                <button className="px-8 py-3 bg-linear-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2">
+                <button className="px-8 py-3 bg-linear-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2">
                   View All
                   <FaArrowRight className="w-4 h-4" />
                 </button>
@@ -461,7 +461,7 @@ const FuturesOptionsPage: React.FC = () => {
                     className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-[#4A90E2] cursor-pointer group"
                   >
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#EF9309] to-[#D68108] rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#fbc40c] to-[#D68108] rounded-full flex items-center justify-center">
                         <span className="text-xl font-bold text-white">
                           {index.name.charAt(0)}
                         </span>
@@ -540,7 +540,7 @@ const FuturesOptionsPage: React.FC = () => {
                     key={index}
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#EF9309] to-[#D68108] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#fbc40c] to-[#D68108] rounded-xl flex items-center justify-center flex-shrink-0">
                       <div className="text-white">{feature.icon}</div>
                     </div>
                     <div>
@@ -562,16 +562,16 @@ const FuturesOptionsPage: React.FC = () => {
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-4">
-              Why F&O on <span className="text-[#EF9309]">ez wealth?</span>
+              Why F&O on <span className="text-[#fbc40c]">ez wealth?</span>
             </h2>
-            <div className="w-20 h-1 bg-[#EF9309] mx-auto rounded-full mt-4"></div>
+            <div className="w-20 h-1 bg-[#fbc40c] mx-auto rounded-full mt-4"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {whyFeatures.map((feature, index) => (
               <div
                 key={feature.id}
-                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-100 hover:border-[#EF9309]"
+                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-100 hover:border-[#fbc40c]"
               >
                 <div
                   className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
@@ -579,7 +579,7 @@ const FuturesOptionsPage: React.FC = () => {
                   <div className="text-white">{feature.icon}</div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-dark mb-3 group-hover:text-[#EF9309] transition-colors">
+                <h3 className="text-2xl font-bold text-gray-dark mb-3 group-hover:text-[#fbc40c] transition-colors">
                   {feature.title}
                 </h3>
 
@@ -618,7 +618,7 @@ const FuturesOptionsPage: React.FC = () => {
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-6">
                 Trade Futures{" "}
-                <span className="text-[#EF9309]">with Confidence</span>
+                <span className="text-[#fbc40c]">with Confidence</span>
               </h2>
               <p className="text-lg text-[#666] mb-8 leading-relaxed">
                 Access comprehensive futures trading tools with real-time market
@@ -641,7 +641,7 @@ const FuturesOptionsPage: React.FC = () => {
               </div>
 
               <a
-                href="/open-demat-account/"
+                href="/auth/open-demat-account/"
                 className="px-8 py-4 bg-gradient-to-r from-[#0A2745] to-[#1A3A5C] hover:from-[#1A3A5C] hover:to-[#0A2745] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
               >
                 Start Trading Futures
@@ -667,7 +667,7 @@ const FuturesOptionsPage: React.FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-5 md:px-10 text-center">
           <h2 className="text-3xl lg:text-5xl font-bold  mb-6">
-            Ready to <span className="text-[#EF9309]">Trade F&O?</span>
+            Ready to <span className="text-[#fbc40c]">Trade F&O?</span>
           </h2>
           <p className="text-lg text-[#666] mb-8">
             Open your free demat account and start trading futures and options
@@ -675,15 +675,15 @@ const FuturesOptionsPage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/open-demat-account/"
-              className="px-10 py-4 bg-gradient-to-r from-[#EF9309] to-[#D68108] hover:from-[#D68108] hover:to-[#EF9309] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
+              href="/auth/open-demat-account/"
+              className="px-10 py-4 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
             >
               Open Free Account
               <FaRocket className="w-4 h-4" />
             </a>
             <a
               href="/pricing/"
-              className="px-10 py-4 bg-white border-2 border-[#EF9309] hover:bg-[#EF9309] text-[#EF9309] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
+              className="px-10 py-4 bg-white border-2 border-[#fbc40c] hover:bg-[#fbc40c] text-[#fbc40c] hover:text-white font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2"
             >
               View Pricing
             </a>

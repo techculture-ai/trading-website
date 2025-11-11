@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 interface Testimonial {
   id: number;
@@ -14,115 +14,128 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: 'Ipsita Sahoo',
-    username: '@ipsiworld',
-    avatar: 'https://stock-logos.dhan.co/static-openweb/img1.jpg',
-    content: 'I am loving Dhan app so far. @DhanHQ @DhanCares Thanks for providing an amazing platform specially for traders. #OptionsTrading #TRADINGTIPS',
+    name: "Ipsita Sahoo",
+    username: "@ipsiworld",
+    avatar: "https://stock-logos.dhan.co/static-openweb/img1.jpg",
+    content:
+      "I am loving Dhan app so far. @DhanHQ @DhanCares Thanks for providing an amazing platform specially for traders. #OptionsTrading #TRADINGTIPS",
   },
   {
     id: 2,
-    name: 'chirag_p',
-    username: '@chirag_721p',
-    avatar: 'https://stock-logos.dhan.co/static-openweb/img2.jpg',
-    content: '@dhanhq good broker and good tech support with best chart experience. #madefortrade with tradingview chart with no glitch in price movement',
+    name: "chirag_p",
+    username: "@chirag_721p",
+    avatar: "https://stock-logos.dhan.co/static-openweb/img2.jpg",
+    content:
+      "@dhanhq good broker and good tech support with best chart experience. #madefortrade with tradingview chart with no glitch in price movement",
   },
   {
     id: 3,
-    name: 'SSUMIT',
-    username: '@saxenassumit',
-    avatar: 'https://stock-logos.dhan.co/static-openweb/img3.jpg',
-    content: '@DhanHQ is the best ❤️',
+    name: "SSUMIT",
+    username: "@saxenassumit",
+    avatar: "https://stock-logos.dhan.co/static-openweb/img3.jpg",
+    content: "@DhanHQ is the best ❤️",
   },
   {
     id: 4,
-    name: 'Shashank Singh',
-    username: '@knahsahs_hgnis',
-    avatar: 'https://stock-logos.dhan.co/static-openweb/img4.jpg',
-    content: 'No matter what, but i will be the strongest cheerleader for @DhanHQ, hope to see you guys as the industry leader in coming 5 years, All the best, @BeingPractical u have literally inspired me a lot, cheers.',
+    name: "Shashank Singh",
+    username: "@knahsahs_hgnis",
+    avatar: "https://stock-logos.dhan.co/static-openweb/img4.jpg",
+    content:
+      "No matter what, but i will be the strongest cheerleader for @DhanHQ, hope to see you guys as the industry leader in coming 5 years, All the best, @BeingPractical u have literally inspired me a lot, cheers.",
   },
   {
     id: 5,
-    name: 'Novice Trader',
-    username: '@NoviceT7',
-    avatar: 'https://stock-logos.dhan.co/static-openweb/img5.jpg',
-    content: 'I started using Dhan trading platform and I would say this is one of the best platform for the trader providing seamless UI @DhanHQ',
+    name: "Novice Trader",
+    username: "@NoviceT7",
+    avatar: "https://stock-logos.dhan.co/static-openweb/img5.jpg",
+    content:
+      "I started using Dhan trading platform and I would say this is one of the best platform for the trader providing seamless UI @DhanHQ",
   },
   {
     id: 6,
-    name: 'Trading eye',
-    username: '@Priyabrata099',
-    avatar: 'https://stock-logos.dhan.co/static-openweb/img6.jpg',
+    name: "Trading eye",
+    username: "@Priyabrata099",
+    avatar: "https://stock-logos.dhan.co/static-openweb/img6.jpg",
     content: "Dhan's platform is best in India.",
   },
   {
     id: 7,
-    name: 'TUKKEBAAZ TRADER',
-    username: '@tukkebaaztrader',
-    avatar: 'https://stock-logos.dhan.co/static-openweb/img7.jpg',
-    content: 'Really best broker. I tried and traded in many brokers. But your platform is too good for trading',
+    name: "TUKKEBAAZ TRADER",
+    username: "@tukkebaaztrader",
+    avatar: "https://stock-logos.dhan.co/static-openweb/img7.jpg",
+    content:
+      "Really best broker. I tried and traded in many brokers. But your platform is too good for trading",
   },
   {
     id: 8,
-    name: 'Gaurav (blue tick here)',
-    username: '@simplyGAURAV007',
-    avatar: 'https://stock-logos.dhan.co/static-openweb/img8.jpg',
-    content: 'I got access to options app of @DhanHQ. Blown away by the ease of placing trade and brokerage calculation. For someone who ends up placing more than 20 intraday orders on an avg this thing is insanely powerful and cost effective. Wow! In love with the product. @BeingPractical 🔥🔥',
+    name: "Gaurav (blue tick here)",
+    username: "@simplyGAURAV007",
+    avatar: "https://stock-logos.dhan.co/static-openweb/img8.jpg",
+    content:
+      "I got access to options app of @DhanHQ. Blown away by the ease of placing trade and brokerage calculation. For someone who ends up placing more than 20 intraday orders on an avg this thing is insanely powerful and cost effective. Wow! In love with the product. @BeingPractical 🔥🔥",
   },
   {
     id: 9,
-    name: 'Vivek Joshi',
-    username: '@mejoshivivek',
-    avatar: 'https://stock-logos.dhan.co/static-new-images/vivek-twit.jpeg',
-    content: 'You guys are dropping bombs on other discount brokers!🔥 Truly out of the box features!',
+    name: "Vivek Joshi",
+    username: "@mejoshivivek",
+    avatar: "https://stock-logos.dhan.co/static-new-images/vivek-twit.jpeg",
+    content:
+      "You guys are dropping bombs on other discount brokers!🔥 Truly out of the box features!",
   },
   {
     id: 10,
-    name: 'Kshitiz Anand',
-    username: '@nuisancejunkie',
-    avatar: 'https://stock-logos.dhan.co/static-new-images/kshitiz-twit.jpeg',
-    content: 'Awesome job guys! @DhanHQ @DhanLive @DhanCares you listened! And did a wonderful job! Too good. Made my (and all the user\'s) day!',
+    name: "Kshitiz Anand",
+    username: "@nuisancejunkie",
+    avatar: "https://stock-logos.dhan.co/static-new-images/kshitiz-twit.jpeg",
+    content:
+      "Awesome job guys! @DhanHQ @DhanLive @DhanCares you listened! And did a wonderful job! Too good. Made my (and all the user's) day!",
   },
   {
     id: 11,
-    name: 'Chirag',
-    username: '@tweetsbychirag',
-    avatar: 'https://stock-logos.dhan.co/static-new-images/chirag-twit.jpeg',
-    content: 'Thanks for detail explanation and reaching out on behalf of me. You made me your lifetime customer. #CustomerService at its best.',
+    name: "Chirag",
+    username: "@tweetsbychirag",
+    avatar: "https://stock-logos.dhan.co/static-new-images/chirag-twit.jpeg",
+    content:
+      "Thanks for detail explanation and reaching out on behalf of me. You made me your lifetime customer. #CustomerService at its best.",
   },
   {
     id: 12,
-    name: 'Suneel.A',
-    username: '@a_suneel',
-    avatar: 'https://stock-logos.dhan.co/static-new-images/Suneel.jpg',
-    content: '@DhanHQ Undoubtedly the best trading platform I have used ! Love the UI and the ease of use.',
+    name: "Suneel.A",
+    username: "@a_suneel",
+    avatar: "https://stock-logos.dhan.co/static-new-images/Suneel.jpg",
+    content:
+      "@DhanHQ Undoubtedly the best trading platform I have used ! Love the UI and the ease of use.",
   },
   {
     id: 13,
-    name: 'Annamayya ks',
-    username: '@ksannamayya',
-    avatar: 'https://stock-logos.dhan.co/static-new-images/anna-twit.jpeg',
-    content: '@DhanHQ - excellent interphase and features for traders, just go through their features. U will not need any other broker. Amazon level customer service.',
+    name: "Annamayya ks",
+    username: "@ksannamayya",
+    avatar: "https://stock-logos.dhan.co/static-new-images/anna-twit.jpeg",
+    content:
+      "@DhanHQ - excellent interphase and features for traders, just go through their features. U will not need any other broker. Amazon level customer service.",
   },
   {
     id: 14,
-    name: 'Raj Kundalia',
-    username: '@raj_kundalia',
-    avatar: 'https://stock-logos.dhan.co/static-new-images/raj-twit.jpeg',
-    content: 'Super fast support from @DhanHQ',
+    name: "Raj Kundalia",
+    username: "@raj_kundalia",
+    avatar: "https://stock-logos.dhan.co/static-new-images/raj-twit.jpeg",
+    content: "Super fast support from @DhanHQ",
   },
   {
     id: 15,
-    name: 'Aakash Kamdi',
-    username: '@johndoedeigner',
-    avatar: 'https://stock-logos.dhan.co/static-new-images/akashkambadi.png',
-    content: 'There is a new player in the financial market - @RaiseTheBarHQ entering with its own ecosystem with scratch. The very first product is @DhanHQ awaiting early access & also can\'t wait to see other Products.',
+    name: "Aakash Kamdi",
+    username: "@johndoedeigner",
+    avatar: "https://stock-logos.dhan.co/static-new-images/akashkambadi.png",
+    content:
+      "There is a new player in the financial market - @RaiseTheBarHQ entering with its own ecosystem with scratch. The very first product is @DhanHQ awaiting early access & also can't wait to see other Products.",
   },
   {
     id: 16,
-    name: 'Ronak Bhagdev',
-    username: '@RonakBhagdev',
-    avatar: 'https://stock-logos.dhan.co/static-new-images/ronakbhag.png',
-    content: '@DhanHQ experience is super fast so far. Onboarding and applying for IPO were never that much easier. I am sure they must have some surprises coming in for long term investors like me.',
+    name: "Ronak Bhagdev",
+    username: "@RonakBhagdev",
+    avatar: "https://stock-logos.dhan.co/static-new-images/ronakbhag.png",
+    content:
+      "@DhanHQ experience is super fast so far. Onboarding and applying for IPO were never that much easier. I am sure they must have some surprises coming in for long term investors like me.",
   },
 ];
 
@@ -132,7 +145,11 @@ const Testimonials: React.FC = () => {
   const [isTransitioning, setIsTransitioning] = useState(true);
 
   // Create infinite loop by duplicating testimonials
-  const infiniteTestimonials = [...testimonials, ...testimonials, ...testimonials];
+  const infiniteTestimonials = [
+    ...testimonials,
+    ...testimonials,
+    ...testimonials,
+  ];
 
   // Responsive card count
   useEffect(() => {
@@ -149,8 +166,8 @@ const Testimonials: React.FC = () => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Auto-play functionality with infinite loop
@@ -213,8 +230,8 @@ const Testimonials: React.FC = () => {
             </svg>
           </div>
           <h2 className="text-white text-2xl lg:text-3xl font-semibold text-center">
-            Love from India&apos;s{' '}
-            <span className="text-[#EF9309]">Traders & Investors</span>
+            Love from India&apos;s{" "}
+            <span className="text-[#fbc40c]">Traders & Investors</span>
           </h2>
         </div>
 
@@ -222,16 +239,26 @@ const Testimonials: React.FC = () => {
         <div className="hidden md:block relative">
           <div className="overflow-hidden">
             <div
-              className={`flex gap-6 ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
+              className={`flex gap-6 ${
+                isTransitioning
+                  ? "transition-transform duration-500 ease-out"
+                  : ""
+              }`}
               style={{
-                transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
+                transform: `translateX(-${
+                  currentIndex * (100 / visibleCards)
+                }%)`,
               }}
             >
               {infiniteTestimonials.map((testimonial, index) => (
                 <div
                   key={`${testimonial.id}-${index}`}
                   className="flex-shrink-0"
-                  style={{ width: `calc(${100 / visibleCards}% - ${(24 * (visibleCards - 1)) / visibleCards}px)` }}
+                  style={{
+                    width: `calc(${100 / visibleCards}% - ${
+                      (24 * (visibleCards - 1)) / visibleCards
+                    }px)`,
+                  }}
                 >
                   <div className="bg-gradient-to-br from-[#1A2B42]/80 to-[#0F1F35]/80 rounded-[20px] p-5 h-[270px] backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-xl">
                     <div className="flex justify-between items-center mb-4">
@@ -274,9 +301,9 @@ const Testimonials: React.FC = () => {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  (currentIndex % testimonials.length) === index
-                    ? 'bg-[#EF9309] w-8'
-                    : 'bg-white/30 w-2 hover:bg-white/50'
+                  currentIndex % testimonials.length === index
+                    ? "bg-[#fbc40c] w-8"
+                    : "bg-white/30 w-2 hover:bg-white/50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -288,13 +315,20 @@ const Testimonials: React.FC = () => {
         <div className="md:hidden">
           <div className="relative px-4">
             <div
-              className={`flex ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
+              className={`flex ${
+                isTransitioning
+                  ? "transition-transform duration-500 ease-out"
+                  : ""
+              }`}
               style={{
                 transform: `translateX(-${currentIndex * 100}%)`,
               }}
             >
               {infiniteTestimonials.map((testimonial, index) => (
-                <div key={`mobile-${testimonial.id}-${index}`} className="w-full flex-shrink-0 px-2">
+                <div
+                  key={`mobile-${testimonial.id}-${index}`}
+                  className="w-full flex-shrink-0 px-2"
+                >
                   <div className="bg-gradient-to-br from-[#1A2B42]/80 to-[#0F1F35]/80 rounded-[20px] p-4 min-h-[250px] backdrop-blur-sm border border-white/10">
                     <div className="flex justify-between items-center mb-4">
                       <div className="relative w-12 h-12">
@@ -336,17 +370,15 @@ const Testimonials: React.FC = () => {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  (currentIndex % testimonials.length) === index
-                    ? 'bg-[#EF9309] w-8'
-                    : 'bg-white/30 w-2'
+                  currentIndex % testimonials.length === index
+                    ? "bg-[#fbc40c] w-8"
+                    : "bg-white/30 w-2"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
         </div>
-
-        
       </div>
     </section>
   );

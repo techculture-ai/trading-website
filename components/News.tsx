@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 interface NewsItem {
   id: number;
@@ -15,51 +15,54 @@ interface NewsItem {
 const newsItems: NewsItem[] = [
   {
     id: 1,
-    logo: 'https://stock-logos.dhan.co/static-openweb/moneycontrol.svg',
-    logoWidth: 'lg:w-5/12 w-4/12',
-    title: 'Dhan turns profitable with Rs 177 crore in FY24 as revenue surges by 689%',
-    url: 'https://www.moneycontrol.com/technology/dhan-turns-profitable-with-rs-177-crore-in-fy24-as-revenue-surges-by-689-article-12834258.html',
-    alt: 'MoneyControl',
+    logo: "https://stock-logos.dhan.co/static-openweb/moneycontrol.svg",
+    logoWidth: "lg:w-5/12 w-4/12",
+    title:
+      "Dhan turns profitable with Rs 177 crore in FY24 as revenue surges by 689%",
+    url: "https://www.moneycontrol.com/technology/dhan-turns-profitable-with-rs-177-crore-in-fy24-as-revenue-surges-by-689-article-12834258.html",
+    alt: "MoneyControl",
   },
   {
     id: 2,
-    logo: 'https://stock-logos.dhan.co/static-openweb/moneycontrol.svg',
-    logoWidth: 'lg:w-5/12 w-4/12',
-    title: 'Dhan and TradingView partner to allow Indian investors to trade directly on TradingView',
-    url: 'https://www.moneycontrol.com/news/business/announcements/dhan-and-tradingview-partner-to-allow-indian-investors-to-trade-directly-on-tradingview-9491101.html',
-    alt: 'MoneyControl',
+    logo: "https://stock-logos.dhan.co/static-openweb/moneycontrol.svg",
+    logoWidth: "lg:w-5/12 w-4/12",
+    title:
+      "Dhan and TradingView partner to allow Indian investors to trade directly on TradingView",
+    url: "https://www.moneycontrol.com/news/business/announcements/dhan-and-tradingview-partner-to-allow-indian-investors-to-trade-directly-on-tradingview-9491101.html",
+    alt: "MoneyControl",
   },
   {
     id: 3,
-    logo: 'https://stock-logos.dhan.co/static-openweb/moneycontrol.svg',
-    logoWidth: 'lg:w-5/12 w-4/12',
-    title: 'Dhan takes on Zerodha, Groww; eyes 1 million users in 18 months',
-    url: 'https://www.moneycontrol.com/news/business/startup/dhan-takes-on-zerodha-groww-eyes-1-million-users-in-18-months-7490491.html',
-    alt: 'MoneyControl',
+    logo: "https://stock-logos.dhan.co/static-openweb/moneycontrol.svg",
+    logoWidth: "lg:w-5/12 w-4/12",
+    title: "Dhan takes on Zerodha, Groww; eyes 1 million users in 18 months",
+    url: "https://www.moneycontrol.com/news/business/startup/dhan-takes-on-zerodha-groww-eyes-1-million-users-in-18-months-7490491.html",
+    alt: "MoneyControl",
   },
   {
     id: 4,
-    logo: 'https://stock-logos.dhan.co/static-openweb/EconomicTimes.png',
-    logoWidth: 'lg:w-11/12 w-8/12',
+    logo: "https://stock-logos.dhan.co/static-openweb/EconomicTimes.png",
+    logoWidth: "lg:w-11/12 w-8/12",
     title: "Dhan launches 'Trading via Charts' in partnership with TradingView",
-    url: 'https://economictimes.indiatimes.com/tech/startups/dhan-launches-trading-via-charts-in-partnership-with-tradingview/articleshow/88135462.cms',
-    alt: 'Economic Times',
+    url: "https://economictimes.indiatimes.com/tech/startups/dhan-launches-trading-via-charts-in-partnership-with-tradingview/articleshow/88135462.cms",
+    alt: "Economic Times",
   },
   {
     id: 5,
-    logo: 'https://stock-logos.dhan.co/static-openweb/LiveMint.svg',
-    logoWidth: 'lg:w-5/12 w-4/12',
-    title: 'Raise Financial raises $22mn Funding in Series A',
-    url: 'https://www.livemint.com/companies/start-ups/pravin-jadhav-s-raise-financial-raises-22mn-in-series-a-11643037842347.html',
-    alt: 'Live Mint',
+    logo: "https://stock-logos.dhan.co/static-openweb/LiveMint.svg",
+    logoWidth: "lg:w-5/12 w-4/12",
+    title: "Raise Financial raises $22mn Funding in Series A",
+    url: "https://www.livemint.com/companies/start-ups/pravin-jadhav-s-raise-financial-raises-22mn-in-series-a-11643037842347.html",
+    alt: "Live Mint",
   },
   {
     id: 6,
-    logo: 'https://stock-logos.dhan.co/static-openweb/logo_yourstory.svg',
-    logoWidth: 'lg:w-5/12 w-4/12',
-    title: 'Raise Financial raises $22M in Series A round from BEENEXT, Mirae Asset Ventures, others.',
-    url: 'https://yourstory.com/2022/01/funding-alert-raise-financial-raises-22million-seriesa/amp',
-    alt: 'YourStory',
+    logo: "https://stock-logos.dhan.co/static-openweb/logo_yourstory.svg",
+    logoWidth: "lg:w-5/12 w-4/12",
+    title:
+      "Raise Financial raises $22M in Series A round from BEENEXT, Mirae Asset Ventures, others.",
+    url: "https://yourstory.com/2022/01/funding-alert-raise-financial-raises-22million-seriesa/amp",
+    alt: "YourStory",
   },
 ];
 
@@ -82,8 +85,8 @@ const News: React.FC = () => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const nextSlide = useCallback(() => {
@@ -133,7 +136,9 @@ const News: React.FC = () => {
                   <div
                     className="flex transition-transform duration-500 ease-out gap-6"
                     style={{
-                      transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
+                      transform: `translateX(-${
+                        currentIndex * (100 / visibleCards)
+                      }%)`,
                     }}
                   >
                     {newsItems.map((item) => (
@@ -141,7 +146,9 @@ const News: React.FC = () => {
                         key={item.id}
                         className="flex-shrink-0 pt-3"
                         style={{
-                          width: `calc(${100 / visibleCards}% - ${(24 * (visibleCards - 1)) / visibleCards}px)`,
+                          width: `calc(${100 / visibleCards}% - ${
+                            (24 * (visibleCards - 1)) / visibleCards
+                          }px)`,
                         }}
                       >
                         <a
@@ -151,7 +158,9 @@ const News: React.FC = () => {
                           className="block h-full hover:shadow-lg transition-shadow duration-300"
                         >
                           <div className="bg-[#F9FCFF] h-36 rounded-2xl border-[0.5px] border-[#BBDDFF] p-3 hover:border-[#99CCFF] transition-colors duration-300">
-                            <div className={`h-10 pt-3 ${item.logoWidth} relative`}>
+                            <div
+                              className={`h-10 pt-3 ${item.logoWidth} relative`}
+                            >
                               <Image
                                 src={item.logo}
                                 alt={item.alt}
@@ -175,8 +184,8 @@ const News: React.FC = () => {
                   disabled={!canGoPrev}
                   className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center transition-all ${
                     canGoPrev
-                      ? 'hover:bg-gray-50 cursor-pointer'
-                      : 'opacity-50 cursor-not-allowed'
+                      ? "hover:bg-gray-50 cursor-pointer"
+                      : "opacity-50 cursor-not-allowed"
                   }`}
                   aria-label="Previous news"
                 >
@@ -199,8 +208,8 @@ const News: React.FC = () => {
                   disabled={!canGoNext}
                   className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center transition-all ${
                     canGoNext
-                      ? 'hover:bg-gray-50 cursor-pointer'
-                      : 'opacity-50 cursor-not-allowed'
+                      ? "hover:bg-gray-50 cursor-pointer"
+                      : "opacity-50 cursor-not-allowed"
                   }`}
                   aria-label="Next news"
                 >
@@ -246,7 +255,9 @@ const News: React.FC = () => {
                           className="block"
                         >
                           <div className="bg-[#F9FCFF] h-32 rounded-2xl border-[0.5px] border-[#BBDDFF] p-3">
-                            <div className={`h-10 pt-3 ${item.logoWidth} relative`}>
+                            <div
+                              className={`h-10 pt-3 ${item.logoWidth} relative`}
+                            >
                               <Image
                                 src={item.logo}
                                 alt={item.alt}
@@ -272,8 +283,8 @@ const News: React.FC = () => {
                       onClick={() => goToSlide(index)}
                       className={`h-2 rounded-full transition-all duration-300 ${
                         index === currentIndex
-                          ? 'bg-[#EF9309] w-8'
-                          : 'bg-gray-300 w-2'
+                          ? "bg-[#fbc40c] w-8"
+                          : "bg-gray-300 w-2"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
