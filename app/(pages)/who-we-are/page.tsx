@@ -23,6 +23,7 @@ import {
   FaFacebook,
   FaQuoteLeft,
 } from "react-icons/fa";
+import Link from "next/link";
 
 interface Feature {
   id: number;
@@ -36,6 +37,7 @@ interface WhyUsReason {
   id: number;
   title: string;
   description: string;
+  href?: string;
 }
 
 const features: Feature[] = [
@@ -91,19 +93,22 @@ const features: Feature[] = [
 const whyUsReasons: WhyUsReason[] = [
   {
     id: 1,
-    title: "Range of Plans",
+    title: "Wide Range of Plans",
     description: "EZ Assist for RM assisted investment advice and trade.",
+    href: "/pricing",
   },
   {
     id: 2,
     title: "EZ Flat Plan",
     description:
       "For less frequent traders regardless of the size of the order.",
+    href: "/pricing",
   },
   {
     id: 3,
     title: "EZ Family Plan",
     description: "For high volume active unlimited traders.",
+    href: "/pricing",
   },
   {
     id: 4,
@@ -120,6 +125,7 @@ const whyUsReasons: WhyUsReason[] = [
     title: "Same Price",
     description:
       "Same price for Equity, F&O and Currency across all exchanges.",
+    href: "/pricing",
   },
   {
     id: 7,
@@ -166,16 +172,19 @@ const whyUsReasons: WhyUsReason[] = [
     id: 15,
     title: "Customer Support",
     description: "Dedicated interactive online support.",
+    href: "/customer-service",
   },
   {
     id: 16,
     title: "Simple Pricing",
     description: "No hidden charges or complex fee structures.",
+    href: "/pricing",
   },
   {
     id: 17,
     title: "More for Less",
     description: "Maximum services at minimum cost.",
+    href: "/pricing",
   },
   {
     id: 18,
@@ -660,26 +669,33 @@ const AboutPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-            {whyUsReasons.map((reason, index) => (
-              <div
-                key={reason.id}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/30 transition-all duration-300 group"
-              >
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-[#fbc40c] to-[#D68108] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-sm">
-                      {reason.id}
-                    </span>
+            {whyUsReasons.map((reason, index) => {
+              const CardContent = (
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/30 transition-all duration-300 group">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-[#fbc40c] to-[#D68108] rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-sm">
+                        {reason.id}
+                      </span>
+                    </div>
+                    <h4 className="text-white font-bold text-sm leading-tight group-hover:text-[#fbc40c] transition-colors">
+                      {reason.title}
+                    </h4>
                   </div>
-                  <h4 className="text-white font-bold text-sm leading-tight group-hover:text-[#fbc40c] transition-colors">
-                    {reason.title}
-                  </h4>
+                  <p className="text-xs text-[#DADADA] leading-relaxed">
+                    {reason.description}
+                  </p>
                 </div>
-                <p className="text-xs text-[#DADADA] leading-relaxed">
-                  {reason.description}
-                </p>
-              </div>
-            ))}
+              );
+
+              return reason.href ? (
+                <Link href={reason.href} key={reason.id}>
+                  {CardContent}
+                </Link>
+              ) : (
+                <div key={reason.id}>{CardContent}</div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -136,7 +136,7 @@ const IPODetailPage: React.FC = () => {
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="pt-32 pb-12 bg-gradient-to-br from-[#0A2745] to-[#1A3A5C]">
+      <section className="pt-32 pb-12 bg-white">
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <Link
             href="/invest/ipos"
@@ -146,7 +146,7 @@ const IPODetailPage: React.FC = () => {
             Back to IPO List
           </Link>
 
-          <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl">
+          <div className="bg-gray-50 rounded-2xl p-6 lg:p-8 shadow-xl">
             <div className="flex flex-col lg:flex-row gap-6 items-start">
               {/* Logo */}
               <div className="w-20 h-20 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -187,7 +187,7 @@ const IPODetailPage: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-12">
+      <section className="py-12 bg-gray-50">
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Column - Main Details */}

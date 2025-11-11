@@ -182,7 +182,7 @@ const IPOPage: React.FC = () => {
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[75vh]">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[80vh] bgBanner">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
@@ -326,12 +326,12 @@ const IPOPage: React.FC = () => {
             <div className="hidden lg:block">
               <div className="relative">
                 {/* Background Card */}
-                <div className="absolute -top-3 -left-3 w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl"></div>
+                {/* <div className="absolute -top-3 -left-3 w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl"></div> */}
 
                 {/* Main Container */}
                 <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 shadow-2xl max-w-md mx-auto">
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                    {/* <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
                       <svg
                         className="w-7 h-7 text-white"
                         fill="currentColor"
@@ -339,13 +339,13 @@ const IPOPage: React.FC = () => {
                       >
                         <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
                       </svg>
-                    </div>
+                    </div> */}
                     <h3 className="text-xl font-bold text-gray-dark">
                       Open IPOs
                     </h3>
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-3 overflow-auto max-h-[400px] pr-2 hide-scrollbar ">
                     {currentIPOs.map((ipo, index) => (
                       <Link href={`/invest/ipos/${ipo.id}`} key={ipo.id}>
                         <div

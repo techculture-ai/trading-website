@@ -210,7 +210,7 @@ const Hero = () => {
                         ₹0
                       </div>
                       <div className="text-sm text-gray-600 font-medium">
-                        Brokerage Fee
+                        Brokerage Fee<sup className="text-red-500 text-base">*</sup>
                       </div>
                     </div>
 

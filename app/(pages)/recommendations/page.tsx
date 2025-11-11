@@ -15,6 +15,7 @@ import {
   FaBolt,
 } from "react-icons/fa";
 import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
+import Link from "next/link";
 
 interface Stock {
   id: number;
@@ -418,10 +419,10 @@ const RecommendationsPage: React.FC = () => {
                   </div>
 
                   {/* Explore Button */}
-                  <button className="w-full py-3 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group-hover:scale-105">
+                  <Link href={"/pricing"} className="w-full py-3 bg-gradient-to-r from-[#fbc40c] to-[#D68108] hover:from-[#D68108] hover:to-[#fbc40c] text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group-hover:scale-105">
                     Explore
                     <FaArrowRight className="w-4 h-4" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

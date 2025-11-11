@@ -155,7 +155,7 @@ const MutualFundsPage: React.FC = () => {
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[80vh]">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[80vh] bgBanner">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>

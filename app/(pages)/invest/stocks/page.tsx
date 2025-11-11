@@ -204,7 +204,7 @@ export default function StocksPage() {
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[80vh] ">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[80vh] bgBanner">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-repeat"></div>
         </div>
@@ -277,7 +277,7 @@ export default function StocksPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {features.map((feature, index) => (
@@ -299,7 +299,7 @@ export default function StocksPage() {
       </section>
 
       {/* Categories Section */}
-      <section id="categories" className="py-20 bg-white">
+      <section id="categories" className="py-20 bg-gray-50">
         <div className="max-w-8xl mx-auto px-5 md:px-10 lg:px-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-4">

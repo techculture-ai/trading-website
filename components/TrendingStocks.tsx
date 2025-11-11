@@ -110,10 +110,41 @@ const topLosers: Stock[] = [
   },
 ];
 
-const TrendingStocks: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"gainers" | "losers">("gainers");
+const moreStocks: Stock[] = [
+  // Additional stocks can be added here
+  {
+    id: 3,
+    symbol: "VEDL",
+    name: "VEDANTA LIMITED",
+    price: "₹234.70",
+    change: "-28.90",
+    changePercent: "-10.96",
+    logo: "/logos/vedl.png",
+  },
+  {
+    id: 4,
+    symbol: "COALINDIA",
+    name: "COAL INDIA LTD",
+    price: "₹389.50",
+    change: "-45.30",
+    changePercent: "-10.42",
+    logo: "/logos/coal.png",
+  },
+  {
+    id: 5,
+    symbol: "SBIN",
+    name: "STATE BANK OF INDIA",
+    price: "₹578.90",
+    change: "-62.15",
+    changePercent: "-9.70",
+    logo: "/logos/sbi.png",
+  },
+];
 
-  const displayStocks = activeTab === "gainers" ? topGainers : topLosers;
+const TrendingStocks: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<"gainers" | "losers" | "more">("gainers");
+
+  const displayStocks = activeTab === "gainers" ? topGainers : activeTab === "losers" ? topLosers : moreStocks;
 
   return (
     <section className="bg-gradient-to-br from-[#0A2745] via-[#0F2744] to-[#0A1929] py-16 lg:py-24">
@@ -157,6 +188,19 @@ const TrendingStocks: React.FC = () => {
                 Top Losers
               </span>
             </button>
+            <button
+              onClick={() => setActiveTab("more")}
+              className={`px-6 lg:px-10 py-3 rounded-lg font-medium text-sm lg:text-base transition-all duration-300 ${
+                activeTab === "more"
+                  ? "bg-purple-600 text-white shadow-lg"
+                  : "text-[#8E8E8E] hover:text-white"
+              }`}
+            >
+              <span className="flex items-center gap-2">
+                {/* <FaArrowDown className="w-4 h-4" /> */}
+                More
+              </span>
+            </button>
           </div>
         </div>
 
@@ -178,7 +222,9 @@ const TrendingStocks: React.FC = () => {
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
                     activeTab === "gainers"
                       ? "bg-[#00D09C]/20 text-[#00D09C]"
-                      : "bg-[#EF4B53]/20 text-[#EF4B53]"
+                      : activeTab === "losers"
+                      ? "bg-[#EF4B53]/20 text-[#EF4B53]"
+                      : "bg-purple-600/20 text-purple-600"
                   }`}
                 >
                   #{index + 1}
@@ -209,7 +255,9 @@ const TrendingStocks: React.FC = () => {
                   className={`flex items-center gap-1 text-sm font-semibold ${
                     activeTab === "gainers"
                       ? "text-[#00D09C]"
-                      : "text-[#EF4B53]"
+                      : activeTab === "losers"
+                      ? "text-[#EF4B53]"
+                      : "text-purple-600"   
                   }`}
                 >
                   {activeTab === "gainers" ? (
@@ -223,7 +271,9 @@ const TrendingStocks: React.FC = () => {
                   className={`text-xs font-medium ${
                     activeTab === "gainers"
                       ? "text-[#00D09C]"
-                      : "text-[#EF4B53]"
+                      : activeTab === "losers"
+                      ? "text-[#EF4B53]"
+                      : "text-purple-600"
                   }`}
                 >
                   {stock.change}
@@ -236,7 +286,9 @@ const TrendingStocks: React.FC = () => {
                   className={`h-full rounded-full transition-all duration-1000 ${
                     activeTab === "gainers"
                       ? "bg-gradient-to-r from-[#00D09C] to-[#00E0AC]"
-                      : "bg-gradient-to-r from-[#EF4B53] to-[#FF6B73]"
+                      : activeTab === "losers"
+                      ? "bg-gradient-to-r from-[#EF4B53] to-[#FF6A70]"
+                      : "bg-gradient-to-r from-purple-500 to-purple-600"
                   }`}
                   style={{
                     width: `${Math.min(
